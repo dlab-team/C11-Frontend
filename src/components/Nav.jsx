@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom"
 import { Disclosure } from "@headlessui/react"
 import { X, Menu, Home, UserCheck } from "lucide-react"
 import logo_blanco from "../assets/logo_blanco.png"
 import logo_azul from "../assets/logo_azul.png"
 import { useState } from "react"
+
+const ruta_login = "/login"
 
 const navigation = [
   {
@@ -13,7 +16,7 @@ const navigation = [
   },
   {
     name: "Iniciar Sesión",
-    href: "/login",
+    href: ruta_login,
     current: false,
     icono: (
       <UserCheck className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
@@ -40,12 +43,12 @@ const Nav = () => {
                 <img className="logo_blanco" src={logo} alt="Your Company" />
               </div>
               <div className="hidden md:block">
-                <div className="mt-4 p-4 ml-10 flex items-baseline space-x-4 ">
-                  <span className="text-white ">
-                    <a className="text-sm" href="/login">
+                <div className="p-4 ml-10 flex items-baseline space-x-4 ">
+                  <Link to={ruta_login}>
+                    <button className="bg-white rounded-lg p-4 font-normal text-xl text-[#2738F5] hover:text-white hover:bg-[#2738F5] ">
                       Inicia Sesión
-                    </a>
-                  </span>
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="mt-2 md:hidden">
@@ -63,7 +66,10 @@ const Nav = () => {
                     <>
                       {setNavColor("bg-white")}
                       {setLogo(logo_azul)}
-                      <X className="iconBlue block h-6 w-6" aria-hidden="true" />
+                      <X
+                        className="iconBlue block h-6 w-6"
+                        aria-hidden="true"
+                      />
                     </>
                   ) : (
                     <>
