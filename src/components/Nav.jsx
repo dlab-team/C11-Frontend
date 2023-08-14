@@ -1,5 +1,5 @@
 import { Disclosure } from "@headlessui/react"
-import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid"
+import { X, Menu  } from 'lucide-react'
 import logo_blanco from "../assets/logo_blanco.png"
 
 const navigation = [
@@ -63,11 +63,11 @@ const Nav = () => {
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <>
-                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                      <X className="block h-6 w-6" aria-hidden="true" />
                     </>
                   ) : (
                     <>
-                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                      <Menu className="block h-6 w-6" aria-hidden="true" />
                     </>
                   )}
                 </Disclosure.Button>
