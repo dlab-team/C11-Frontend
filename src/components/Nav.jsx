@@ -40,7 +40,9 @@ const Nav = () => {
           <>
             <div className="nav mb-4 px-4 sm:px-6 lg:px-8 flex justify-between">
               <div className="flex-none ">
-                <img className="logo_blanco" src={logo} alt="Your Company" />
+                <Link to="/">
+                  <img className="logo_blanco" src={logo} alt="Your Company" />
+                </Link>
               </div>
               <div className="hidden md:block">
                 <div className="p-4 ml-10 flex items-baseline space-x-4 ">
