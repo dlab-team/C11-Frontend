@@ -63,7 +63,7 @@ const Nav = () => {
                     <>
                       {setNavColor("bg-white")}
                       {setLogo(logo_azul)}
-                      <X className="block h-6 w-6" aria-hidden="true" />
+                      <X className="iconBlue block h-6 w-6" aria-hidden="true" />
                     </>
                   ) : (
                     <>
