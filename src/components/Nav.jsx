@@ -47,7 +47,7 @@ const Nav = () => {
               <div className="hidden md:block">
                 <div className="p-4 ml-10 flex items-baseline space-x-4 ">
                   <Link to={ruta_login}>
-                    <button className="bg-white rounded-lg p-4 font-normal text-xl text-[#2738F5] hover:text-white hover:bg-[#2738F5] ">
+                    <button className="bg-[#FFFFFF] rounded-lg p-4 font-normal text-xl text-[#2738F5] hover:text-[#FFFFFF] hover:bg-[#2738F5] ">
                       Inicia Sesión
                     </button>
                   </Link>
@@ -59,14 +59,14 @@ const Nav = () => {
                   className={classNames(
                     open
                       ? "mt-4 relative inline-flex items-center justify-center rounded-md p-2 "
-                      : "mt-4 relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      : "mt-4 relative inline-flex items-center justify-center rounded-md p-2 text-[#FFFFFF] hover:bg-blue-700 hover:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] focus:ring-offset-2 focus:ring-offset-gray-800"
                   )}
                 >
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <>
-                      {setNavColor("bg-white")}
+                      {setNavColor("bg-[#FFFFFF]")}
                       {setLogo(logo_azul)}
                       <X
                         className="iconBlue block h-6 w-6"
