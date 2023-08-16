@@ -38,7 +38,7 @@ const Nav = () => {
       <Disclosure as="nav" className={navColor}>
         {({ open }) => (
           <>
-            <div className="nav mb-4 px-4 sm:px-6 lg:px-8 flex justify-between">
+            <div className="nav px-4 sm:px-6 lg:px-8 flex justify-between">
               <div className="flex-none ">
                 <Link to="/">
                   <img className="logo_blanco" src={logo} alt="Your Company" />
