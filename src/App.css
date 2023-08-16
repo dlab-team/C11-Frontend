@@ -20,8 +20,7 @@
 .iconBlue {
   color:#0084EA;
   background-color: white;
-  width: 80px;
-  
+  width: 80px;  
 }
 
 .icon_cel {
@@ -31,4 +30,9 @@
 .texto_azul {
   font-weight:600;
   color: #2738F5;
+}
+
+.titulo {
+  font-weight: 600;
+  margin-bottom: 2rem;
 }
