@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+
+#root {
+  font-family: poppins;
+}
+
+.logo_blanco {
+  width: 170px;
+  height: 50px;
+  margin-top: 23px;
+  margin-left: 25px;
+}
+
+.nav {
+  height: 96px;
+}
+
+.iconBlue {
+  color:#0084EA;
+  background-color: white;
+  width: 80px;
+  
+}
+
+.icon_cel {
+  margin: 0 30px;
+}
