@@ -5,7 +5,7 @@ import logo_blanco from "../assets/logo_blanco.png"
 import logo_azul from "../assets/logo_azul.png"
 import { useState } from "react"
 
-const ruta_login = "/login"
+const ruta_login = "/index"
 
 const navigation = [
   {
