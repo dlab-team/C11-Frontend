@@ -1,4 +1,7 @@
-import ProgramExplanation from "./ProgramExplanation"
+import ProgramExplanation from "./ProgramExplanation";
+import Footer from "../../components/Footer";
+import LandingForm from "../../components/Landing/LandingForm";
+
 const Home = () => {
   return (
     <>
@@ -7,7 +10,7 @@ const Home = () => {
       <Footer />
       <LandingForm />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
