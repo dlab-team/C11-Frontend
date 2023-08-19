@@ -7,8 +7,8 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="w-full">
-      <div className="bg-white shadow-md  lg:mx-56 px-8 pt-6 pb-8 mb-4">
+    <div className="">
+      <div className="bg-[#FFF] px-8 pt-16 pb-8 mb-4">
         <div
           className="mb-12
         "
@@ -24,6 +24,7 @@ const LoginForm = () => {
               autoComplete="off"
             />
           </label>
+          <input type="checkbox" className="" />Recordarme
         </div>
 
         <label className="block text-gray-700 text-sm mb-2">
@@ -89,7 +90,7 @@ const LoginForm = () => {
 
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full py-2 px-4 focus:outline-none focus:shadow-outline"
             type="button"
           >
             Iniciar Sesión
