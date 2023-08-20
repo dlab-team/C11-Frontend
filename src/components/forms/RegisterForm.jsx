@@ -8,9 +8,9 @@ const RegisterForm = () => {
 
   return (
     <div className="w-full">
-      <div className="bg-white shadow-md  mx-56 px-8 pt-6 pb-8 mb-4">
+      <div className="bg-[#FFF]  lg:mx-56 px-8 pt-6 pb-8 mb-4">
         <div
-          className="mb-12
+          className="lg:mb-12 mb-6
         "
         >
           <label className="block text-gray-700 text-sm mb-2">
@@ -27,7 +27,7 @@ const RegisterForm = () => {
         </div>
 
         <div
-          className="mb-12
+          className="lg:mb-12 mb-6
         "
         >
           <label className="block text-gray-700 text-sm mb-2">
@@ -44,7 +44,7 @@ const RegisterForm = () => {
         </div>
 
         <div
-          className="mb-12
+          className="lg:mb-12 mb-6
         "
         >
           <label className="block text-gray-700 text-sm mb-2">
@@ -63,7 +63,7 @@ const RegisterForm = () => {
         <label className="block text-gray-700 text-sm mb-2">
           Crea tu Contraseña
           <div
-            className="relative mb-12
+            className="relative lg:mb-12 mb-6
         "
           >
             <input
@@ -124,7 +124,7 @@ const RegisterForm = () => {
         <label className="block text-gray-700 text-sm mb-2">
           Repite tu Nueva contraseña
           <div
-            className="relative mb-12
+            className="relative lg:mb-12 mb-6
         "
           >
             <input
