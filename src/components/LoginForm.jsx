@@ -6,6 +6,7 @@ const LoginForm = () => {
 
   async function handleSubmit(event) {
     event.preventDefault()
+    // console.log(email, pass, checkbox)
   }
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
