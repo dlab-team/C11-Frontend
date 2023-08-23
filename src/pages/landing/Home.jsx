@@ -7,8 +7,8 @@ const Home = () => {
     <>
       <div></div>
       <ProgramExplanation />
-      <Footer />
       <LandingForm />
+      <Footer />
     </>
   );
 };
