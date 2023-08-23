@@ -1,21 +1,23 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+
 import mail from "../assets/mail.svg"
 import gmail from "../assets/gmail.svg"
 import github from "../assets/github.svg"
 import linkedin from "../assets/linkedin.svg"
 
 const Social_login = () => {
-  const [social, setSocial] = useState("gmail")
+  const [social, setSocial] = useState("")
 
   async function handleSubmit(event) {
     event.preventDefault()
-    // console.log(social)
+    console.log(social)
   }
   return (
     <div className="bg-[#FFF] px-8 pt-20 pb-8 mb-4 font-normal text-sm ">
       <form onSubmit={handleSubmit}>
         {/* <div className="flex items-center justify-between"> */}
-        <div className="mb-14">
+        <div className="mb-14 mt-6">
           <button
             className=" text-[#000] borde  w-full py-2 px-4 focus:outline-none focus:shadow-outline flex items-center hover:bg-blue-700"
             onClick={() => setSocial("google")}
@@ -23,7 +25,11 @@ const Social_login = () => {
             value={social}
           >
             <img src={mail} className="logo mail" alt="mail logo" />
-            <span className="px-4 text-xl leading-[30px]">Formulario de registro</span>
+            <Link to="/register">
+              <span className="px-4 text-xl leading-[30px]">
+                Formulario de registro
+              </span>
+            </Link>
           </button>
         </div>
         <div className="mb-14">
@@ -34,7 +40,9 @@ const Social_login = () => {
             value={social}
           >
             <img src={gmail} className="logo gmail" alt="gmail logo" />
-            <span className="px-4 text-xl leading-[30px]">Ingresa con Gmail</span>
+            <span className="px-4 text-xl leading-[30px]">
+              Ingresa con Gmail
+            </span>
           </button>
         </div>
         <div className="mb-14">
@@ -45,7 +53,9 @@ const Social_login = () => {
             value={social}
           >
             <img src={linkedin} className="logo linkedin" alt="linkedin logo" />
-            <span className="px-4 text-xl leading-[30px]">Ingresa con Linkedin</span>
+            <span className="px-4 text-xl leading-[30px]">
+              Ingresa con Linkedin
+            </span>
           </button>
         </div>
         <div className="mb-14">
@@ -56,7 +66,9 @@ const Social_login = () => {
             value={social}
           >
             <img src={github} className="logo github" alt="github logo" />
-            <span className="px-4 text-xl leading-[30px]">Ingresa con GitHub</span>
+            <span className="px-4 text-xl leading-[30px]">
+              Ingresa con GitHub
+            </span>
           </button>
         </div>
       </form>
