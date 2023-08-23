@@ -1,3 +1,4 @@
+import "./registerForm.css"
 import { useState } from "react"
 
 const RegisterForm = () => {
@@ -9,6 +10,7 @@ const RegisterForm = () => {
 
   async function handleSubmit(event) {
     event.preventDefault()
+    console.log(username, lastname, email, pass, repass)
   }
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -16,16 +18,17 @@ const RegisterForm = () => {
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState)
   }
+  //sm:text-sm sm:leading-[19.5px] 
 
   return (
-    <div className="w-full">
-      <div className="bg-[#FFF]  lg:mx-56 px-8 pt-6 pb-8 mb-4">
-        <form onSubmit={handleSubmit}>
+    <div className="  ">
+      <div className="bg-[#FFF]  lg:mx-56 px-8 pt-6 pb-8 mb-4 ">
+        <form onSubmit={handleSubmit} className=" mobil ">
           <div
-            className="lg:mb-12 mb-6
+            className="lg:mb-12 mb-6 
         "
           >
-            <label className="block text-gray-700 text-sm mb-2">
+            <label className="block text-gray-700 mb-2   md:text-2xl md:leading-9   ">
               Danos tu nombre
               <input
                 className="shadow appearance-none borde w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -44,7 +47,7 @@ const RegisterForm = () => {
             className="lg:mb-12 mb-6
         "
           >
-            <label className="block text-gray-700 text-sm mb-2">
+            <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
               Danos tu apellido
               <input
                 className="shadow appearance-none borde  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -63,7 +66,7 @@ const RegisterForm = () => {
             className="lg:mb-12 mb-6
         "
           >
-            <label className="block text-gray-700 text-sm mb-2">
+            <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
               Correo Electrónico
               <input
                 className="shadow appearance-none borde w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -78,7 +81,7 @@ const RegisterForm = () => {
             </label>
           </div>
 
-          <label className="block text-gray-700 text-sm mb-2">
+          <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
             Crea tu Contraseña
             <div
               className="relative lg:mb-12 mb-6
@@ -97,7 +100,7 @@ const RegisterForm = () => {
         outline-none
         focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
               />
-              <button
+              <a
                 className="absolute inset-y-0 right-0 flex items-center px-4 text-gray-600"
                 onClick={togglePasswordVisibility}
               >
@@ -137,11 +140,11 @@ const RegisterForm = () => {
                     />
                   </svg>
                 )}
-              </button>
+              </a>
             </div>
           </label>
 
-          <label className="block text-gray-700 text-sm mb-2">
+          <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
             Repite tu Nueva contraseña
             <div
               className="relative lg:mb-12 mb-6
@@ -160,7 +163,7 @@ const RegisterForm = () => {
         outline-none
         focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
               />
-              <button
+              <a
                 className="absolute inset-y-0 right-0 flex items-center px-4 text-gray-600"
                 onClick={togglePasswordVisibility}
               >
@@ -200,13 +203,13 @@ const RegisterForm = () => {
                     />
                   </svg>
                 )}
-              </button>
+              </a>
             </div>
           </label>
 
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline  md:text-2xl md:leading-9 "
               type="submit"
             >
               Crear Cuenta
