@@ -12,7 +12,7 @@ const Social_login = () => {
     // console.log(social)
   }
   return (
-    <div className="bg-[#FFF] px-8 pt-20 pb-8 mb-4">
+    <div className="bg-[#FFF] px-8 pt-20 pb-8 mb-4 font-normal text-sm ">
       <form onSubmit={handleSubmit}>
         {/* <div className="flex items-center justify-between"> */}
         <div className="mb-14">
@@ -23,7 +23,7 @@ const Social_login = () => {
             value={social}
           >
             <img src={mail} className="logo mail" alt="mail logo" />
-            <span className="px-4">Formulario de registro</span>
+            <span className="px-4 text-xl leading-[30px]">Formulario de registro</span>
           </button>
         </div>
         <div className="mb-14">
@@ -34,7 +34,7 @@ const Social_login = () => {
             value={social}
           >
             <img src={gmail} className="logo gmail" alt="gmail logo" />
-            <span className="px-4">Ingresa con Gmail</span>
+            <span className="px-4 text-xl leading-[30px]">Ingresa con Gmail</span>
           </button>
         </div>
         <div className="mb-14">
@@ -45,7 +45,7 @@ const Social_login = () => {
             value={social}
           >
             <img src={linkedin} className="logo linkedin" alt="linkedin logo" />
-            <span className="px-4">Ingresa con Linkedin</span>
+            <span className="px-4 text-xl leading-[30px]">Ingresa con Linkedin</span>
           </button>
         </div>
         <div className="mb-14">
@@ -56,7 +56,7 @@ const Social_login = () => {
             value={social}
           >
             <img src={github} className="logo github" alt="github logo" />
-            <span className="px-4">Ingresa con GitHub</span>
+            <span className="px-4 text-xl leading-[30px]">Ingresa con GitHub</span>
           </button>
         </div>
       </form>
