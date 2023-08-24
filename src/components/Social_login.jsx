@@ -7,6 +7,7 @@ import github from "../assets/github.svg"
 import linkedin from "../assets/linkedin.svg"
 
 const Social_login = () => {
+  const btn_soc = "hover:bg-blue-700 text-[#000] borde w-full h-[2.3125rem] md:h-[4.25rem] px-4 focus:outline-none focus:shadow-outline flex items-center"
   const [social, setSocial] = useState("")
 
   async function handleSubmit(event) {
@@ -14,12 +15,11 @@ const Social_login = () => {
     console.log(social)
   }
   return (
-    <div className="bg-[#FFF] px-8 pt-20 pb-8 mb-4 font-normal text-sm ">
+    <div className="bg-[#FFF] px-8 pb-8 mb-4 font-normal text-xs leading-[1.125rem] ">
       <form onSubmit={handleSubmit}>
-        {/* <div className="flex items-center justify-between"> */}
-        <div className="mb-14 mt-6">
+        <div className="mb-14 mt-8 md:mt-[-4.067rem]">
           <button
-            className=" text-[#000] borde  w-full py-2 px-4 focus:outline-none focus:shadow-outline flex items-center hover:bg-blue-700"
+            className={btn_soc}
             onClick={() => setSocial("google")}
             type="submit"
             value={social}
@@ -34,7 +34,7 @@ const Social_login = () => {
         </div>
         <div className="mb-14">
           <button
-            className="hover:bg-blue-700 text-[#000] borde w-full py-2 px-4 focus:outline-none focus:shadow-outline flex items-center"
+            className={btn_soc}
             onClick={() => setSocial("gmail")}
             type="submit"
             value={social}
@@ -47,7 +47,7 @@ const Social_login = () => {
         </div>
         <div className="mb-14">
           <button
-            className="hover:bg-blue-700 text-[#000] borde w-full py-2 px-4 focus:outline-none focus:shadow-outline flex items-center"
+            className={btn_soc}
             onClick={() => setSocial("linkedin")}
             type="submit"
             value={social}
@@ -60,7 +60,7 @@ const Social_login = () => {
         </div>
         <div className="mb-14">
           <button
-            className="hover:bg-blue-700 text-[#000] borde w-full py-2 px-4 focus:outline-none focus:shadow-outline flex items-center"
+            className={btn_soc}
             onClick={() => setSocial("github")}
             type="submit"
             value={social}

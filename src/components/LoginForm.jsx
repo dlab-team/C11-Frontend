@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types'
 import { useState } from "react"
-const LoginForm = () => {
+const LoginForm = ({cl}) => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
   const [checkbox, setCheckbox] = useState(false)
@@ -17,17 +18,16 @@ const LoginForm = () => {
 
   return (
     <div className="">
-      <div className="bg-[#FFF] px-8 pt-16 pb-8 mb-4">
+      <div className="bg-[#FFF] px-8 pb-8 mb-4 mt-0 md:mt-[-6.75rem]">
         <form onSubmit={handleSubmit}>
           <div className="leading-[1.219rem] text-[0.813rem] md:leading-[2.25rem] md:text-2xl">
             <div
-              className="mb-12
-        "
+              className=" "
             >
-              <label className="block text-gray-700  mb-2">
+              <label className="block text-gray-700 text-[#000000]">
                 Correo Electrónico
                 <input
-                  className="shadow appearance-none borde w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className={cl.sm}
                   id="email"
                   type="email"
                   placeholder="nombre@correo.cl"
@@ -37,12 +37,12 @@ const LoginForm = () => {
                   value={email}
                 />
               </label>
-              <div className="invisible md:visible md:leading-[1.313rem] md:text-sm ">
+              <div className="md:mb-[2.56rem] invisible md:visible md:leading-[1.313rem] md:text-sm ">
                 <input
                   type="checkbox"
                   id="recordar"
                   name="recordar"
-                  className="me-1.5"
+                  className="h-[2.3125rem] me-1.5"
                   onChange={() => setCheckbox(true)}
                   value={checkbox}
                 />
@@ -50,10 +50,10 @@ const LoginForm = () => {
               </div>
             </div>
 
-            <label className="block text-gray-700 mb-2">
+            <label className="block text-gray-700">
               Contraseña
               <div
-                className="relative mb-12
+                className="relative mb-[1.62rem] md:mb-[4.44rem]
           "
               >
                 <input
@@ -63,8 +63,7 @@ const LoginForm = () => {
                   value={pass}
                   name="contraseña"
                   className="w-full borde
-            px-4
-            py-2
+                  h-[2.3125rem]  md:h-[4.75rem] px-4 
             text-base
             outline-none
             focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
@@ -116,7 +115,7 @@ const LoginForm = () => {
 
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full py-2 px-4 focus:outline-none focus:shadow-outline"
+              className="mb-[2.88rem] bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full h-[2.5rem]  md:h-[4.75rem] px-4 focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Iniciar Sesión
@@ -129,3 +128,7 @@ const LoginForm = () => {
 }
 
 export default LoginForm
+
+LoginForm.propTypes = {
+  cl: PropTypes.object.isRequired,
+}
