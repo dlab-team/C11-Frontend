@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./App.css"
 import Nav from "./components/Nav"
 import Home from "./pages/landing/Home"
+import RestorePass from "./pages/RestorePass"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Nav />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/restorePass" element={<RestorePass />} />
         </Routes>
       </Router>
     </main>
