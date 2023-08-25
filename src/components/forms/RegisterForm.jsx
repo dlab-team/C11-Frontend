@@ -18,20 +18,23 @@ const RegisterForm = () => {
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState)
   }
-  //sm:text-sm sm:leading-[19.5px] 
+  
+  const cl = {
+    sm: "mb-[1.5rem] md:mb-[3rem] shadow appearance-none borde w-full  px-4 h-[2.3125rem] md:h-[5.20719rem] text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+  }
 
   return (
     <div className="  ">
-      <div className="bg-[#FFF]  lg:mx-56 px-8 pt-6 pb-8 mb-4 ">
+      <div className="bg-[#FFF]  md:mx-[13.81rem] pb-8 mb-4 mx-[4.5rem]">
         <form onSubmit={handleSubmit} className=" mobil ">
           <div
-            className="lg:mb-12 mb-6 
+            className="  
         "
           >
-            <label className="block text-gray-700 mb-2   md:text-2xl md:leading-9   ">
+            <label className="block text-gray-700   md:text-2xl md:leading-9   ">
               Danos tu nombre
               <input
-                className="shadow appearance-none borde w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className={cl.sm}
                 id="username"
                 type="text"
                 placeholder="Nombre"
@@ -44,13 +47,13 @@ const RegisterForm = () => {
           </div>
 
           <div
-            className="lg:mb-12 mb-6
+            className=" 
         "
           >
-            <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
+            <label className="block text-gray-700  md:text-2xl md:leading-9  ">
               Danos tu apellido
               <input
-                className="shadow appearance-none borde  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className={cl.sm}
                 id="lastname"
                 type="text"
                 placeholder="Apellido"
@@ -63,13 +66,13 @@ const RegisterForm = () => {
           </div>
 
           <div
-            className="lg:mb-12 mb-6
+            className=" 
         "
           >
-            <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
+            <label className="block text-gray-700  md:text-2xl md:leading-9  ">
               Correo Electrónico
               <input
-                className="shadow appearance-none borde w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className={cl.sm}
                 id="email"
                 type="email"
                 placeholder="nombre@ejemplo.com"
@@ -81,10 +84,10 @@ const RegisterForm = () => {
             </label>
           </div>
 
-          <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
+          <label className="block text-gray-700  md:text-2xl md:leading-9  ">
             Crea tu Contraseña
             <div
-              className="relative lg:mb-12 mb-6
+              className="relative  
         "
             >
               <input
@@ -93,12 +96,7 @@ const RegisterForm = () => {
                 onChange={(event) => setPass(event.target.value)}
                 value={pass}
                 name="contraseña"
-                className="w-full borde
-        px-4
-        py-2
-        text-base
-        outline-none
-        focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+                className={cl.sm}
               />
               <a
                 className="absolute inset-y-0 right-0 flex items-center px-4 text-gray-600"
@@ -126,7 +124,7 @@ const RegisterForm = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-8 h-6 mb-6"
                   >
                     <path
                       strokeLinecap="round"
@@ -144,10 +142,10 @@ const RegisterForm = () => {
             </div>
           </label>
 
-          <label className="block text-gray-700 mb-2  md:text-2xl md:leading-9  ">
+          <label className="block text-gray-700  md:text-2xl md:leading-9  ">
             Repite tu Nueva contraseña
             <div
-              className="relative lg:mb-12 mb-6
+              className="relative  
         "
             >
               <input
@@ -156,12 +154,7 @@ const RegisterForm = () => {
                 onChange={(event) => setRePass(event.target.value)}
                 value={repass}
                 name="re_contraseña"
-                className="w-full borde
-        px-4
-        py-2
-        text-base
-        outline-none
-        focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+                className={cl.sm}
               />
               <a
                 className="absolute inset-y-0 right-0 flex items-center px-4 text-gray-600"
@@ -189,7 +182,7 @@ const RegisterForm = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-8 h-6 mb-6"
                   >
                     <path
                       strokeLinecap="round"
@@ -209,7 +202,7 @@ const RegisterForm = () => {
 
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline  md:text-2xl md:leading-9 "
+              className="bg-blue-500 hover:bg-blue-700 text-[#E2F2FE] borde bg-[#2738F5] w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline  md:text-2xl md:leading-9 h-[2.5rem] md:h-[5.5rem] mt-[0.188rem]"
               type="submit"
             >
               Crear Cuenta
