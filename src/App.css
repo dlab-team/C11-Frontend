@@ -3,7 +3,6 @@
 
 #root {
   font-family: poppins;
-  font-weight: 400;
 }
 
 .logo_blanco {
@@ -20,7 +19,8 @@
 .iconBlue {
   color:#0084EA;
   background-color: white;
-  width: 80px;  
+  width: 80px;
+  
 }
 
 .icon_cel {
@@ -47,3 +47,4 @@
   border: 3px solid #2738F5;
   border-radius: 0.5rem;
 }
+
