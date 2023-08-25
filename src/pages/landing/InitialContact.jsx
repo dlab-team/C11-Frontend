@@ -1,14 +1,15 @@
 import imgContact from "../../assets/landing/devsafio/imgContact.png";
 import React from "react";
+import LandingForm from "../../components/Landing/LandingForm";
 
 const InitialContact = () => {
 	return (
 		<section
 			className="flex justify-center   pb-6 md:pb-8
-                     md:h-5/6 md:py-11"
+                     md: md:py-11"
 			id="contact-section"
 		>
-			<div className="container flex mx-auto flex-col sm:flex-row md:flex-row">
+			<div className="container flex mx-auto flex-col sm:flex-col md:flex-row ">
 				<div className="mx-auto">
 					<h2 className="py-4 px-4  md:py-1.5 lg:py-2.5 font-sans text-3xl  font-semibold  lg:mx-auto text-dark-purple">
 						DEVsafiamos el sistema
@@ -49,6 +50,9 @@ const InitialContact = () => {
 							</a>
 						</button>
 					</div>
+				</div>
+				<div className="flex justify-center">
+					<LandingForm />
 				</div>
 			</div>
 		</section>
