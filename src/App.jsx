@@ -4,6 +4,8 @@ import "./App.css"
 import Nav from "./components/Nav"
 import Home from "./pages/landing/Home"
 import Register from "./pages/access/Register"
+import Footer from "./components/Footer"
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path='/register' element={ <Register /> } />
         </Routes>
+        <Footer />
       </Router>
     </main>
   )
