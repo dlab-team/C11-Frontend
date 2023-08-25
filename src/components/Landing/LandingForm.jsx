@@ -191,9 +191,9 @@ export default function LandingForm() {
         src="../../src/assets/image_moon.svg"
         alt="Moon Image"
       />
-      <div className="flex items-center content-center justify-center sm:justify-start mb-[2.3125rem] sm:mb-[2.5rem]">
+      <div className="flex items-center content-center justify-center mb-[2.3125rem] sm:mb-[2.5rem]">
         <button
-          className="rounded-[1.5rem] sm:rounded-3xl bg-[#575253] sm:bg-[#fff] w-[10.625rem] sm:w-[8.5625rem] h-[2rem] sm:h-[4.25rem] text-black-700 sm:text-blue-700 text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
+          className="sm:border-none border-solid border-[#2738F5] border rounded-[0.5rem] sm:rounded-3xl bg-[#fff] w-[21.375rem] h-[2.3125rem] sm:w-[8.5625rem] sm:h-[4.25rem] text-blue-700 font-bold text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
           type="submit"
         >
           ENVIAR
