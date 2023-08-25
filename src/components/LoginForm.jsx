@@ -42,7 +42,7 @@ const LoginForm = ({cl}) => {
                   type="checkbox"
                   id="recordar"
                   name="recordar"
-                  className="h-[2.3125rem] me-1.5"
+                  className="me-1.5"
                   onChange={() => setCheckbox(true)}
                   value={checkbox}
                 />
@@ -122,6 +122,11 @@ const LoginForm = ({cl}) => {
             </button>
           </div>
         </form>
+        <div className="flex flex-row justify-between items-center lg:hidden">
+            <div className="w-[100px] h-[1px] border border-opacity-50 lg:hidden"></div>
+            <span className=" lg:hidden mx-2">O</span>
+            <div className="w-[100px] h-[1px] border border-opacity-50  lg:hidden"></div>
+          </div>
       </div>
     </div>
   )
