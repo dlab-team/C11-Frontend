@@ -18,7 +18,7 @@ const LoginForm = ({ cl }) => {
 
   return (
     <div className="">
-      <div className="bg-[#FFF] px-8 pb-8 mb-4 mt-0 md:mt-[-6.75rem] flex flex-col md:flex-row">
+      <div className="bg-[#FFF] md:w-[44.518rem] md:ps-[7.5rem] pb-8 mb-4 mt-0 md:mt-[-6.75rem] flex flex-col md:flex-row">
         <form onSubmit={handleSubmit}>
           <div className="leading-[1.219rem] text-[0.813rem] md:leading-[2.25rem] md:text-2xl">
             <div className=" ">
@@ -121,7 +121,7 @@ const LoginForm = ({ cl }) => {
           </div>
         </form>
 
-        <div className="flex flex-row justify-between items-center md:ml-8">
+        <div className="flex flex-row justify-between items-center md:ml-[6.38rem]">
           <div className="w-[100px] h-[1px] border border-opacity-50 shrink md:w-[1px] md:h-[160px] md:ml-0 md:mt-[-420px] "></div>
           <span className="md:mt-[-220px]  ms-[-6px]">O</span>
           <div className="w-[100px] h-[1px] border border-opacity-50 shrink md:w-[1px] md:h-[360px] md:ms-[-7px] md:mt-[170px] "></div>
