@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./App.css"
 import Nav from "./components/Nav"
 import Home from "./pages/landing/Home"
+import FloatingButton from "./components/FloatingButton"
+
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/" element={<FloatingButton />}/>
         </Routes>
       </Router>
     </main>

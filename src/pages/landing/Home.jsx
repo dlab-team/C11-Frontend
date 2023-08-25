@@ -1,11 +1,18 @@
-import ProgramExplanation from "./ProgramExplanation"
-const Home = () => {
-  return (
-    <>
-      <div></div>
-      <ProgramExplanation />
-    </>
-  )
-}
+import InitialContact from "./InitialContact";
+import FloatingButton from "../../components/FloatingButton";
 
-export default Home
+
+
+const Home = () => {
+	return (
+		<>
+			<div>
+				<InitialContact />
+				<FloatingButton />
+
+			</div>
+		</>
+	);
+};
+
+export default Home;
