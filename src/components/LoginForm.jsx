@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import { useState } from "react"
-const LoginForm = ({cl}) => {
+const LoginForm = ({ cl }) => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
   const [checkbox, setCheckbox] = useState(false)
@@ -18,12 +18,10 @@ const LoginForm = ({cl}) => {
 
   return (
     <div className="">
-      <div className="bg-[#FFF] px-8 pb-8 mb-4 mt-0 md:mt-[-6.75rem]">
+      <div className="bg-[#FFF] px-8 pb-8 mb-4 mt-0 md:mt-[-6.75rem] flex flex-col md:flex-row">
         <form onSubmit={handleSubmit}>
           <div className="leading-[1.219rem] text-[0.813rem] md:leading-[2.25rem] md:text-2xl">
-            <div
-              className=" "
-            >
+            <div className=" ">
               <label className="block text-gray-700 text-[#000000]">
                 Correo Electrónico
                 <input
@@ -122,11 +120,13 @@ const LoginForm = ({cl}) => {
             </button>
           </div>
         </form>
-        <div className="flex flex-row justify-between items-center lg:hidden">
-            <div className="w-[100px] h-[1px] border border-opacity-50 lg:hidden"></div>
-            <span className=" lg:hidden mx-2">O</span>
-            <div className="w-[100px] h-[1px] border border-opacity-50  lg:hidden"></div>
-          </div>
+
+        <div className="flex flex-row justify-between items-center md:ml-8">
+          <div className="w-[100px] h-[1px] border border-opacity-50 shrink md:w-[1px] md:h-[160px] md:ml-0 md:mt-[-420px] "></div>
+          <span className="md:mt-[-220px]  ms-[-6px]">O</span>
+          <div className="w-[100px] h-[1px] border border-opacity-50 shrink md:w-[1px] md:h-[360px] md:ms-[-7px] md:mt-[170px] "></div>
+        </div>
+
       </div>
     </div>
   )
