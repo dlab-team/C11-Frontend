@@ -4,7 +4,7 @@
 function Banner() {
   return (
     <div className="w-[1440px] h-[479]">
-      <h1>¿Cómo funcionamos?</h1>
+      <h1 className="">¿Cómo funcionamos?</h1>
       <div className="flex flex-auto w-50">
         <p className="text-[#140B34] w-[590px] h-[144px] text-center text-[25px] not-italic font-normal leading-[normal];">
           Da click a nuestro video y en sólo 60 segundos conoce{" "}
