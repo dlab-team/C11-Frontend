@@ -1,7 +1,7 @@
 import mid1 from "../../assets/landing/mid1.png"
 import mid2 from "../../assets/landing/mid2.png"
 import mid3 from "../../assets/landing/mid3.png"
-import { Carousel } from "@material-tailwind/react"
+// import { Carousel } from "@material-tailwind/react"
 
 const ProgramExplanation = () => {
   return (
@@ -27,7 +27,7 @@ const ProgramExplanation = () => {
       </header>
       <section className="bg-celeste pb-28">
         <div className=" overflow-x-auto mx-4 sm:mx-0 sm:px-9 grid  sm:grid-cols-3 gap-4 justify-items-center text-center ">
-          <Carousel className="rounded-xl sm-auto">
+          {/* <Carousel className="rounded-xl"> */}
             <article className="card max-w-sm overflow-hidden shadow-lg bg-[#FFFFFF] sm:bg-celeste">
             <img src={mid1} alt="" className="mb-14 max-h-36 inline" />
             <h1 className="titulo">Aceleramos</h1>
@@ -55,7 +55,7 @@ const ProgramExplanation = () => {
               candidatos en 5 días.
             </p>
           </article>
-          </Carousel>
+          {/* </Carousel> */}
         </div>
       </section>
     </div>

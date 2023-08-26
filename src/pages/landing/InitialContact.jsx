@@ -50,9 +50,9 @@ const InitialContact = () => {
 							</a>
 						</button>
 					</div>
-				</div>
-				<div className="flex justify-center">
-					<LandingForm />
+					<div className="flex justify-center flex-col sm:flex-col md:flex-row">
+						<LandingForm />
+					</div>
 				</div>
 			</div>
 		</section>
