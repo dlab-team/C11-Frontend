@@ -2,92 +2,92 @@ import React from "react";
 
 export default function LandingForm() {
   return (
-    <form className="bg-[#140B34] w-[393px] sm:w-[590px] h-[852px] sm:h-[1007px] sm:mt-[78px] sm:mb-[98px] sm:rounded-[16px] text-[color:white] pb-0 pt-[32px] pl-[33px] sm:pl-[51px] pr-[27px] sm:pr-[50px] flex flex-col">
-      <p className="text-[15px] sm:text-[20px] font-semibold h-[92px] sm:h-[90px] mb-[6px] sm:mb-[32px]">
+    <form className="bg-[#140B34] w-[589.92px] sm:w-[36.875rem] h-[53.25rem] sm:h-[62.9375rem] sm:mt-[4.875rem] sm:mb-[6.125rem] sm:rounded-[1rem] text-[color:white] pb-0 pt-[2rem] pl-[2.0625rem] sm:pl-[3.1875rem] pr-[1.6875rem] sm:pr-[3.125rem] flex flex-col">
+      <p className="text-[0.9375rem] sm:text-[1.25rem] font-semibold h-[5.75rem] sm:h-[5.625rem] mb-[0.375rem] sm:mb-[2rem]">
         Si eres empresa y buscas talento TI, déjanos tu información en este
         formulario. En breve te contactaremos:
       </p>
-      <div className="flex flex-row gap-[30px] sm:gap-[22px]">
+      <div className="flex flex-row gap-[1.875rem] sm:gap-[1.375rem]">
         <div>
           <label
-            className="block text-[13px] sm:text-[16px] font-normal"
+            className="block text-[0.8125rem] sm:text-[1rem] font-normal"
             htmlFor="name"
           >
             Nombre *
           </label>
           <input
-            className="rounded-md sm:rounded-lg mt-[6.5px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
+            className="rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-[8.625rem] sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
             id="name"
           />
         </div>
         <div>
           <label
-            className="block text-[13px] sm:text-[16px] font-normal"
+            className="block text-[0.8125rem] sm:text-[1rem] font-normal"
             htmlFor="surname"
           >
             Apellido *
           </label>
           <input
-            className="rounded-md sm:rounded-lg mt-[6.5px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
+            className="rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-[8.625rem] sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
             id="surname"
           />
         </div>
       </div>
-      <div className="flex flex-row gap-[30px] sm:gap-[22px] mt-[12.5px] sm:mt-[16px]">
+      <div className="flex flex-row gap-[1.875rem] sm:gap-[1.375rem] mt-[0.7813rem] sm:mt-[1rem]">
         <div>
           <label
-            className="block text-[13px] sm:text-[16px] font-normal"
+            className="block text-[0.8125rem] sm:text-[1rem] font-normal"
             htmlFor="email"
           >
             Email corporativo *
           </label>
           <input
-            className="rounded-md sm:rounded-lg mt-[6.5px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
+            className="rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-[8.625rem] sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="email"
             id="email"
           />
         </div>
         <div>
           <label
-            className="block text-[13px] sm:text-[16px] font-normal"
+            className="block text-[0.8125rem] sm:text-[1rem] font-normal"
             htmlFor="tel"
           >
             Número de teléfono *
           </label>
           <input
-            className="rounded-md sm:rounded-lg mt-[6.5px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
+            className="rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-[8.625rem] sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="tel"
             id="tel"
           />
         </div>
       </div>
-      <div className="mt-[28px] sm:mt-[16px]">
+      <div className="mt-[1.75rem] sm:mt-[1rem]">
         <label
-          className="block text-[13px] sm:text-[16px] font-normal"
+          className="block text-[0.8125rem] sm:text-[1rem] font-normal"
           htmlFor="company-name"
         >
           ¿A qué empresa perteneces? *
         </label>
         <input
-          className="rounded-md sm:rounded-lg mt-[6px] sm:mt-[16px] w-[300px] sm:w-[489px] h-9 bg-celeste"
+          className="rounded-md sm:rounded-lg mt-[0.375rem] sm:mt-[1rem] w-[18.75rem] sm:w-[30.5625rem] h-9 bg-celeste"
           type="text"
           id="company-name"
         />
       </div>
-      <section className="mt-[19px] mb-[33px]">
-        <h3 className="mb-[23px] text-[13px] sm:text-[16px] font-bold sm:font-normal">
+      <section className="mt-[1.1875rem] mb-[2.0625rem]">
+        <h3 className="mb-[1.4375rem] text-[0.8125rem] sm:text-[1rem] font-bold sm:font-normal">
           Cargo/área de preferencia que buscas contratar *
         </h3>
-        <div className="ml-[6px] sm:ml-[0px] flex gap-[14px] sm:gap-[8px] flex-col">
+        <div className="ml-[0.375rem] sm:ml-[0rem] flex gap-[0.875rem] sm:gap-[0.5rem] flex-col">
           <div className="flex items-center content-center">
             <label
-              className="text-[12px] sm:text-[16px] font-normal"
+              className="text-[0.75rem] sm:text-[1rem] font-normal"
               htmlFor="checkbox-front"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[0.375rem] sm:mr-[1.5rem] w-[1.0625rem] sm:w-[1.5rem] h-[1.0625rem] sm:h-[1.5rem] appearance-none bg-celeste"
                 type="checkbox"
                 id="checkbox-front"
               />
@@ -96,11 +96,11 @@ export default function LandingForm() {
           </div>
           <div className="flex items-center content-center">
             <label
-              className="text-[12px] sm:text-[16px] font-normal"
+              className="text-[0.75rem] sm:text-[1rem] font-normal"
               htmlFor="checkbox-back"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[0.375rem] sm:mr-[1.5rem] w-[1.0625rem] sm:w-[1.5rem] h-[1.0625rem] sm:h-[1.5rem] appearance-none bg-celeste"
                 type="checkbox"
                 id="checkbox-back"
               />
@@ -109,11 +109,11 @@ export default function LandingForm() {
           </div>
           <div className="flex items-center content-center">
             <label
-              className="text-[12px] sm:text-[16px] font-normal"
+              className="text-[0.75rem] sm:text-[1rem] font-normal"
               htmlFor="checkbox-ui"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[0.375rem] sm:mr-[1.5rem] w-[1.0625rem] sm:w-[1.5rem] h-[1.0625rem] sm:h-[1.5rem] appearance-none bg-celeste"
                 type="checkbox"
                 id="checkbox-ui"
               />
@@ -122,11 +122,11 @@ export default function LandingForm() {
           </div>
           <div className="flex items-center content-center">
             <label
-              className="text-[12px] sm:text-[16px] font-normal"
+              className="text-[0.75rem] sm:text-[1rem] font-normal"
               htmlFor="checkbox-qa"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[0.375rem] sm:mr-[1.5rem] w-[1.0625rem] sm:w-[1.5rem] h-[1.0625rem] sm:h-[1.5rem] appearance-none bg-celeste"
                 type="checkbox"
                 id="checkbox-qa"
               />
@@ -135,11 +135,11 @@ export default function LandingForm() {
           </div>
           <div className="flex items-center content-center">
             <label
-              className="text-[12px] sm:text-[16px] font-normal"
+              className="text-[0.75rem] sm:text-[1rem] font-normal"
               htmlFor="checkbox-mobile"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[0.375rem] sm:mr-[1.5rem] w-[1.0625rem] sm:w-[1.5rem] h-[1.0625rem] sm:h-[1.5rem] appearance-none bg-celeste"
                 type="checkbox"
                 id="checkbox-mobile"
               />
@@ -148,11 +148,11 @@ export default function LandingForm() {
           </div>
           <div className="flex items-center content-center">
             <label
-              className="text-[12px] sm:text-[16px] font-normal"
+              className="text-[0.75rem] sm:text-[1rem] font-normal"
               htmlFor="checkbox-data"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[0.375rem] sm:mr-[1.5rem] w-[1.0625rem] sm:w-[1.5rem] h-[1.0625rem] sm:h-[1.5rem] appearance-none bg-celeste"
                 type="checkbox"
                 id="checkbox-data"
               />
@@ -161,11 +161,11 @@ export default function LandingForm() {
           </div>
           <div className="flex items-center content-center">
             <label
-              className="text-[12px] sm:text-[16px] font-normal"
+              className="text-[0.75rem] sm:text-[1rem] font-normal"
               htmlFor="checkbox-others"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[0.375rem] sm:mr-[1.5rem] w-[1.0625rem] sm:w-[1.5rem] h-[1.0625rem] sm:h-[1.5rem] appearance-none bg-celeste"
                 type="checkbox"
                 id="checkbox-others"
               />
@@ -174,26 +174,26 @@ export default function LandingForm() {
           </div>
         </div>
       </section>
-      <div className="flex flex-col gap-[13px] mb-[42px] sm:mb-[40px]">
+      <div className="flex flex-col gap-[0.8125rem] mb-[2.625rem] sm:mb-[2.5rem]">
         <label
-          className="text-[13px] sm:text-[16px] font-normal"
+          className="text-[0.8125rem] sm:text-[1rem] font-normal"
           htmlFor="questions"
         >
           ¿Dudas? Déjalas acá!
         </label>
         <textarea
-          className="rounded-md sm:rounded-lg w-[343px] sm:w-[489px] h-[69px] sm:h-[85px] bg-celeste"
+          className="rounded-md sm:rounded-lg w-[21.4375rem] sm:w-[30.5625rem] h-[4.3125rem] sm:h-[5.3125rem] bg-celeste"
           id="questions"
         ></textarea>
       </div>
       <img
-        className="absolute right-[0] bottom-[272px] sm:invisible"
+        className="absolute right-[0] bottom-[17rem] sm:invisible"
         src="../../src/assets/image_moon.svg"
         alt="Moon Image"
       />
-      <div className="flex items-center content-center justify-center sm:justify-start mb-[37px] sm:mb-[40px]">
+      <div className="flex items-center content-center justify-center sm:justify-start mb-[2.3125rem] sm:mb-[2.5rem]">
         <button
-          className="rounded-[24px] sm:rounded-3xl bg-[#575253] sm:bg-[#fff] w-[170px] sm:w-[137px] h-[32px] sm:h-[68px] text-black-700 sm:text-blue-700 text-[16px] sm:text-[24px] sm:font-bold sm:px-6 sm:py-4"
+          className="rounded-[1.5rem] sm:rounded-3xl bg-[#575253] sm:bg-[#fff] w-[10.625rem] sm:w-[8.5625rem] h-[2rem] sm:h-[4.25rem] text-black-700 sm:text-blue-700 text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
           type="submit"
         >
           ENVIAR

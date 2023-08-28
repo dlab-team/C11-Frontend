@@ -102,7 +102,7 @@ const FloatingButton = () => {
 	return (
 		<div>
 			<button
-				className="fixed text-white font-bold py-2 px-4 rounded "
+				className="fixed text-white font-bold py-2 px-4 rounded  shadow shadow-xl" 
 				style={{
 					top: `${position.y}px`,
 					left: `${position.x}px`,
@@ -223,7 +223,7 @@ const FloatingButton = () => {
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center ">
 											{/* Icono de Reproductor */}
-											<span className="text-3xl text-[#ffffff]">+A</span>
+											<span className="text-3xl text-[#ffffff]">-A</span>
 										</div>
 									</div>
 								</div>
