@@ -4,7 +4,7 @@ import LandingForm from "../../components/Landing/LandingForm";
 
 const InitialContact = () => {
 	return (
-		<div className="flex justify-center flex-col sm:flex-col md:flex-row gap-[5rem]">
+		<div className="  w-auto flex justify-center flex-col sm:flex-col md:flex-row gap-[5rem]">
 			<section
 				className="flex justify-center w-[31.75rem] h-[61.75rem] pb-6 md:pb-8
                      md:py-10"

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LandingForm() {
   return (
-    <form className="bg-[#140B34] w-[589.92px] sm:w-[36.875rem] h-[53.25rem] sm:h-[62.9375rem] sm:mt-[4.875rem] sm:mb-[6.125rem] sm:rounded-[1rem] text-[color:white] pb-0 pt-[2rem] pl-[2.0625rem] sm:pl-[3.1875rem] pr-[1.6875rem] sm:pr-[3.125rem] flex flex-col">
+    <form className="bg-[#140B34] w-[589.92rem] sm:w-[36.875rem] h-[53.25rem] sm:h-[62.9375rem] sm:mt-[4.875rem] sm:mb-[6.125rem] sm:rounded-[1rem] text-[color:white] pb-0 pt-[2rem] pl-[2.0625rem] sm:pl-[3.1875rem] pr-[1.6875rem] sm:pr-[3.125rem] flex flex-col">
       <p className="text-[0.9375rem] sm:text-[1.25rem] font-semibold h-[5.75rem] sm:h-[5.625rem] mb-[0.375rem] sm:mb-[2rem]">
         Si eres empresa y buscas talento TI, déjanos tu información en este
         formulario. En breve te contactaremos:
