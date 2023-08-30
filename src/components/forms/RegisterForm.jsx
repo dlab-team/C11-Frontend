@@ -25,7 +25,7 @@ const RegisterForm = () => {
 
   return (
     <div className="  ">
-      <div className="bg-[#FFF]  md:mx-[13.81rem] pb-8 mb-4 mx-[4.5rem]">
+      <div className="bg-[#FFF]  md:mx-[13.81rem] mb-[8.81rem] md:mb-[10rem] mx-[4.5rem]">
         <form onSubmit={handleSubmit} className=" mobil ">
           <div
             className="  
