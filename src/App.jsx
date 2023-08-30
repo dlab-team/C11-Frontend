@@ -1,9 +1,4 @@
 // import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Nav from "./components/Nav";
-import Login from "./pages/Login"
-import Home from "./pages/landing/Home";
 import FloatingButton from "./components/FloatingButton";
 import { React } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
@@ -13,6 +8,7 @@ import Login from "./pages/Login"
 import Home from "./pages/landing/Home"
 import Register from "./pages/access/Register"
 import Footer from "./components/Footer"
+import Social_login from "./components/Social_login";
 
 
 function App() {
@@ -26,7 +22,10 @@ function App() {
           <Route exact path="/" element={<FloatingButton />} />
           <Route exact path='/login' element={ <Login /> } />
           <Route exact path='/register' element={ <Register /> } />
-          <Route exact path='/login' element={ <Login /> } />
+          <Route exact path='/social_login' element={ <Social_login /> } />
+        
+
+
         </Routes>
         <Footer />
       </Router>
