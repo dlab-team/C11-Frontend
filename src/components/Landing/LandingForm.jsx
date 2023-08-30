@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LandingForm() {
   return (
-    <form className="bg-[#140B34] w-[589.92rem] sm:w-[36.875rem] h-[53.25rem] sm:h-[62.9375rem] sm:mt-[4.875rem] sm:mb-[6.125rem] sm:rounded-[1rem] text-[color:white] pb-0 pt-[2rem] pl-[2.0625rem] sm:pl-[3.1875rem] pr-[1.6875rem] sm:pr-[3.125rem] flex flex-col">
+    <form className="bg-[#140B34] w-[24.5625rem] sm:w-[36.875rem] h-[53.25rem] sm:h-[62.9375rem] sm:mt-[4.875rem] sm:mb-[6.125rem] sm:rounded-[1rem] text-[color:white] pb-0 pt-[2rem] pl-[2.0625rem] sm:pl-[3.1875rem] pr-[1.6875rem] sm:pr-[3.125rem] flex flex-col relative">
       <p className="text-[0.9375rem] sm:text-[1.25rem] font-semibold h-[5.75rem] sm:h-[5.625rem] mb-[0.375rem] sm:mb-[2rem]">
         Si eres empresa y buscas talento TI, déjanos tu información en este
         formulario. En breve te contactaremos:
@@ -191,9 +191,9 @@ export default function LandingForm() {
         src="../../src/assets/image_moon.svg"
         alt="Moon Image"
       />
-      <div className="flex items-center content-center justify-center sm:justify-start mb-[2.3125rem] sm:mb-[2.5rem]">
+      <div className="flex items-center content-center justify-center mb-[2.3125rem] sm:mb-[2.5rem]">
         <button
-          className="rounded-[1.5rem] sm:rounded-3xl bg-[#575253] sm:bg-[#fff] w-[10.625rem] sm:w-[8.5625rem] h-[2rem] sm:h-[4.25rem] text-black-700 sm:text-blue-700 text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
+          className="sm:border-none border-solid border-[#2738F5] border rounded-[0.5rem] sm:rounded-3xl bg-[#fff] w-[21.375rem] h-[2.3125rem] sm:w-[8.5625rem] sm:h-[4.25rem] text-blue-700 font-bold text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
           type="submit"
         >
           ENVIAR
