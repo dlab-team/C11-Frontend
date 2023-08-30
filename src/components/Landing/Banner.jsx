@@ -20,7 +20,7 @@ const Banner = () => {
       </h5>
     </div>
     <div className=" items-center">
-      <div className="">
+      <div>
         <iframe
           className="aspect-video "
           title="Devsafio:¿Cómo funcionamos?"
