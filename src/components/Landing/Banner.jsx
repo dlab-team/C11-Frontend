@@ -1,40 +1,43 @@
 /* import React from 'react' */
 /* import '../components/bannerStyle.css' */
 
-function Banner() {
+const Banner = () => {
   return (
-    <div className="w-[90rem] h-[29.9rem] flex flex-col ">
-      <h1 className=" [#140B34] sm:w-[19.6rem] sm:h-[8.1rem] text-center font-bold font-poppins text-[2.5rem] font-semibold ">
+  <section className="flex justify-center items-center h-screen md:h-5/6 md:py-11">
+  <div className="container flex mx-auto flex-col md:flex-row">
+    <div className="text-center ">
+      <h2 className="py-8 px-4 md:py-1.5  text-5xl md:text-3xl font-semibold text-[#140B34]">
         ¿Cómo funcionamos?
-      </h1>
+      </h2>
+      <h5 className="py-4 px-4 ">
+        Da click a nuestro video y en sólo 60 segundos conoce{' '}
+        <span className="text-light-purple font-semibold">Devsafio</span> y
+        cómo estamos{' '}
+        <span className="text-light-purple font-semibold">
+          cambiando el mundo TI
+        </span>
+        , acelerando y potenciando las células tecnológicas.
+      </h5>
+    </div>
+    <div className=" items-center">
+      <div className="">
+        <iframe
+          className="aspect-video "
+          title="Devsafio:¿Cómo funcionamos?"
+          width="640"
+          height="360"
+          allowFullScreen
 
-      <div className="w-[75rem] h-[21.25rem]  ">
-        <div className="w [40.25rem]">
-          <p className="text-[#140B34] w-[19.6rem] h-[9rem] text-center text-[1.5rem] ml-24 mr-4 mt-9 not-italic font-normal;">
-            Da click a nuestro video y en sólo 60 segundos conoce{" "}
-            <span className="text-[#2738F5] text-2xl not-italic font-semibold leading-[normal];">
-              Devsafio
-            </span>
-            y cómo estamos{" "}
-            <span className="text-[#2738F5] text-2xl not-italic font-semibold leading-[normal];">
-              cambiando el mundo TI
-            </span>
-            , acelerando y potenciando las células tecnológicas.
-          </p>
-        </div>
-        <div className="video-container w-[34.75rem] h-[21.25rem]  ">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/z5NPi7WrViU?si=G41Etx6_0H5oiYk-"
-            title="Video de YouTube"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-        </div>
+          src="https://www.youtube.com/embed/z5NPi7WrViU?si=G41Etx6_0H5oiYk-"
+        >
+          Error al cargar video.
+        </iframe>
       </div>
     </div>
+  </div>
+</section>
+
   );
-}
+};
 
 export default Banner;
