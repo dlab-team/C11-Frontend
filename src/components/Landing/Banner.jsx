@@ -9,11 +9,11 @@ const Banner = () => {
       <h2 className="py-8 px-4 md:py-1.5  text-5xl md:text-3xl font-semibold text-[#140B34]">
         ¿Cómo funcionamos?
       </h2>
-      <h5 className="py-4 px-4 ">
+      <h5 className="py-4 px-4 text-2xl  ">
         Da click a nuestro video y en sólo 60 segundos conoce{' '}
-        <span className="text-light-purple font-semibold">Devsafio</span> y
+        <span className="text-light-purple font-semibold text-[#2738F5]">Devsafio</span> y
         cómo estamos{' '}
-        <span className="text-light-purple font-semibold">
+        <span className="text-light-purple font-semibold text-[#2738F5]">
           cambiando el mundo TI
         </span>
         , acelerando y potenciando las células tecnológicas.
