@@ -1,6 +1,6 @@
 function Introduction() {
   return (
-    <section className="bg-[#2C2348] pl-[35px] pr-[45px] text-[color:white]">
+    <section className="bg-[#2C2348] pl-[35px] pr-[45px] text-[color:white] lg:hidden">
       <h1 className="mb-16 pt-[23px] text-4xl font-bold pl-9 leading-[54px]">
         ¡POSTULA
         <br />Y ÚNETE
@@ -57,7 +57,9 @@ function Introduction() {
             />
           </svg>
           <div className="mr-[-5px] flex flex-col items-end">
-            <p className="text-right text-sm font-bold pb-[5px]">TIEMPO: 5-10 MINUTOS</p>
+            <p className="text-right text-sm font-bold pb-[5px]">
+              TIEMPO: 5-10 MINUTOS
+            </p>
             <button className="text-[#2738F5] w-[125px] font-bold text-[10px] bg-white rounded-3xl px-[11.5px] py-[7px]">
               ¡VAMOS CON TODO!
             </button>
