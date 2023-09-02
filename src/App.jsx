@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Home from "./pages/landing/Home";
 import Register from "./pages/access/Register";
 import Footer from "./components/Footer";
-import Introduction from "./pages/Introduction";
+import Introduction from "./pages/application-form/Introduction";
 
 function App() {
   return (
