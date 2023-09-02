@@ -1,6 +1,6 @@
 function Introduction() {
   return (
-    <section className="md:px-[202px] bg-[#2C2348] md:bg-[#140B34] pl-[35px] pr-[45px] text-[color:white]">
+    <section className="md:pb-[61px] md:px-[202px] bg-[#2C2348] md:bg-[#140B34] pl-[35px] pr-[45px] text-[color:white]">
       <h1 className="md:mb-[24px] mb-16 pt-[23px] md:pt-[81px] pl-9 md:pl-[0] text-4xl md:leading-normal md:text-[32px] font-bold leading-[54px]">
         ¡POSTULA
         <br className="md:hidden" /> Y ÚNETE
@@ -39,7 +39,7 @@ function Introduction() {
           distintos beneficios y remuneración acorde al mercado.
         </p>
       </article>
-      <article className="mr-[-5px] md:mt-[164px]">
+      <article className="mr-[-5px] md:mt-[164px] ">
         <p className=" text-sm leading-7 mb-[45px] md:hidden">
           Si quieres saber más de nosotros y nuestras actividades, nos puedes
           seguir en:
