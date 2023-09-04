@@ -1,5 +1,5 @@
-import ProgramExplanation from "./ProgramExplanation";
-import Footer from "../../components/Footer";
+
+import ProgramExplanation from "./ProgramExplanation"
 import LandingForm from "../../components/Landing/LandingForm";
 
 const Home = () => {
@@ -8,7 +8,6 @@ const Home = () => {
       <div></div>
       <ProgramExplanation />
       <LandingForm />
-      <Footer />
     </>
   );
 };
