@@ -1,38 +1,54 @@
 import { Link } from "react-router-dom"
-import { Disclosure } from "@headlessui/react"
-import { X, Menu, Home, UserCheck } from "lucide-react"
+import { Disclosure, Menu, Transition } from "@headlessui/react"
+import { X, Menu as Barras, Home, UserCheck } from "lucide-react"
 import logo_blanco from "../assets/logo_blanco.png"
 import logo_azul from "../assets/logo_azul.png"
-import { useState } from "react"
+import { useState, Fragment } from "react"
 
 const ruta_login = "/login"
+let nombre = 'Iniciar Sesión'
+let imagen = <UserCheck className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
 
-const navigation = [
-  {
-    name: "Inicio",
-    href: "/",
-    current: true,
-    icono: <Home className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />,
-  },
-  {
-    name: "Iniciar Sesión",
-    href: ruta_login,
-    current: false,
-    icono: (
-      <UserCheck className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
-    ),
-  },
-  /* { name: "Registro", href: "/registro", current: false },
-  { name: "Contacto", href: "/contacto", current: false }, */
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
 const Nav = () => {
+  
+  const user = null
+  if (user) {
+    nombre = user.nombre
+    imagen = <img
+    className="ms-8 me-4 h-10 w-10 md:h-16 md:w-16  rounded-full"
+    src={user.foto}
+    alt="foto"
+  />
+  }
+
+  const navigation = [
+    {
+      name: "Inicio",
+      href: "/",
+      current: true,
+      icono: <Home className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />,
+    },
+    {
+      name: nombre,
+      href: ruta_login,
+      current: false,
+      icono: imagen,
+    },
+    /* { name: "Registro", href: "/registro", current: false },
+    { name: "Contacto", href: "/contacto", current: false }, */
+  ]
   const [navColor, setNavColor] = useState("bg-[#2738F5]")
   const [logo, setLogo] = useState(logo_blanco)
+
+  const handleSubmit = () => {
+    localStorage.setItem("usuarioLogeado", null)
+  }
+
   return (
     <div className="min-h-full">
       <Disclosure as="nav" className={navColor}>
@@ -44,6 +60,91 @@ const Nav = () => {
                   <img className="logo_blanco" src={logo} alt="Your Company" />
                 </Link>
               </div>
+
+              {user ? (
+                <div className="hidden md:block">
+                  <div className="p-4 ml-10 flex items-baseline space-x-4 ">
+                    {/* Profile dropdown */}
+                    <Menu as="div" className="relative ml-3">
+                      <div>
+                        <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                          <span className="absolute -inset-1.5" />
+                          <span className="sr-only">Open user menu</span>
+                          <img
+                            className="h-10 w-10 md:h-16 md:w-16  rounded-full"
+                            src={user.foto}
+                            alt="foto"
+                          />
+                          <div className="my-auto ml-[0.56rem] flex  flex-col text-left">
+                            <span className="md:text-xl md:leading-5">
+                              {/* Roberto Carlos */}
+                              {user.nombre}
+                            </span>
+                            <span className="md:text-base md:leading-4 ">
+                              Chile
+                            </span>
+                          </div>
+                        </Menu.Button>
+                      </div>
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-100"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
+                                )}
+                              >
+                                Your Profile
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
+                                )}
+                              >
+                                Settings
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <form onSubmit={handleSubmit}>
+                                <button
+                                  // onClick={logout}
+                                  href="#"
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-700"
+                                  )}
+                                >
+                                  Sign out
+                                </button>
+                              </form>
+                            )}
+                          </Menu.Item>
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
+                  </div>
+                </div>
+              ) : (
+
               <div className="hidden md:block">
                 <div className="p-4 ml-10 flex items-baseline space-x-4 ">
                   <Link to={ruta_login}>
@@ -53,6 +154,8 @@ const Nav = () => {
                   </Link>
                 </div>
               </div>
+              )}
+
               <div className="mt-2 md:hidden">
                 {/* Mobile menu button */}
                 <Disclosure.Button
@@ -75,9 +178,15 @@ const Nav = () => {
                     </>
                   ) : (
                     <>
+                      {!user ? (<>
                       {setNavColor("bg-[#2738F5]")}
                       {setLogo(logo_blanco)}
-                      <Menu className="block h-6 w-6" aria-hidden="true" />
+                      <Barras className="block h-6 w-6" aria-hidden="true" />
+                    </>) : (<>
+                      {setNavColor("bg-[#FFFFFF]")}
+                      {setLogo(logo_azul)}
+                      <Barras className="bg-[#2738F5] block h-6 w-6" aria-hidden="true" />
+                    </>)}
                     </>
                   )}
                 </Disclosure.Button>
