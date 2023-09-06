@@ -1,6 +1,6 @@
 
 import Carrusel from "../components/Carrusel"
-import LandingForm from "../components/Landing/LandingForm";
+import LandingForm from "../components/forms/LandingForm";
 
 const Home = () => {
   return (
