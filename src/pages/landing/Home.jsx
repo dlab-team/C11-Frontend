@@ -1,12 +1,12 @@
 
-import ProgramExplanation from "./ProgramExplanation"
+import Carrusel from "../../components/Carrusel"
 import LandingForm from "../../components/Landing/LandingForm";
 
 const Home = () => {
   return (
     <>
       <div></div>
-      <ProgramExplanation />
+      <Carrusel />
       <LandingForm />
     </>
   );

@@ -1,6 +1,6 @@
-import mid1 from "../../assets/landing/mid1.png"
-import mid2 from "../../assets/landing/mid2.png"
-import mid3 from "../../assets/landing/mid3.png"
+import mid1 from "../assets/landing/mid1.png"
+import mid2 from "../assets/landing/mid2.png"
+import mid3 from "../assets/landing/mid3.png"
 import { Carousel } from "@material-tailwind/react"
 
 const ProgramExplanation = () => {
