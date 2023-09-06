@@ -1,4 +1,4 @@
-import LoginForm from "../../components/LoginForm"
+import LoginForm from "../../components/forms/LoginForm"
 import Social_login from "../../components/Social_login"
 import { Link } from "react-router-dom"
 
