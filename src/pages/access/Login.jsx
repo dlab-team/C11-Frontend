@@ -1,5 +1,5 @@
-import LoginForm from "../components/LoginForm"
-import Social_login from "../components/Social_login"
+import LoginForm from "../../components/LoginForm"
+import Social_login from "../../components/Social_login"
 import { Link } from "react-router-dom"
 
 const Login = () => {

@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./App.css"
 import Nav from "./components/Nav"
-import Login from "./pages/Login"
+import Login from "./pages/access/Login"
 import Landing from "./pages/Landing"
 import Register from "./pages/access/Register"
 import Footer from "./components/Footer"
