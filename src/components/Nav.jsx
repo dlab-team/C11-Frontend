@@ -110,3 +110,6 @@ const Nav = () => {
 }
 
 export default Nav
+
+
+/* nav se agrega para revision */

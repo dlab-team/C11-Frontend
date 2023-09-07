@@ -1,15 +1,19 @@
-
-import ProgramExplanation from "./ProgramExplanation"
-import LandingForm from "../../components/Landing/LandingForm";
+import Footer from "../../components/Footer";
+import InitialContact from "./InitialContact";
+import FloatingButton from "../../components/FloatingButton";
+import ProgramExplanation from "./ProgramExplanation";
 
 const Home = () => {
-  return (
-    <>
-      <div></div>
-      <ProgramExplanation />
-      <LandingForm />
-    </>
-  );
+	return (
+		<>
+			<div>
+				<ProgramExplanation />
+				<FloatingButton />
+				<InitialContact />
+				<Footer />
+			</div>
+		</>
+	);
 };
 
 export default Home;
