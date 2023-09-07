@@ -1,6 +1,8 @@
 // import { useState } from 'react'
 import FloatingButton from "./components/FloatingButton";
 import { React } from "react";
+import FloatingButton from "./components/FloatingButton";
+import { React } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./App.css"
 import Nav from "./components/Nav"
@@ -14,12 +16,15 @@ import Introduction from "./pages/application-form/Introduction";
 
 function App() {
 
+
   return (
     <main className="app">
       <Router>
         <Nav />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<FloatingButton />} />
+          <Route exact path='/login' element={ <Login /> } />
           <Route exact path="/" element={<FloatingButton />} />
           <Route exact path='/login' element={ <Login /> } />
           <Route exact path='/register' element={ <Register /> } />
