@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function LandingForm() {
   return (
     <form className="bg-[#140B34] w-[24.5625rem] sm:w-[36.875rem] h-[53.25rem] sm:h-[62.9375rem] sm:mt-[4.875rem] sm:mb-[6.125rem] sm:rounded-[1rem] text-[color:white] pb-0 pt-[2rem] pl-[2.0625rem] sm:pl-[3.1875rem] pr-[1.6875rem] sm:pr-[3.125rem] flex flex-col relative">

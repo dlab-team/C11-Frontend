@@ -7,6 +7,7 @@ import Home from "./pages/landing/Home";
 import Register from "./pages/access/Register";
 import Footer from "./components/Footer";
 import Introduction from "./pages/application-form/Introduction";
+import PersonalInfoForm from "./pages/application-form/PersonalInfoForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/intro" element={<Introduction />} />
+          <Route exact path="/personal-info" element={<PersonalInfoForm />} />
         </Routes>
         <Footer />
       </Router>
