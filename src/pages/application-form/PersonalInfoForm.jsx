@@ -314,9 +314,9 @@ function PersonalInfoForm() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mb-[1rem] mt-[130px] mb-[49px]">
+        <div className="flex justify-center mt-[130px] mb-[49px]">
           <div className="inline-flex">
-            <button className="bg-[#2738F5] text-white font-bold py-2 px-4 rounded-[8px] lg:text-[1.5rem]">
+            <button className="bg-[#2738F5] text-white font-bold py-[7px] px-[8px] rounded-[8px] text-[10px] lg:text-[1.5rem]">
               Continuar
             </button>
           </div>
