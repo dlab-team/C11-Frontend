@@ -26,7 +26,11 @@ const RegisterForm = () => {
   const onSubmit = handleSubmit(async (data) => {
     console.log(data)
     try {
-      await signup(data)
+      await fetch(signup, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data })
+      })
       navigate('/login')
     } catch (error) {
       console.log(error)
