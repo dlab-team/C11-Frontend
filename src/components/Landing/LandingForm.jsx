@@ -191,7 +191,7 @@ export default function LandingForm() {
       />
       <div className="flex items-center content-center justify-center mb-[2.3125rem] sm:mb-[2.5rem]">
         <button
-          className="sm:border-none border-solid border-[#2738F5] border rounded-[0.5rem] sm:rounded-3xl bg-[#fff] w-[21.375rem] h-[2.3125rem] sm:w-[8.5625rem] sm:h-[4.25rem] text-blue-700 font-bold text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
+          className="text-[#2738F5] sm:border-none border-solid border-[#2738F5] border rounded-[0.5rem] sm:rounded-3xl bg-[#fff] w-[21.375rem] h-[2.3125rem] sm:w-[8.5625rem] sm:h-[4.25rem] text-blue-700 font-bold text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
           type="submit"
         >
           ENVIAR
