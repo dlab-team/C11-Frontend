@@ -6,7 +6,7 @@ import Login from "./pages/Login"
 import Home from "./pages/landing/Home"
 import Register from "./pages/access/Register"
 import Footer from "./components/Footer"
-
+import WorkingExperience from "./components/forms/WorkingExperience"
 
 function App() {
   return (
@@ -17,6 +17,13 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path='/register' element={ <Register /> } />
           <Route exact path='/login' element={ <Login /> } />
+          <Route
+            exact
+            path="/workingExperience"
+            element={
+                <WorkingExperience />
+            }
+          />
         </Routes>
         <Footer />
       </Router>
