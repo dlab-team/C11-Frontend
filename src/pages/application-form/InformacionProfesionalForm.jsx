@@ -1,4 +1,3 @@
-import React from "react";
 import Line from "../../assets/Line.svg";
 import AgregarInstitucion from "../../assets/boton-más.svg";
 
