@@ -23,7 +23,7 @@ function JobTypeForm() {
           5
         </div>
       </div>
-      <h1 className="mt-[91px] text-center lg:text-left lg:ml-[16.69rem] font-bold mb-[21px] lg:text-[2rem] lg:font-bold font-poppins">
+      <h1 className="text-center lg:text-left lg:ml-[16.69rem] font-bold mb-[21px] lg:text-[2rem] lg:font-bold font-poppins">
         ¿QUÉ TIPO DE TRABAJO ESTÁS BUSCANDO?
       </h1>
       <form action="" className="w-full">
