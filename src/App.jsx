@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Introduction from "./pages/application-form/Introduction";
 import PersonalInfoForm from "./pages/application-form/PersonalInfoForm";
 import InformacionProfesionalForm from "./pages/application-form/InformacionProfesionalForm.jsx";
-
+import MultistepForm from "./components/MultistepForm";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/intro" element={<Introduction />} />
+          <Route exact path="/form" element={<MultistepForm />} />
           <Route exact path="/profesional-info" element={<InformacionProfesionalForm />} />
           <Route exact path="/personal-info" element={<PersonalInfoForm />} />
         </Routes>

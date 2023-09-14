@@ -75,7 +75,7 @@ function PersonalInfoForm() {
           </label>
           <div className="relative divide-x divide-black text-[10px]">
             <select
-              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
             >
               <option>Selección</option>
@@ -100,7 +100,7 @@ function PersonalInfoForm() {
           </label>
           <div className="relative divide-x divide-black text-[10px]">
             <select
-              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
             >
               <option>Selección</option>
@@ -125,7 +125,7 @@ function PersonalInfoForm() {
           </label>
           <div className="relative divide-x divide-black text-[10px]">
             <select
-              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
             >
               <option>Selección</option>
@@ -172,7 +172,7 @@ function PersonalInfoForm() {
           </label>
           <div className="relative divide-x divide-black text-[10px]">
             <select
-              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
             >
               <option className="m-0 p-0">Selección</option>
@@ -314,13 +314,13 @@ function PersonalInfoForm() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-[130px] mb-[49px]">
+        {/* <div className="flex justify-center mt-[130px] mb-[49px]">
           <div className="inline-flex">
-            <button className="bg-[#2738F5] text-white font-bold py-[7px] px-[8px] rounded-[8px] text-[10px] lg:text-[1.5rem]">
+            <button className="bg-[#2738F5] text-white font-bold py-[7.25px] px-[8px] rounded-[8px] text-[10px] lg:text-[1.5rem]">
               Continuar
             </button>
           </div>
-        </div>
+        </div> */}
       </form>
     </section>
   );

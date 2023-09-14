@@ -1,0 +1,91 @@
+import { useState } from "react";
+import SignUpInfo from "./SignUpInfo";
+import PersonalInfo from "./PersonalInfo";
+import OtherInfo from "./OtherInfo";
+import PersonalInfoForm from "../pages/application-form/PersonalInfoForm";
+import InformacionProfesionalForm from "../pages/application-form/InformacionProfesionalForm";
+
+function MultistepForm() {
+  const [page, setPage] = useState(0);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+    firstName: "",
+    lastName: "",
+    username: "",
+    nationality: "",
+    other: "",
+  });
+
+  // const FormTitles = ["Sign Up", "Personal Info", "Other"];
+
+  const PageDisplay = () => {
+    if (page === 0) {
+      return <PersonalInfoForm formData={formData} setFormData={setFormData} />;
+    } else if (page === 1) {
+      return (
+        <InformacionProfesionalForm
+          formData={formData}
+          setFormData={setFormData}
+        />
+      );
+    } else {
+      return <OtherInfo formData={formData} setFormData={setFormData} />;
+    }
+  };
+
+  return (
+    <div className="form">
+      <div className="progressbar">
+        <div
+          style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
+        ></div>
+      </div>
+      <div className="form-container">
+        <div className="header">
+          {/* <h1>{FormTitles[page]}</h1> */}
+        </div>
+        <div className="body">{PageDisplay()}</div>
+
+        {page === 0 && (
+          <div className="flex justify-center mt-[130px] mb-[49px]">
+            <div className="inline-flex">
+              <button
+                onClick={() => {
+                  setPage((currPage) => currPage + 1);
+                }}
+                className="bg-[#2738F5] text-white font-bold py-[7px] px-[8px] rounded-[8px] text-[10px] lg:text-[1.5rem]"
+              >
+                Continuar
+              </button>
+            </div>
+          </div>
+        )}
+        {page === 1 && (
+          <div className="flex justify-center mt-[130px] mb-[49px]">
+            <button
+              className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
+              onClick={() => {
+                setPage((currPage) => currPage - 1);
+              }}
+            >
+              Atrás
+            </button>
+
+            <button
+              className="text-[10px] bg-[#2738F5] text-white font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
+              onClick={() => {
+                setPage((currPage) => currPage - 1);
+              }}
+            >
+              Continuar
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default MultistepForm;

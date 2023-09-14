@@ -188,16 +188,16 @@ function InformacionProfesionalForm() {
             </div>
           </div>
           {/* _____________Botones_____________ */}
-          <div className="flex justify-center mb-[1rem] mt-[1rem]">
-            <div class="inline-flex">
-              <button class="bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-2 px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]">
+          {/* <div className="flex justify-center mb-[1rem] mt-[1rem]">
+            <div className="inline-flex">
+              <button className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]">
                 Atrás
               </button>
-              <button class="bg-[#2738F5] text-white font-bold py-2 px-4 rounded-r-xl lg:text-[1.5rem]">
+              <button className="text-[10px] bg-[#2738F5] text-white font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]">
                 Continuar
               </button>
             </div>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
