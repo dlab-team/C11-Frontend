@@ -4,7 +4,7 @@ import AgregarInstitucion from "../../assets/boton-más.svg";
 function InformacionProfesionalForm() {
   return (
     <div className="container">
-      <div className="flex flex-row justify-center mt-[1.00rem] lg:mt-[10] mb-[3rem] lg:mb-[4rem] lg:ml-[20%]">
+      <div className="flex flex-row justify-center mt-[1rem] lg:mt-[10] mb-[3rem] lg:mb-[4rem] lg:ml-[20%]">
         <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
           1
         </div>
@@ -40,7 +40,7 @@ function InformacionProfesionalForm() {
             </label>
             <div className="relative divide-x divide-black text-[10px]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option className="m-0 p-0">Selección</option>
@@ -100,7 +100,7 @@ function InformacionProfesionalForm() {
             </label>
             <div className="relative divide-x divide-black text-[10px]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option className="m-0 p-0">Selección</option>
@@ -139,7 +139,7 @@ function InformacionProfesionalForm() {
                 </label>
                 <div className="relative divide-x divide-black text-[10px]">
                   <select
-                    className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-state"
                   >
                     <option className="m-0 p-0">Selección</option>
@@ -164,7 +164,7 @@ function InformacionProfesionalForm() {
                 </label>
                 <div className="relative divide-x divide-black text-[10px]">
                   <select
-                    className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-state"
                   >
                     <option className="m-0 p-0">Selección</option>

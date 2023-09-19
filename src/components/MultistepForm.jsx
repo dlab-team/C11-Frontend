@@ -50,7 +50,7 @@ function MultistepForm() {
         <div className="body">{PageDisplay()}</div>
 
         {page === 0 && (
-          <div className="flex justify-center mt-[130px] mb-[49px]">
+          <div className="flex justify-center mt-[90px] mb-[49px]">
             <div className="inline-flex">
               <button
                 onClick={() => {
@@ -64,7 +64,7 @@ function MultistepForm() {
           </div>
         )}
         {page == 1 && (
-          <div className="flex justify-center mt-[130px] mb-[49px]">
+          <div className="flex justify-center mt-[90px] mb-[49px]">
             <button
               className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
               onClick={() => {
@@ -85,7 +85,7 @@ function MultistepForm() {
           </div>
         )}
         {page == 2 && (
-          <div className="flex justify-center mt-[130px] mb-[49px]">
+          <div className="flex justify-center mt-[90px] mb-[49px]">
             <button
               className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
               onClick={() => {
@@ -106,7 +106,7 @@ function MultistepForm() {
           </div>
         )}
         {page === 3 && (
-          <div className="flex justify-center mt-[130px] mb-[49px]">
+          <div className="flex justify-center mt-[90px] mb-[49px]">
             <button
               className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
               onClick={() => {
@@ -119,7 +119,7 @@ function MultistepForm() {
             <button
               className="text-[10px] bg-[#2738F5] text-white font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
               onClick={() => {
-                alert("ultimo paso");
+                alert("FELICIDADES EL FORMULARIO FUE REGISTRADO EXITOSAMENTE");
               }}
             >
               Enviar

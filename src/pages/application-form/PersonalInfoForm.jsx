@@ -80,9 +80,9 @@ function PersonalInfoForm() {
             >
               <option>Selección</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
-                class="fill-current h-4 w-4"
+                className="fill-current h-4 w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -105,9 +105,9 @@ function PersonalInfoForm() {
             >
               <option>Selección</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
-                class="fill-current h-4 w-4"
+                className="fill-current h-4 w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -130,9 +130,9 @@ function PersonalInfoForm() {
             >
               <option>Selección</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
-                class="fill-current h-4 w-4"
+                className="fill-current h-4 w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -177,9 +177,9 @@ function PersonalInfoForm() {
             >
               <option className="m-0 p-0">Selección</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
-                class="fill-current h-4 w-4"
+                className="fill-current h-4 w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >

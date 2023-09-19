@@ -4,7 +4,7 @@ import AgregarInstitucion from "../../assets/boton-más.svg";
 function PerfilLaboralForm() {
   return (
     <div className="container">
-      <div className="flex flex-row justify-center mt-[1.75rem] lg:mt-[10] mb-[4.81rem] lg:mb-[6.75rem] lg:ml-[9.31rem]">
+      <div className="flex flex-row justify-center mt-[1.75rem] lg:mt-[10] mb-[48px] lg:mb-[6.75rem] lg:ml-[9.31rem]">
         <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
           1
         </div>
@@ -69,7 +69,7 @@ function PerfilLaboralForm() {
               </label>
               <div className="text-[10px] relative divide-x divide-[#140B34]">
                 <select
-                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
                   <option>Selección</option>
@@ -94,7 +94,7 @@ function PerfilLaboralForm() {
               </label>
               <div className="relative divide-x divide-[#140B34]">
                 <select
-                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
                   <option>Selección</option>
@@ -112,17 +112,17 @@ function PerfilLaboralForm() {
             </div>
           </div>
           <div className="mr-[32px] flex justify-end mt-[0.5rem] lg:mt-[1.81rem]">
-              <button className="flex p-1 lg:border-[2px] lg:border-[#2738F5] lg:rounded-xl">
-                <img
-                  src={AgregarInstitucion}
-                  alt="Boton-agregar-institucion"
-                  className="lg:p-1"
-                />
-                <span className="max-[1024px]:hidden text-[#2738F5] font-poppins font-bold lg:p-1">
-                  Agregar
-                </span>
-              </button>
-            </div>
+            <button className="flex p-1 lg:border-[2px] lg:border-[#2738F5] lg:rounded-xl">
+              <img
+                src={AgregarInstitucion}
+                alt="Boton-agregar-institucion"
+                className="lg:p-1"
+              />
+              <span className="max-[1024px]:hidden text-[#2738F5] font-poppins font-bold lg:p-1">
+                Agregar
+              </span>
+            </button>
+          </div>
           <div className="px-[26px] lg:flex lg:flex-row lg:justify-between">
             <div className="w-full md:w-3/3 lg:w-[24.12rem] px-3 mb-[1.38rem] md:mb-0">
               <label
@@ -133,7 +133,7 @@ function PerfilLaboralForm() {
               </label>
               <div className="text-[10px] relative divide-x divide-[#140B34]">
                 <select
-                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
                   <option>Selección</option>
@@ -158,7 +158,7 @@ function PerfilLaboralForm() {
               </label>
               <div className="text-[10px] relative divide-x divide-[#140B34]">
                 <select
-                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
                   <option>Selección</option>
@@ -197,7 +197,7 @@ function PerfilLaboralForm() {
               </label>
               <div className="text-[10px] relative divide-x divide-[#140B34]">
                 <select
-                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
                   <option>Selección</option>
@@ -222,7 +222,7 @@ function PerfilLaboralForm() {
               </label>
               <div className="text-[10px] relative divide-x divide-[#140B34]">
                 <select
-                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
                   <option>Selección</option>
@@ -240,17 +240,17 @@ function PerfilLaboralForm() {
             </div>
           </div>
           <div className="flex justify-end mt-[0.5rem] lg:mt-[1.81rem]">
-              <button className="mr-[32px] flex p-1 lg:border-[2px] lg:border-[#2738F5] lg:rounded-xl">
-                <img
-                  src={AgregarInstitucion}
-                  alt="Boton-agregar-institucion"
-                  className="lg:p-1"
-                />
-                <span className="max-[1024px]:hidden text-[#2738F5] font-poppins font-bold lg:p-1">
-                  Agregar
-                </span>
-              </button>
-            </div>
+            <button className="mr-[32px] flex p-1 lg:border-[2px] lg:border-[#2738F5] lg:rounded-xl">
+              <img
+                src={AgregarInstitucion}
+                alt="Boton-agregar-institucion"
+                className="lg:p-1"
+              />
+              <span className="max-[1024px]:hidden text-[#2738F5] font-poppins font-bold lg:p-1">
+                Agregar
+              </span>
+            </button>
+          </div>
           {/* _________________Ultima sección_________________ */}
           <div className="w-full md:w-3/3 px-[26px] mb-[1.38rem] mt-[4.06rem] lg:mt-[4.66rem] md:mb-0  lg:w-[62.25rem]">
             <label
