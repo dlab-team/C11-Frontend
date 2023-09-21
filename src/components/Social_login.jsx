@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import {
   GoogleAuthProvider,
   GithubAuthProvider,
@@ -31,6 +31,7 @@ const loginFacebook = () => {
 }
 
 const Social_login = () => {
+  const navigate = useNavigate()
   const [error, setError] = useState("")
   const setProfile = useAuthStore((state) => state.setProfile)
   const btn_soc =
@@ -64,6 +65,7 @@ const Social_login = () => {
         const token = credential.accessToken
         console.log(token)
       }
+      navigate("/")
     } catch (error) {
       if (error.code == 'auth/account-exists-with-different-credential') {
         setError('cuenta ya autorizada con otro servicio')        
