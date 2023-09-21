@@ -1,14 +1,23 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { auth } from "../firebase"
 import { Alert } from "./Alert"
+import useAuthStore from "../authStore"
 
 import mail from "../assets/mail.svg"
 import gmail from "../assets/gmail.svg"
 import github from "../assets/github.svg"
 import linkedin from "../assets/linkedin.svg"
 
+const loginGoogle = () => {
+  const googleProvider = new GoogleAuthProvider()
+  return signInWithPopup(auth, googleProvider)
+}
+
 const Social_login = () => {
   const [error, setError] = useState("")
+  const setProfile = useAuthStore((state) => state.setProfile)
   const btn_soc =
     "hover:bg-blue-700 text-[#000] borde w-full h-[2.3125rem] md:h-[4.25rem] px-4 focus:outline-none focus:shadow-outline flex items-center"
   const [social, setSocial] = useState("")
@@ -16,9 +25,14 @@ const Social_login = () => {
   async function handleSubmit(event) {
     event.preventDefault()
     setError("")
+    console.log(social)
     try {
       if (social == "google") {
         setSocial("")
+        const res = await loginGoogle()
+        console.log(res) //
+        console.log(res.user.displayName) // nombre
+        setProfile(res.user) 
       }
     } catch (error) {
       setError(error.message)
