@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import {
   GoogleAuthProvider,
   GithubAuthProvider,
+  FacebookAuthProvider,
   signInWithPopup,
 } from "firebase/auth"
 import { auth } from "../firebase"
@@ -12,7 +13,7 @@ import useAuthStore from "../authStore"
 import mail from "../assets/mail.svg"
 import gmail from "../assets/gmail.svg"
 import github from "../assets/github.svg"
-import linkedin from "../assets/linkedin.svg"
+import facebook from "../assets/facebook.svg"
 
 const loginGoogle = () => {
   const googleProvider = new GoogleAuthProvider()
@@ -22,6 +23,11 @@ const loginGoogle = () => {
 const loginGithub = () => {
   const githubProvider = new GithubAuthProvider()
   return signInWithPopup(auth, githubProvider)
+}
+
+const loginFacebook = () => {
+  const facebookProvider = new FacebookAuthProvider()
+  return signInWithPopup(auth, facebookProvider)
 }
 
 const Social_login = () => {
@@ -48,6 +54,13 @@ const Social_login = () => {
         const res = await loginGithub()
         setProfile(res.user)
         const credential = GithubAuthProvider.credentialFromResult(res)
+        const token = credential.accessToken
+        console.log(token)
+      } else if (social == "facebook") {
+        setSocial("")
+        const res = await loginFacebook()
+        setProfile(res.user)
+        const credential = FacebookAuthProvider.credentialFromResult(res)
         const token = credential.accessToken
         console.log(token)
       }
@@ -92,13 +105,13 @@ const Social_login = () => {
         <div className="mb-14">
           <button
             className={btn_soc}
-            onClick={() => setSocial("linkedin")}
+            onClick={() => setSocial("facebook")}
             type="submit"
             value={social}
           >
-            <img src={linkedin} className="logo linkedin" alt="linkedin logo" />
+            <img src={facebook} className="logo facebook" alt="facebook logo" />
             <span className="px-4 text-xl leading-[30px]">
-              Ingresa con Linkedin
+              Ingresa con Facebook
             </span>
           </button>
         </div>
