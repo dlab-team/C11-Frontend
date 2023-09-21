@@ -1,6 +1,10 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import {
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
+} from "firebase/auth"
 import { auth } from "../firebase"
 import { Alert } from "./Alert"
 import useAuthStore from "../authStore"
@@ -13,6 +17,11 @@ import linkedin from "../assets/linkedin.svg"
 const loginGoogle = () => {
   const googleProvider = new GoogleAuthProvider()
   return signInWithPopup(auth, googleProvider)
+}
+
+const loginGithub = () => {
+  const githubProvider = new GithubAuthProvider()
+  return signInWithPopup(auth, githubProvider)
 }
 
 const Social_login = () => {
@@ -30,14 +39,23 @@ const Social_login = () => {
       if (social == "google") {
         setSocial("")
         const res = await loginGoogle()
-        console.log(res) //
-        console.log(res.user.displayName) // nombre
-        setProfile(res.user) 
+        setProfile(res.user)
+        const credential = GoogleAuthProvider.credentialFromResult(res)
+        const token = credential.accessToken
+        console.log(token)
+      } else if (social == "github") {
+        setSocial("")
+        const res = await loginGithub()
+        setProfile(res.user)
+        const credential = GithubAuthProvider.credentialFromResult(res)
+        const token = credential.accessToken
+        console.log(token)
       }
     } catch (error) {
-      setError(error.message)
+      if (error.code == 'auth/account-exists-with-different-credential') {
+        setError('cuenta ya autorizada con otro servicio')        
+      }
     }
-    
   }
   return (
     <div className="bg-[#FFF] px-8 pb-8 mb-4 font-normal text-xs leading-[1.125rem] ">
