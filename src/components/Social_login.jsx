@@ -1,21 +1,44 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { auth } from "../firebase"
+import { Alert } from "./Alert"
+import useAuthStore from "../authStore"
 
 import mail from "../assets/mail.svg"
 import gmail from "../assets/gmail.svg"
 import github from "../assets/github.svg"
 import linkedin from "../assets/linkedin.svg"
 
+const loginGoogle = () => {
+  const googleProvider = new GoogleAuthProvider()
+  return signInWithPopup(auth, googleProvider)
+}
+
 const Social_login = () => {
-  const btn_soc = "hover:bg-blue-700 text-[#000] borde w-full h-[2.3125rem] md:h-[4.25rem] px-4 focus:outline-none focus:shadow-outline flex items-center"
+  const [error, setError] = useState("")
+  const setProfile = useAuthStore((state) => state.setProfile)
+  const btn_soc =
+    "hover:bg-blue-700 text-[#000] borde w-full h-[2.3125rem] md:h-[4.25rem] px-4 focus:outline-none focus:shadow-outline flex items-center"
   const [social, setSocial] = useState("")
 
   async function handleSubmit(event) {
     event.preventDefault()
-    console.log(social)
+    setError("")
+    try {
+      if (social == "google") {
+        setSocial("")
+        const res = await loginGoogle()
+        setProfile(res.user) 
+      }
+    } catch (error) {
+      setError(error.message)
+    }
+    
   }
   return (
     <div className="bg-[#FFF] px-8 pb-8 mb-4 font-normal text-xs leading-[1.125rem] ">
+      {error && <Alert message={error} />}
       <form onSubmit={handleSubmit}>
         <div className="mb-14 mt-8 md:mt-[-4.067rem]">
           <button
@@ -35,7 +58,7 @@ const Social_login = () => {
         <div className="mb-14">
           <button
             className={btn_soc}
-            onClick={() => setSocial("gmail")}
+            onClick={() => setSocial("google")}
             type="submit"
             value={social}
           >
