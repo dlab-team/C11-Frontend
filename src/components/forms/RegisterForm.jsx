@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 
 const RegisterForm = () => {
-  const signup = 'https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/'
+  const signup = 'https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/user'
 
   const navigate = useNavigate()
 
@@ -27,10 +27,10 @@ const RegisterForm = () => {
     console.log(data)
     try {
       await fetch(signup, {
-        mode: 'no-cors',
+        // mode: 'no-cors',
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data })
+        body: data
       })
       navigate('/login')
     } catch (error) {
