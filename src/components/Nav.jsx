@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { X, Menu as Barras, Home, UserCheck } from "lucide-react"
 import logo_blanco from "../assets/logo_blanco.png"
 import logo_azul from "../assets/logo_azul.png"
+
 import useAuthStore from "../authStore"
 
 const ruta_login = "/login"
