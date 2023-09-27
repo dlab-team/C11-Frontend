@@ -22,7 +22,7 @@ const FloatingButton = () => {
 	const [speech, setSpeech] = useState(null);
 	const [gradientStyle, setGradientStyle] = useState({
 		width: `${volume}%`,
-		background: `linear-gradient(to right, #1E40AF 0%, #60A5FA ${volume}%, #F9FAFB  ${volume}%)`,
+		background: `linear-gradient(to right, #1E40AF 0%, #60A5FA 100% ${volume}%, #1E40AF 10%, #f8fafc 10% ${volume}%)`,
 	});
 
 	const handleMouseDown = (e) => {
@@ -90,7 +90,7 @@ const FloatingButton = () => {
 	const updateGradientStyle = (newVolume) => {
 		setGradientStyle({
 			width: `${newVolume}%`,
-			background: `linear-gradient(to right, #1E40AF 0%, #60A5FA  ${newVolume}%, #F9FAFB ${newVolume}%)`,
+			background: `linear-gradient(, #1e40af 50%, #60a5fa  ${newVolume}%, #f8fafc ${newVolume}%)`,
 		});
 	};
 
@@ -196,14 +196,14 @@ const FloatingButton = () => {
 								</div>
 								{/* Barra de Volumen */}
 								<div className="mt-5">
-									<div className="flex justify-center items-center w-[13.75rem] h-[1.75rem] mx-auto bg-[#cbd5e1] ">
+									<div className="flex justify-center items-center w-[13.75rem] rounded-full h-[1.75rem] mx-auto bg-[#9ca3af] ">
 										<BiMinus
 											className="text-white rounded-full bg-[#2738F5] text-2xl cursor-pointer "
 											onClick={decreaseVolume}
 										/>
-										<div className="flex-grow w-[10.75rem] h-[1.3rem]   relative">
+										<div className="flex-grow w-[10.75rem] h-[1.3rem] relative">
 											<div
-												className="h-4  rounded-full"
+												className="h-[1.2rem]  rounded-[0.3rem]"
 												style={gradientStyle}
 											/>
 											<div className="absolute text-white top-0 bottom-0 left-0 right-0 flex items-center justify-center">
