@@ -1,0 +1,53 @@
+.label_email {
+    margin: 1.69rem auto;
+    display: flex;
+
+    width: 15.125rem;
+    flex-shrink: 0;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Poppins;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.input_email {
+    margin: 0 auto;
+    display: flex;
+
+    width: 15.125rem;
+    height: 2.3125rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    border: 3px solid #2738F5;
+    background: #FFF;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Poppins;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+.btn_send {
+    margin: 0 auto;
+    display: flex;
+    width: 15.125rem;
+    height: 2.5rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    background: #2738F5;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
