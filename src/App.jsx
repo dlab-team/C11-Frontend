@@ -9,6 +9,7 @@ import RecoverPass from "./components/RecoverPass"
 import Register from "./pages/access/Register"
 import Footer from "./components/Footer"
 import WorkingExperience from "./components/forms/WorkingExperience"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <WorkingExperience />
             }
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>

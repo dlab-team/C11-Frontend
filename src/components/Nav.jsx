@@ -1,52 +1,67 @@
-import { Link } from "react-router-dom"
+import { useState, Fragment } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { X, Menu as Barras, Home, UserCheck } from "lucide-react"
 import logo_blanco from "../assets/logo_blanco.png"
 import logo_azul from "../assets/logo_azul.png"
-import { useState, Fragment } from "react"
+
+import useAuthStore from "../authStore"
 
 const ruta_login = "/login"
-let nombre = 'Iniciar Sesión'
-let imagen = <UserCheck className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
-
+let user = {}
+let nombre = "Iniciar Sesión"
+let imagen = (
+  <UserCheck className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
+)
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
 const Nav = () => {
-  
-  const user = null
-  if (user) {
-    nombre = user.nombre
-    imagen = <img
-    className="ms-8 me-4 h-10 w-10 md:h-16 md:w-16  rounded-full"
-    src={user.foto}
-    alt="foto"
-  />
+  const Profile = useAuthStore()
+  const [navColor, setNavColor] = useState("bg-[#2738F5]")
+  const [logo, setLogo] = useState(logo_blanco)
+
+  const navigate = useNavigate()
+  const logout = useAuthStore(state => state.logout) 
+
+  if (Profile.profile) {
+    user = {
+      nombre: Profile.profile.displayName || "user",
+      foto: Profile.profile.photoURL, // || fotox
+    }
   }
+
+  if (user.nombre) {
+    nombre = user.nombre
+    imagen = (
+      <img
+        className="ms-8 me-4 h-10 w-10 md:h-16 md:w-16  rounded-full"
+        src={user.foto}
+        alt="foto"
+      />
+    )
+  } else nombre = "Iniciar Sesión"
 
   const navigation = [
     {
       name: "Inicio",
       href: "/",
       current: true,
-      icono: <Home className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />,
+      icono: <Home className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
     },
     {
       name: nombre,
       href: ruta_login,
       current: false,
-      icono: imagen,
-    },
-    /* { name: "Registro", href: "/registro", current: false },
-    { name: "Contacto", href: "/contacto", current: false }, */
+      icono: imagen
+    }
   ]
-  const [navColor, setNavColor] = useState("bg-[#2738F5]")
-  const [logo, setLogo] = useState(logo_blanco)
 
   const handleSubmit = () => {
-    localStorage.setItem("usuarioLogeado", null)
+    logout()
+    navigate('/')
   }
 
   return (
@@ -60,8 +75,7 @@ const Nav = () => {
                   <img className="logo_blanco" src={logo} alt="Your Company" />
                 </Link>
               </div>
-
-              {user ? (
+              {user.nombre ? (
                 <div className="hidden md:block">
                   <div className="p-4 ml-10 flex items-baseline space-x-4 ">
                     {/* Profile dropdown */}
@@ -70,19 +84,21 @@ const Nav = () => {
                         <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="absolute -inset-1.5" />
                           <span className="sr-only">Open user menu</span>
-                          <img
+                          {imagen}
+                          {/* <img
                             className="h-10 w-10 md:h-16 md:w-16  rounded-full"
-                            src={user.foto}
+                            // src={user.foto}
+                            src={foto}
                             alt="foto"
-                          />
+                          /> */}
                           <div className="my-auto ml-[0.56rem] flex  flex-col text-left">
                             <span className="md:text-xl md:leading-5">
                               {/* Roberto Carlos */}
                               {user.nombre}
                             </span>
-                            <span className="md:text-base md:leading-4 ">
+                            {/* <span className="md:text-base md:leading-4 ">
                               Chile
-                            </span>
+                            </span> */}
                           </div>
                         </Menu.Button>
                       </div>
@@ -126,7 +142,7 @@ const Nav = () => {
                             {({ active }) => (
                               <form onSubmit={handleSubmit}>
                                 <button
-                                  // onClick={logout}
+                                  onClick={logout}
                                   href="#"
                                   className={classNames(
                                     active ? "bg-gray-100" : "",
@@ -144,16 +160,15 @@ const Nav = () => {
                   </div>
                 </div>
               ) : (
-
-              <div className="hidden md:block">
-                <div className="p-4 ml-10 flex items-baseline space-x-4 ">
-                  <Link to={ruta_login}>
-                    <button className="bg-[#FFFFFF] rounded-lg p-4 font-normal text-xl text-[#2738F5] hover:text-[#FFFFFF] hover:bg-[#2738F5] ">
-                      Inicia Sesión
-                    </button>
-                  </Link>
+                <div className="hidden md:block">
+                  <div className="p-4 ml-10 flex items-baseline space-x-4 ">
+                    <Link to={ruta_login}>
+                      <button className="bg-[#FFFFFF] rounded-lg p-4 font-normal text-xl text-[#2738F5] hover:text-[#FFFFFF] hover:bg-[#2738F5] ">
+                        Inicia Sesión
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
               )}
 
               <div className="mt-2 md:hidden">
@@ -178,7 +193,7 @@ const Nav = () => {
                     </>
                   ) : (
                     <>
-                      {!user ? (<>
+                    {!user ? (<>
                       {setNavColor("bg-[#2738F5]")}
                       {setLogo(logo_blanco)}
                       <Barras className="block h-6 w-6" aria-hidden="true" />
