@@ -13,10 +13,6 @@ import Introduction from "./pages/application-form/Introduction";
 import PersonalInfoForm from "./pages/application-form/PersonalInfoForm";
 import InformacionProfesionalForm from "./pages/application-form/InformacionProfesionalForm.jsx";
 import MultistepForm from "./components/MultistepForm";import WorkingExperience from "./components/forms/WorkingExperience"
-
-
-import Introduction from "./pages/application-form/Introduction";
-
 import NotFound from "./pages/NotFound"
 
 function App() {

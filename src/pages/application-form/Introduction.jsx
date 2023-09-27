@@ -102,7 +102,7 @@ function Introduction() {
             </p>
             <button
               onClick={() => navigate("/form")}
-              className="text-[#2738F5] w-[125px] md:w-[241px] font-bold text-[10px] md:text-[20px] bg-white rounded-3xl px-[11.5px] md:px-[18.5px] py-[7px] md:py-[18px]"
+              className="text-[#2738F5] w-[125px] md:w-[241px] font-bold text-[10px] md:text-[20px] bg-[white] rounded-3xl px-[11.5px] md:px-[18.5px] py-[7px] md:py-[18px]"
             >
               ¡VAMOS CON TODO!
             </button>
