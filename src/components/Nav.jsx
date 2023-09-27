@@ -34,7 +34,7 @@ const Nav = () => {
   const [navColor, setNavColor] = useState("bg-[#2738F5]")
   const [logo, setLogo] = useState(logo_blanco)
   return (
-    <div className="min-h-full">
+    <div className="w-[90rem] h-[6rem] mx-auto">
       <Disclosure as="nav" className={navColor}>
         {({ open }) => (
           <>
@@ -110,3 +110,7 @@ const Nav = () => {
 }
 
 export default Nav
+
+
+
+

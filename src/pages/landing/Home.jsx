@@ -1,6 +1,5 @@
-import ProgramExplanation from "./ProgramExplanation";
-import Footer from "../../components/Footer";
 
+import Footer from "../../components/Footer";
 import InitialContact from "./InitialContact";
 import FloatingButton from "../../components/FloatingButton";
 
@@ -9,7 +8,6 @@ const Home = () => {
 		<>
 			<div>
 				<FloatingButton/>
-				<ProgramExplanation />
 				<InitialContact />
 				<Footer />
 			</div>
