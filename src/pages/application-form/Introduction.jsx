@@ -97,7 +97,7 @@ function Introduction() {
             <p className="uppercase md:normal-case text-right text-sm font-bold pb-[5px]  md:text-[20px]">
               Tiempo: 5-10 minutos
             </p>
-            <button className="text-[#2738F5] w-[125px] md:w-[241px] font-bold text-[10px] md:text-[20px] bg-white rounded-3xl px-[11.5px] md:px-[18.5px] py-[7px] md:py-[18px]">
+            <button className="text-[#2738F5] w-[125px] md:w-[241px] font-bold text-[10px] md:text-[20px] bg-[white] rounded-3xl px-[11.5px] md:px-[18.5px] py-[7px] md:py-[18px]">
               ¡VAMOS CON TODO!
             </button>
           </div>
