@@ -8,6 +8,7 @@ import RestorePass from "./pages/RestorePass"
 import RecoverPass from "./components/RecoverPass"
 import Register from "./pages/access/Register"
 import Footer from "./components/Footer"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/recoverPass" element={<RecoverPass />} />
           <Route exact path='/register' element={ <Register /> } />
           <Route exact path='/login' element={ <Login /> } />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>
