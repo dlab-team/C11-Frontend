@@ -11,22 +11,32 @@ const LoginForm = ({ cl }) => {
   const navigate = useNavigate()
   const [error, setError] = useState("")
   const setProfile = useAuthStore((state) => state.setProfile)
+  const logeando = 'https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/login'
   const perfil = 'https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/user/profile'
 
   async function handleSubmit(event) {
     event.preventDefault()
     setError("")
     console.log(email, pass, checkbox)
+    const password = pass
 
     try {
-      const res = await fetch(perfil, {
+      const resLogin = await fetch(logeando, {
         // mode: 'no-cors',
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: { email, password }
+      })
+      console.log(resLogin)
+
+      const res = await fetch(perfil, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
-        body: {email, pass, checkbox}
+        body: email
       })
       console.log(res)
-      navigate('/login')
+
+      navigate('/')
       setProfile(res.user)
     } catch (error) {
       console.log(error)
