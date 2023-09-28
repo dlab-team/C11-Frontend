@@ -27,34 +27,34 @@ const ProgramExplanation = () => {
       </header>
       <section className="bg-celeste pb-28">
         <div className=" overflow-x-auto mx-4 sm:mx-0 sm:px-9 grid  sm:grid-cols-3 gap-4 justify-items-center text-center ">
-          <Carousel className="rounded-xl">
+          <Carousel className="rounded-xl sm-auto">
             <article className="card max-w-sm overflow-hidden shadow-lg bg-[#FFFFFF] sm:bg-celeste">
-            <img src={mid1} alt="" className="mb-14 max-h-36 inline" />
-            <h1 className="titulo">Aceleramos</h1>
-            <p>
-              Aceleramos el proceso de contratación. Una vez que nos envíes tu
-              necesidad de talento digital recibirás un listado con los mejores
-              candidatos en 5 días.
-            </p>
-          </article>
+              <img src={mid1} alt="" className="mb-14 max-h-36 inline" />
+              <h1 className="titulo">Aceleramos</h1>
+              <p>
+                Aceleramos el proceso de contratación. Una vez que nos envíes tu
+                necesidad de talento digital recibirás un listado con los
+                mejores candidatos en 5 días.
+              </p>
+            </article>
             <article className="card max-w-sm overflow-hidden shadow-lg bg-[#FFFFFF] sm:bg-celeste">
-            <img src={mid2} alt="" className="mb-14 max-h-36 inline" />
-            <h1 className="titulo">Aceleramos</h1>
-            <p>
-              Aceleramos el proceso de contratación. Una vez que nos envíes tu
-              necesidad de talento digital recibirás un listado con los mejores
-              candidatos en 5 días.
-            </p>
-          </article>
+              <img src={mid2} alt="" className="mb-14 max-h-36 inline" />
+              <h1 className="titulo">Aceleramos</h1>
+              <p>
+                Aceleramos el proceso de contratación. Una vez que nos envíes tu
+                necesidad de talento digital recibirás un listado con los
+                mejores candidatos en 5 días.
+              </p>
+            </article>
             <article className="card max-w-sm overflow-hidden shadow-lg bg-[#FFFFFF] sm:bg-celeste">
-            <img src={mid3} alt="" className="mb-14 max-h-36 inline" />
-            <h1 className="titulo">Aceleramos</h1>
-            <p>
-              Aceleramos el proceso de contratación. Una vez que nos envíes tu
-              necesidad de talento digital recibirás un listado con los mejores
-              candidatos en 5 días.
-            </p>
-          </article>
+              <img src={mid3} alt="" className="mb-14 max-h-36 inline" />
+              <h1 className="titulo">Aceleramos</h1>
+              <p>
+                Aceleramos el proceso de contratación. Una vez que nos envíes tu
+                necesidad de talento digital recibirás un listado con los
+                mejores candidatos en 5 días.
+              </p>
+            </article>
           </Carousel>
         </div>
       </section>

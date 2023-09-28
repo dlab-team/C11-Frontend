@@ -1,17 +1,42 @@
 import "./registerForm.css"
 import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 
 const RegisterForm = () => {
-  const [username, setUsername] = useState("")
-  const [lastname, setLastname] = useState("")
-  const [email, setEmail] = useState("")
-  const [pass, setPass] = useState("")
-  const [repass, setRePass] = useState("")
+  const signup = 'https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/user'
 
-  async function handleSubmit(event) {
-    event.preventDefault()
-    console.log(username, lastname, email, pass, repass)
-  }
+  const navigate = useNavigate()
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm({
+    defaultValues: {
+      username: "",
+      lastname: "",
+      email: "",
+      pass: "",
+      repass: "",
+    },
+  })
+
+  const onSubmit = handleSubmit(async (data) => {
+    console.log(data)
+    try {
+      await fetch(signup, {
+        // mode: 'no-cors',
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: data
+      })
+      navigate('/login')
+    } catch (error) {
+      console.log(error)
+    }
+  })
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
@@ -26,11 +51,24 @@ const RegisterForm = () => {
   return (
     <div className="  ">
       <div className="bg-[#FFF]  md:mx-[13.81rem] mb-[8.81rem] md:mb-[10rem] mx-[4.5rem]">
-        <form onSubmit={handleSubmit} className=" mobil ">
+        <form onSubmit={onSubmit} className=" mobil ">
           <div
             className="  
         "
           >
+            {errors.username?.type === "required" && (
+              <span className="text-[red]">{errors.username.message}</span>
+            )}
+            {errors.username?.type === "maxLength" && (
+              <span className="text-[red]">Nombre no debe ser mayor a 20 caracteres</span>
+            )}
+            {errors.username?.type === "minLength" && (
+              <span className="text-[red]">Nombre debe ser mayor a 2 caracteres</span>
+            )}
+
+            {errors.username?.type === "pattern" && (
+              <span className="text-[red]">Nombre debe ser texto</span>
+            )}
             <label className="block text-gray-700   md:text-2xl md:leading-9   ">
               Danos tu nombre
               <input
@@ -40,16 +78,37 @@ const RegisterForm = () => {
                 placeholder="Nombre"
                 name="username"
                 autoComplete="off"
-                onChange={(event) => setUsername(event.target.value)}
-                value={username}
+                {...register("username", {
+                  required: {
+                    value: true,
+                    message: "Nombre es requerido",
+                  },
+                  maxLength: 20,
+                  minLength: 2,
+                  pattern: /^[a-zA-Z]+$/,
+                })}
               />
             </label>
+            
           </div>
 
           <div
             className=" 
         "
           >
+            {errors.lastname?.type === "required" && (
+              <span className="text-[red]">{errors.lastname.message}</span>
+            )}
+            {errors.lastname?.type === "maxLength" && (
+              <span className="text-[red]">Apellido no debe ser mayor a 20 caracteres</span>
+            )}
+            {errors.lastname?.type === "minLength" && (
+              <span className="text-[red]">Apellido debe ser mayor a 2 caracteres</span>
+            )}
+
+            {errors.lastname?.type === "pattern" && (
+              <span className="text-[red]">Apellido debe ser texto</span>
+            )}
             <label className="block text-gray-700  md:text-2xl md:leading-9  ">
               Danos tu apellido
               <input
@@ -59,16 +118,25 @@ const RegisterForm = () => {
                 placeholder="Apellido"
                 name="lastname"
                 autoComplete="off"
-                onChange={(event) => setLastname(event.target.value)}
-                value={lastname}
+                {...register("lastname", {
+                  required: {
+                    value: true,
+                    message: "Apellido es requerido",
+                  },
+                  maxLength: 20,
+                  minLength: 2,
+                  pattern: /^[a-zA-Z]+$/,
+                })}
               />
             </label>
+            
           </div>
 
           <div
             className=" 
         "
           >
+            {errors.email && <span className="text-[red]">{errors.email.message}</span>}
             <label className="block text-gray-700  md:text-2xl md:leading-9  ">
               Correo Electrónico
               <input
@@ -78,12 +146,22 @@ const RegisterForm = () => {
                 placeholder="nombre@ejemplo.com"
                 name="email"
                 autoComplete="off"
-                onChange={(event) => setEmail(event.target.value)}
-                value={email}
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Correo es requerido",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                    message: "Correo no válido",
+                  },
+                })}
               />
             </label>
+            
           </div>
 
+          {errors.pass && <span className="text-[red]">{errors.pass.message}</span>}
           <label className="block text-gray-700  md:text-2xl md:leading-9  ">
             Crea tu Contraseña
             <div
@@ -93,9 +171,17 @@ const RegisterForm = () => {
               <input
                 type={isPasswordVisible ? "text" : "password"}
                 placeholder=""
-                onChange={(event) => setPass(event.target.value)}
-                value={pass}
-                name="contraseña"
+                name="pass"
+                {...register("pass", {
+                  required: {
+                    value: true,
+                    message: "Contraseña es requerida",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "Contraseña debe ser mayor a 6 caracteres",
+                  },
+                })}
                 className={cl.sm}
               />
               <a
@@ -142,6 +228,9 @@ const RegisterForm = () => {
             </div>
           </label>
 
+          {errors.repass && (
+          <span className="text-[red]">{errors.repass.message}</span>
+        )}
           <label className="block text-gray-700  md:text-2xl md:leading-9  ">
             Repite tu Nueva contraseña
             <div
@@ -151,9 +240,19 @@ const RegisterForm = () => {
               <input
                 type={isPasswordVisible ? "text" : "password"}
                 placeholder=""
-                onChange={(event) => setRePass(event.target.value)}
-                value={repass}
-                name="re_contraseña"
+                name="repass"
+                {...register("repass", {
+                  required: {
+                    value: true,
+                    message: "contraseña es requerida",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "contraseña debe ser mayor a 6 caracteres",
+                  },
+                  validate: (value) =>
+                    value === watch ('pass') || "Las contraseñas no coinciden",
+                })}
                 className={cl.sm}
               />
               <a
