@@ -4,13 +4,15 @@ import Line from "../../assets/Line.svg";
 function PersonalInfoForm() {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState("");
-  console.log("selectedCountry:", selectedCountry);
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [cities, setCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
-
-  console.log("countries:", countries);
+  const genders = [
+    { title: "Femenino", name: "femenino" },
+    { title: "Masculino", name: "masculino" },
+    { title: "Otro", name: "otro" },
+  ];
   useEffect(() => {
     const apiUrl =
       "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/countries"; // API endpoint for all countries
@@ -292,7 +294,14 @@ function PersonalInfoForm() {
               className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
             >
-              <option className="m-0 p-0">Selección</option>
+              <option className="m-0 p-0" value="">
+                Selección
+              </option>
+              {genders.map((gender) => (
+                <option key={gender.title} value={gender.name}>
+                  {gender.title}
+                </option>
+              ))}
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
