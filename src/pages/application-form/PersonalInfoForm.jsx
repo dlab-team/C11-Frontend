@@ -111,7 +111,7 @@ function PersonalInfoForm() {
           5
         </div>
       </div>
-      <h1 className="lg:text-left lg:ml-[33px] text-center lg:text-left font-bold mb-[21px] lg:text-[2rem] lg:font-bold font-poppins">
+      <h1 className="lg:text-left lg:ml-[33px] text-center font-bold mb-[21px] lg:text-[2rem] lg:font-bold font-poppins">
         INFORMACIÓN PERSONAL
       </h1>
       <form
