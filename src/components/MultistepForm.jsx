@@ -3,6 +3,7 @@ import PersonalInfoForm from "../pages/application-form/PersonalInfoForm";
 import InformacionProfesionalForm from "../pages/application-form/InformacionProfesionalForm";
 import PerfilLaboralForm from "../pages/application-form/PerfilLaboralForm";
 import JobTypeForm from "../pages/application-form/JobTypeForm";
+import WorkingExperience from '../pages/application-form/WorkingExperience';
 
 function MultistepForm() {
   const [page, setPage] = useState(0);
@@ -33,7 +34,12 @@ function MultistepForm() {
       return (
         <PerfilLaboralForm formData={formData} setFormData={setFormData} />
       );
-    } else {
+    } else if (page === 3) {
+      return (
+        <WorkingExperience formData={formData} setFormData={setFormData} />
+      );
+    } 
+    else {
       return <JobTypeForm formData={formData} setFormData={setFormData} />;
     }
   };
