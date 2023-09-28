@@ -25,7 +25,7 @@ const Footer = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="74"
-            height="48"
+            height="58"
             viewBox="0 -6 20 24"
             fill="none"
           >
@@ -58,7 +58,7 @@ const Footer = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="74"
-            height="48"
+            height="58"
             viewBox="0 -6 20 24"
             fill="none"
           >
