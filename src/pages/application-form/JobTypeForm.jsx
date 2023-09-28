@@ -70,7 +70,7 @@ function JobTypeForm() {
             rows="10"
           ></textarea>
         </div>
-        <div className="invisible lg:visible lg:flex gap-x-[36px]  lg:mt-[32px]">
+        <div className="lg:flex gap-x-[36px]  lg:mt-[32px]">
           <div className="mt-[56px] lg:mt-0">
             <p className="text-base text-justify mb-[16px] lg:mb-[32px] font-[500]">
               Indícanos tu disponibilidad laboral:{" "}
@@ -114,10 +114,10 @@ function JobTypeForm() {
               className="block text-base text-justify mb-[16px] font-[500] mb-[10px] lg:mb-[32px] "
               htmlFor="name"
             >
-              ¿Qué describe mejor tu situación <br/>actual?{" "}
-              <span className="text-[#AC231B]">*</span>
+              ¿Qué describe mejor tu situación <br />
+              actual? <span className="text-[#AC231B]">*</span>
             </label>
-            <div className="relative divide-x divide-black text-[10px] lg:invisible lg:h-0">
+            <div className="visible relative divide-x divide-black text-[10px] lg:invisible lg:h-0">
               <select
                 className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="employmentStatus"
@@ -155,7 +155,8 @@ function JobTypeForm() {
           </div>
           <div className="mt-[58px] lg:mt-0">
             <p className="text-base text-justify mb-[16px] font-[500] lg:mb-[32px] ">
-              ¿Cuentas con Visa de trabajo activa en? <span className="text-[#AC231B]">*</span>
+              ¿Cuentas con Visa de trabajo activa en?{" "}
+              <span className="text-[#AC231B]">*</span>
             </p>
             <div className="flex flex-col gap-[12px] lg:gap-[16px] text-base">
               <label htmlFor="radio-direct">
