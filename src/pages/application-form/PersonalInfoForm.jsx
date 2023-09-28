@@ -7,6 +7,8 @@ function PersonalInfoForm() {
   console.log("selectedCountry:", selectedCountry);
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [cities, setCities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState("");
 
   console.log("countries:", countries);
   useEffect(() => {
@@ -32,7 +34,7 @@ function PersonalInfoForm() {
 
   useEffect(() => {
     // Check if a country is selected
-    console.log('selectedCountry:', selectedCountry)
+    console.log("selectedCountry:", selectedCountry);
     if (selectedCountry) {
       // Make an API request to fetch regions based on the selected country
       const regionApiUrl = `https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/countries/${selectedCountry}/states`;
@@ -57,6 +59,32 @@ function PersonalInfoForm() {
         });
     }
   }, [selectedCountry]);
+
+  useEffect(() => {
+    // Check if a region is selected
+    if (selectedRegion) {
+      // Make an API request to fetch cities based on the selected region
+      const cityApiUrl = `https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/countries/${selectedCountry}/states/${selectedRegion}/cities`;
+
+      fetch(cityApiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `Failed to retrieve cities. Status code: ${response.status}`
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setCities(data);
+        })
+        .catch((error) => {
+          console.error(
+            `An error occurred while fetching cities: ${error.message}`
+          );
+        });
+    }
+  }, [selectedRegion]);
 
   return (
     <section className="md:pt-[69px] md:pb-[61px] md:px-[150px] bg-[white] pl-[35px] pr-[45px] text-[color:black]">
@@ -93,7 +121,7 @@ function PersonalInfoForm() {
             Nombre <span className="text-[#AC231B]">*</span>
           </label>
           <input
-            className="h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
+            className="pl-[14px] h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
             id="name"
           />
@@ -106,7 +134,7 @@ function PersonalInfoForm() {
             Apellido <span className="text-[#AC231B]">*</span>
           </label>
           <input
-            className="h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
+            className="pl-[14px]  h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
             id="name"
           />
@@ -119,7 +147,7 @@ function PersonalInfoForm() {
             Email <span className="text-[#AC231B]">*</span>
           </label>
           <input
-            className="h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
+            className="pl-[14px]  h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
             id="name"
           />
@@ -173,11 +201,14 @@ function PersonalInfoForm() {
               className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="region"
               value={selectedRegion}
-              onChange={(e) => setSelectedRegion(e.target.value)}
+              onChange={(e) => {
+                setSelectedRegion(e.target.value);
+                setSelectedCity("");
+              }}
             >
               <option value="">Selección</option>
               {regions.map((region, index) => (
-                <option key={index} value={region.name}>
+                <option key={index} value={region.id}>
                   {region.name}
                 </option>
               ))}
@@ -204,10 +235,18 @@ function PersonalInfoForm() {
           <div className="relative divide-x divide-black text-[10px]">
             <select
               className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+              id="city"
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
             >
-              <option>Selección</option>
+              <option value="">Selección</option>
+              {cities.map((city, index) => (
+                <option key={index} value={city.name}>
+                  {city.name}
+                </option>
+              ))}
             </select>
+
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
                 className="fill-current h-4 w-4"
@@ -234,7 +273,7 @@ function PersonalInfoForm() {
               value="CL  +569"
             />{" "}
             <input
-              className="h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-[142px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
+              className="h-[29px] pl-[14px]  border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] w-[142px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
               type="text"
               id="name"
             />
