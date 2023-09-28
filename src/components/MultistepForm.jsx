@@ -3,7 +3,7 @@ import PersonalInfoForm from "../pages/application-form/PersonalInfoForm";
 import InformacionProfesionalForm from "../pages/application-form/InformacionProfesionalForm";
 import PerfilLaboralForm from "../pages/application-form/PerfilLaboralForm";
 import JobTypeForm from "../pages/application-form/JobTypeForm";
-import WorkingExperience from '../pages/application-form/WorkingExperience';
+import WorkingExperience from "../pages/application-form/WorkingExperience";
 
 function MultistepForm() {
   const [page, setPage] = useState(0);
@@ -38,8 +38,7 @@ function MultistepForm() {
       return (
         <WorkingExperience formData={formData} setFormData={setFormData} />
       );
-    } 
-    else {
+    } else {
       return <JobTypeForm formData={formData} setFormData={setFormData} />;
     }
   };
@@ -62,7 +61,7 @@ function MultistepForm() {
                 onClick={() => {
                   setPage((currPage) => currPage + 1);
                 }}
-                className="bg-[#2738F5] text-white font-bold py-[7px] px-[8px] rounded-[8px] text-[10px] lg:text-[1.5rem]"
+                className="bg-[#2738F5] text-[white] font-bold py-[7px] px-[8px] rounded-[8px] text-[10px] lg:text-[1.5rem]"
               >
                 Continuar
               </button>
@@ -72,7 +71,7 @@ function MultistepForm() {
         {page == 1 && (
           <div className="flex justify-center mt-[90px] mb-[49px]">
             <button
-              className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
+              className="text-[10px] bg-[white] text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
               onClick={() => {
                 setPage((currPage) => currPage - 1);
               }}
@@ -81,7 +80,7 @@ function MultistepForm() {
             </button>
 
             <button
-              className="text-[10px] bg-[#2738F5] text-white font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
+              className="text-[10px] bg-[#2738F5] text-[white] font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
               onClick={() => {
                 setPage((currPage) => currPage + 1);
               }}
@@ -93,7 +92,7 @@ function MultistepForm() {
         {page == 2 && (
           <div className="flex justify-center mt-[90px] mb-[49px]">
             <button
-              className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
+              className="text-[10px] bg-[white] text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
               onClick={() => {
                 setPage((currPage) => currPage - 1);
               }}
@@ -102,7 +101,7 @@ function MultistepForm() {
             </button>
 
             <button
-              className="text-[10px] bg-[#2738F5] text-white font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
+              className="text-[10px] bg-[#2738F5] text-[white] font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
               onClick={() => {
                 setPage((currPage) => currPage + 1);
               }}
@@ -111,10 +110,10 @@ function MultistepForm() {
             </button>
           </div>
         )}
-        {page === 3 && (
+        {page == 3 && (
           <div className="flex justify-center mt-[90px] mb-[49px]">
             <button
-              className="text-[10px] bg-white text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
+              className="text-[10px] bg-[white] text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
               onClick={() => {
                 setPage((currPage) => currPage - 1);
               }}
@@ -123,7 +122,28 @@ function MultistepForm() {
             </button>
 
             <button
-              className="text-[10px] bg-[#2738F5] text-white font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
+              className="text-[10px] bg-[#2738F5] text-[white] font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
+              onClick={() => {
+                setPage((currPage) => currPage + 1);
+              }}
+            >
+              Continuar
+            </button>
+          </div>
+        )}
+        {page === 4 && (
+          <div className="flex justify-center mt-[90px] mb-[49px]">
+            <button
+              className="text-[10px] bg-[white] text-[#2738F5] border-[1px] border-[#2738F5] font-bold py-[7px] px-4 rounded-l-xl mr-[0.31rem] lg:mr-[1.25rem] lg:text-[1.5rem]"
+              onClick={() => {
+                setPage((currPage) => currPage - 1);
+              }}
+            >
+              Atrás
+            </button>
+
+            <button
+              className="text-[10px] bg-[#2738F5] text-[white] font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
               onClick={() => {
                 alert("FELICIDADES EL FORMULARIO FUE REGISTRADO EXITOSAMENTE");
               }}

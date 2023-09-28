@@ -5,23 +5,23 @@ function PerfilLaboralForm() {
   return (
     <div className="container">
       <div className="flex flex-row justify-center mt-[1.75rem] lg:mt-[10] mb-[48px] lg:mb-[6.75rem] lg:ml-[9.31rem]">
-        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
+        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[white] border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
           1
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
-        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
+        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[white] border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
           2
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
-        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[#2738F5] border border-[#2738F5] text-white lg:text-[2.5rem]">
+        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[#2738F5] border border-[#2738F5] text-[white] lg:text-[2.5rem]">
           3
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
-        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
+        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[white] border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
           4
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
-        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
+        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[white] border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
           5
         </div>
       </div>

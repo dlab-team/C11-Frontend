@@ -1,5 +1,63 @@
+import { useState, useEffect } from "react";
 import Line from "../../assets/Line.svg";
+
 function PersonalInfoForm() {
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  console.log("selectedCountry:", selectedCountry);
+  const [regions, setRegions] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState("");
+
+  console.log("countries:", countries);
+  useEffect(() => {
+    const apiUrl =
+      "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/countries"; // API endpoint for all countries
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Failed to retrieve data. Status code: ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setCountries(data);
+      })
+      .catch((error) => {
+        console.error(`An error occurred: ${error.message}`);
+      });
+  }, []);
+
+  useEffect(() => {
+    // Check if a country is selected
+    console.log('selectedCountry:', selectedCountry)
+    if (selectedCountry) {
+      // Make an API request to fetch regions based on the selected country
+      const regionApiUrl = `https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/countries/${selectedCountry}/states`;
+
+      fetch(regionApiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `Failed to retrieve regions. Status code: ${response.status}`
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setRegions(data);
+          console.log("data:", data);
+        })
+        .catch((error) => {
+          console.error(
+            `An error occurred while fetching regions: ${error.message}`
+          );
+        });
+    }
+  }, [selectedCountry]);
+
   return (
     <section className="md:pt-[69px] md:pb-[61px] md:px-[150px] bg-[white] pl-[35px] pr-[45px] text-[color:black]">
       <div className="flex flex-row justify-center mt-[26px] mb-[3rem] lg:mb-[4rem]">
@@ -76,10 +134,22 @@ function PersonalInfoForm() {
           <div className="relative divide-x divide-black text-[10px]">
             <select
               className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+              id="country"
+              value={selectedCountry}
+              onChange={(e) => {
+                setSelectedCountry(e.target.value);
+                // Clear the selected region when the country changes
+                setSelectedRegion("");
+              }}
             >
-              <option>Selección</option>
+              <option value="">Selección</option>
+              {countries.map((country, index) => (
+                <option key={index} value={country.id}>
+                  {country.name}
+                </option>
+              ))}
             </select>
+
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
                 className="fill-current h-4 w-4"
@@ -101,10 +171,18 @@ function PersonalInfoForm() {
           <div className="relative divide-x divide-black text-[10px]">
             <select
               className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+              id="region"
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
             >
-              <option>Selección</option>
+              <option value="">Selección</option>
+              {regions.map((region, index) => (
+                <option key={index} value={region.name}>
+                  {region.name}
+                </option>
+              ))}
             </select>
+
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
                 className="fill-current h-4 w-4"

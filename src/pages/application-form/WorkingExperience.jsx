@@ -71,7 +71,7 @@ const WorkingExperience = () => {
   return (
     <section>
       <div className="flex flex-row justify-center mt-[26px] mb-[3rem] lg:mb-[4rem]">
-        <div className=" flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] lg:text-[2.5rem]">
+        <div className=" flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border text-[#2738F5] border-[#2738F5] lg:text-[2.5rem]">
           1
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
@@ -83,15 +83,15 @@ const WorkingExperience = () => {
           3
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
-        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
+        <div className="text-[white]  bg-[#2738F5]   flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5]  lg:text-[2.5rem]">
           4
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
-        <div className="text-[white]  bg-[#2738F5]  flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] lg:text-[2.5rem]">
+        <div className="text-[#2738F5] flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] lg:text-[2.5rem]">
           5
         </div>
       </div>
-      <form className="mt-[6.87rem]  md:mt-[4.56rem] text-[#140B34] ">
+      <form className="text-[#140B34] ">
         <h1 className=" mb-[3.31rem] md:ms-[9.75rem] md:mb-[4rem] md:uppercase text-center md:text-left text-[0.9375rem] md:text-[2rem] font-bold leading-[1.406rem] md:leading-[3rem]">
           Experiencia y trabajo
         </h1>

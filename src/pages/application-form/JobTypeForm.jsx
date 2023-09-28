@@ -1,9 +1,10 @@
 import Line from "../../assets/Line.svg";
+
 function JobTypeForm() {
   return (
     <section className="md:pt-[69px] md:pb-[61px] md:px-[150px] bg-[white] px-[30px] text-[color:black]">
       <div className="flex flex-row justify-center mt-[26px] mb-[3rem] lg:mb-[4rem]">
-        <div className=" flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] lg:text-[2.5rem]">
+        <div className=" flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[white] text-[#2738F5] border border-[#2738F5] lg:text-[2.5rem]">
           1
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />

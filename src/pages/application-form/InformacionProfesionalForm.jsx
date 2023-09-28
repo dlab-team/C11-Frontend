@@ -9,7 +9,7 @@ function InformacionProfesionalForm() {
           1
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
-        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[#2738F5] border border-[#2738F5] text-white lg:text-[2.5rem]">
+        <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-[#2738F5] border border-[#2738F5] text-[white] lg:text-[2.5rem]">
           2
         </div>
         <img src={Line} alt="Linea-Divisoria" className="lg:w-[9rem]" />
@@ -131,7 +131,7 @@ function InformacionProfesionalForm() {
             <div className="grid grid-cols-2 lg:flex lg:flex-row gap-[8px]">
               <div className="w-full md:w-5/5 lg:w-[36.8rem]   md:mb-0">
                 <label
-                  className="block tracking-wide text-black text-[10px] font-normal mb-2 text-[0.625rem] lg:text-[1.25rem]"
+                  className="block tracking-wide text-black font-normal mb-2 text-[0.625rem] lg:text-[1.25rem]"
                   htmlFor="grid-state"
                 >
                   ¿Cuál es tu situación educacional actual (Bootcamp,
