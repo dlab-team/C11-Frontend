@@ -1,18 +1,18 @@
 
-import Footer from "../../components/Footer";
+import ProgramExplanation from "./ProgramExplanation"
+import LandingForm from "../../components/Landing/LandingForm";
+import Banner from "../../components/Landing/Banner";
 import InitialContact from "./InitialContact";
-import FloatingButton from "../../components/FloatingButton";
-
 const Home = () => {
-	return (
-		<>
-			<div>
-				<FloatingButton/>
-				<InitialContact />
-				<Footer />
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div></div>
+      <Banner/>
+      <ProgramExplanation />
+		<InitialContact/>
+      <LandingForm />
+    </>
+  );
 };
 
-export default Home;
+export default Home
