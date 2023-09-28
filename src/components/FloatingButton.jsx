@@ -114,7 +114,7 @@ const FloatingButton = () => {
 
 	return (
 		<div>
-			<button
+			<button className="fixed text-white font-bold py-2 px-4 rounded  shadow shadow-xl"
 				style={{
 					top: `${position.y}px`,
 					left: `${position.x}px`,
@@ -128,7 +128,7 @@ const FloatingButton = () => {
 				{selectedIcon ? (
 					selectedIcon
 				) : (
-					<BiSolidUniversalAccess className="text-7xl text-[#2738F5] mr-2" />
+					<BiSolidUniversalAccess className="text-7xl text-[#2738F5] mr-2 " />
 				)}
 			</button>
 
