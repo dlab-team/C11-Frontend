@@ -1,6 +1,33 @@
+import { useState, useEffect } from "react";
 import Line from "../../assets/Line.svg";
 
 function JobTypeForm() {
+  const [employmentStatusOptions, setEmploymentStatusOptions] = useState([]);
+  console.log("employmentStatusOptions:", employmentStatusOptions);
+
+  useEffect(() => {
+    const apiUrl =
+      "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/employmentStatus"; // Replace with the actual API URL for employment status options
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Failed to retrieve employment status options. Status code: ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setEmploymentStatusOptions(data);
+      })
+      .catch((error) => {
+        console.error(
+          `An error occurred while fetching employment status options: ${error.message}`
+        );
+      });
+  }, []);
+
   return (
     <section className="md:pt-[69px] md:pb-[61px] md:px-[150px] bg-[white] px-[30px] text-[color:black]">
       <div className="flex flex-row justify-center mt-[26px] mb-[3rem] lg:mb-[4rem]">
@@ -88,9 +115,14 @@ function JobTypeForm() {
           <div className="relative divide-x divide-black text-[10px]">
             <select
               className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+              id="employmentStatus"
             >
-              <option className="m-0 p-0">Selección</option>
+              <option className="m-0 p-0 text-[#575253]">Selección</option>
+              {employmentStatusOptions.map((status, index) => (
+                <option key={index} value={status.value}>
+                  {status.name}
+                </option>
+              ))}
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
