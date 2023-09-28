@@ -7,7 +7,7 @@ import logo_azul from "../assets/logo_azul.png"
 
 import useAuthStore from "../authStore"
 
-const ruta_login = "/login"
+let ruta_login = "/login"
 let user = {}
 let nombre = "Iniciar Sesión"
 let imagen = (
@@ -42,6 +42,7 @@ const Nav = () => {
         alt="foto"
       />
     )
+    ruta_login = null
   } else nombre = "Iniciar Sesión"
 
   const navigation = [
@@ -64,6 +65,85 @@ const Nav = () => {
     navigate('/')
   }
 
+  const menu_perfil = <Menu as="div" className="relative ml-3">
+  <div>
+    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+      <span className="absolute -inset-1.5" />
+      <span className="sr-only">Open user menu</span>
+      {imagen}
+      {/* <img
+        className="h-10 w-10 md:h-16 md:w-16  rounded-full"
+        // src={user.foto}
+        src={foto}
+        alt="foto"
+      /> */}
+      <div className="my-auto ml-[0.56rem] flex  flex-col text-left">
+        <span className="md:text-xl md:leading-5">
+          {/* Roberto Carlos */}
+          {user.nombre}
+        </span>
+        {/* <span className="md:text-base md:leading-4 ">
+          Chile
+        </span> */}
+      </div>
+    </Menu.Button>
+  </div>
+  <Transition
+    as={Fragment}
+    enter="transition ease-out duration-100"
+    enterFrom="transform opacity-0 scale-95"
+    enterTo="transform opacity-100 scale-100"
+    leave="transition ease-in duration-75"
+    leaveFrom="transform opacity-100 scale-100"
+    leaveTo="transform opacity-0 scale-95"
+  >
+    <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-[#fff] py-1 shadow-lg ring-1 ring-black focus:outline-none">
+      <Menu.Item>
+        {({ active }) => (
+          <a
+            href="#"
+            className={classNames(
+              active ? "bg-[#fff]" : "",
+              "block px-4 py-2 text-sm text-[#000]"
+            )}
+          >
+            {user.nombre}
+          </a>
+        )}
+      </Menu.Item>
+      <Menu.Item>
+        {({ active }) => (
+          <a
+            href="#"
+            className={classNames(
+              active ? "bg-[#fff]" : "",
+              "block px-4 py-2 text-sm text-[#000]"
+            )}
+          >
+            Perfil
+          </a>
+        )}
+      </Menu.Item>
+      <Menu.Item>
+        {({ active }) => (
+          <form onSubmit={handleSubmit}>
+            <button
+              onClick={logout}
+              href="#"
+              className={classNames(
+                active ? "bg-[#fff]" : "",
+                " px-4 py-2 text-sm text-[#000]"
+              )}
+            >
+              Cerrar Sesión
+            </button>
+          </form>
+        )}
+      </Menu.Item>
+    </Menu.Items>
+  </Transition>
+</Menu>
+
   return (
     <div className="min-h-full">
       <Disclosure as="nav" className={navColor}>
@@ -79,84 +159,7 @@ const Nav = () => {
                 <div className="hidden md:block">
                   <div className="p-4 ml-10 flex items-baseline space-x-4 ">
                     {/* Profile dropdown */}
-                    <Menu as="div" className="relative ml-3">
-                      <div>
-                        <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                          <span className="absolute -inset-1.5" />
-                          <span className="sr-only">Open user menu</span>
-                          {imagen}
-                          {/* <img
-                            className="h-10 w-10 md:h-16 md:w-16  rounded-full"
-                            // src={user.foto}
-                            src={foto}
-                            alt="foto"
-                          /> */}
-                          <div className="my-auto ml-[0.56rem] flex  flex-col text-left">
-                            <span className="md:text-xl md:leading-5">
-                              {/* Roberto Carlos */}
-                              {user.nombre}
-                            </span>
-                            {/* <span className="md:text-base md:leading-4 ">
-                              Chile
-                            </span> */}
-                          </div>
-                        </Menu.Button>
-                      </div>
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
-                      >
-                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-700"
-                                )}
-                              >
-                                Your Profile
-                              </a>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-700"
-                                )}
-                              >
-                                Settings
-                              </a>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <form onSubmit={handleSubmit}>
-                                <button
-                                  onClick={logout}
-                                  href="#"
-                                  className={classNames(
-                                    active ? "bg-gray-100" : "",
-                                    "block px-4 py-2 text-sm text-gray-700"
-                                  )}
-                                >
-                                  Sign out
-                                </button>
-                              </form>
-                            )}
-                          </Menu.Item>
-                        </Menu.Items>
-                      </Transition>
-                    </Menu>
+                    {menu_perfil}
                   </div>
                 </div>
               ) : (
@@ -193,7 +196,7 @@ const Nav = () => {
                     </>
                   ) : (
                     <>
-                    {!user ? (<>
+                    {!user.nombre ? (<>
                       {setNavColor("bg-[#2738F5]")}
                       {setLogo(logo_blanco)}
                       <Barras className="block h-6 w-6" aria-hidden="true" />
@@ -209,6 +212,7 @@ const Nav = () => {
             </div>
             <Disclosure.Panel className="h-screen sm:hidden">
               <div className="space-y-1 pb-3 pt-0">
+              {!user.nombre ? (<>
                 {navigation.map((item) => (
                   <Disclosure.Button
                     key={item.name}
@@ -223,7 +227,15 @@ const Nav = () => {
                     {item.icono}
                     <p className="text-2xl">{item.name}</p>
                   </Disclosure.Button>
-                ))}
+                ))}</>):(<>
+                <Disclosure.Button href="/" className={classNames("font-normal",
+                      "flex flex-col  px-4 py-4 text-base font-medium")}
+                >
+                  <Home className="ms-12 mb-2 iconBlue icon_cel h-8 w-8 mt-4" aria-hidden="true" />
+                  {/* <span className="text-2xl ms-20 mb-1">Inicio</span> */}
+                {menu_perfil}
+                </Disclosure.Button>
+                </>)}
               </div>
             </Disclosure.Panel>
           </>
