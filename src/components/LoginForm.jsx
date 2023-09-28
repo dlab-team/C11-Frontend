@@ -1,13 +1,47 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import useAuthStore from "../authStore"
+import { Alert } from "./Alert"
+
 const LoginForm = ({ cl }) => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
   const [checkbox, setCheckbox] = useState(false)
+  const navigate = useNavigate()
+  const [error, setError] = useState("")
+  const setProfile = useAuthStore((state) => state.setProfile)
+  const logeando = 'https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/login'
+  const perfil = 'https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/user/profile'
 
   async function handleSubmit(event) {
     event.preventDefault()
+    setError("")
     console.log(email, pass, checkbox)
+    const password = pass
+
+    try {
+      const resLogin = await fetch(logeando, {
+        // mode: 'no-cors',
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: { email, password }
+      })
+      console.log(resLogin)
+
+      const res = await fetch(perfil, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        body: email
+      })
+      console.log(res)
+
+      navigate('/')
+      setProfile(res.user)
+    } catch (error) {
+      console.log(error)
+      setError(error.code)
+    }
   }
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -18,6 +52,7 @@ const LoginForm = ({ cl }) => {
 
   return (
     <div className="">
+      {error && <Alert message={error} />}
       <div className="bg-[#FFF] md:w-[44.518rem] md:ps-[7.5rem] pb-8 mb-4 mt-0 md:mt-[-6.75rem] flex flex-col md:flex-row">
         <form onSubmit={handleSubmit}>
           <div className="leading-[1.219rem] text-[0.813rem] md:leading-[2.25rem] md:text-2xl">
