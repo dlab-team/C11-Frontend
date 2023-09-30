@@ -6,12 +6,9 @@ import Home from "./pages/landing/Home";
 import RestorePass from "./pages/RestorePass"
 import RecoverPass from "./components/RecoverPass"
 import FloatingButton from "./components/FloatingButton";
-
 import Register from "./pages/access/Register"
 import Footer from "./components/Footer"
 import WorkingExperience from "./components/forms/WorkingExperience"
-
-
 import Introduction from "./pages/application-form/Introduction";
 
 import NotFound from "./pages/NotFound"
