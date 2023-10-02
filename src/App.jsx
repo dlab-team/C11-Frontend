@@ -9,9 +9,6 @@ import FloatingButton from "./components/FloatingButton";
 
 import Register from "./pages/access/Register"
 import Footer from "./components/Footer"
-import WorkingExperience from "./components/forms/WorkingExperience"
-
-
 import Introduction from "./pages/application-form/Introduction";
 import PersonalInfoForm from "./pages/application-form/PersonalInfoForm";
 import InformacionProfesionalForm from "./pages/application-form/InformacionProfesionalForm.jsx";
