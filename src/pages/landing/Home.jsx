@@ -7,13 +7,15 @@ const Home = () => {
   return (
     <>
       <div></div>
-      <Banner/>
+      <Banner />
       <ProgramExplanation />
-		<InitialContact/>
-      <LandingForm />
-		<FloatingButton/>
+      <div className="flex flex-wrap lg:flex-nowrap justify-center gap-[6.375rem]">
+        <InitialContact />
+        <LandingForm />
+      </div>
+      <FloatingButton />
     </>
   );
 };
 
-export default Home
+export default Home;
