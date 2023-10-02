@@ -3,10 +3,10 @@ import React from "react";
 
 const InitialContact = () => {
 	return (
-		<div className="flex justify-center flex-row sm:flex-col md:flex-row gap-[5rem]">
+		<div className="flex justify-center flex-row sm:flex-col md:flex-row ">
 			<section
-				className="flex justify-center w-[31.75rem] h-[61.75rem] pb-6 md:pb-8
-                     md:py-10"
+				className="flex justify-center w-[31.75rem] h-[61.75rem] 
+                  "
 				id="contact-section"
 			>
 				<div className="container flex mx-auto flex-col sm:flex-col md:flex-row ">

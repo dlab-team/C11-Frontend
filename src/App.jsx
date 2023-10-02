@@ -25,7 +25,6 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/restorePass" element={<RestorePass />} />
           <Route exact path="/recoverPass" element={<RecoverPass />} />
-          <Route exact path="/" element={<FloatingButton />} />
           <Route exact path='/register' element={ <Register /> } />
           <Route exact path='/login' element={ <Login /> } />
           <Route
@@ -39,6 +38,7 @@ function App() {
           <Route exact path="/intro" element={<Introduction />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingButton/>
         <Footer />
       </Router>
     </main>

@@ -114,11 +114,11 @@ const FloatingButton = () => {
 
 	return (
 		<div>
-			<button className="fixed text-white font-bold py-2 px-4 rounded  shadow shadow-xl"
+			<button className="fixed bg-[FFFFFF] "
 				style={{
-					top: `${position.y}px`,
-					left: `${position.x}px`,
-					cursor: isDragging ? "grabbing" : "grab",
+					bottom: `116px`,
+					right: `26px`,
+					
 				}}
 				onMouseDown={handleMouseDown}
 				onMouseMove={handleMouseMove}
@@ -128,7 +128,7 @@ const FloatingButton = () => {
 				{selectedIcon ? (
 					selectedIcon
 				) : (
-					<BiSolidUniversalAccess className="text-7xl text-[#2738F5] mr-2 " />
+					<BiSolidUniversalAccess className="text-[114px] text-[#2738F5]" />
 				)}
 			</button>
 
