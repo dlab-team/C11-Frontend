@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function Introduction() {
+  const navigate = useNavigate();
   return (
     <section className="md:pb-[61px] md:px-[202px] bg-[#2C2348] md:bg-[#140B34] pl-[35px] pr-[45px] text-[color:white]">
       <h1 className="md:mb-[24px] mb-16 pt-[23px] md:pt-[81px] pl-9 md:pl-[0] text-4xl md:leading-normal md:text-[32px] font-bold leading-[54px]">
@@ -97,7 +100,10 @@ function Introduction() {
             <p className="uppercase md:normal-case text-right text-sm font-bold pb-[5px]  md:text-[20px]">
               Tiempo: 5-10 minutos
             </p>
-            <button className="text-[#2738F5] w-[125px] md:w-[241px] font-bold text-[10px] md:text-[20px] bg-[white] rounded-3xl px-[11.5px] md:px-[18.5px] py-[7px] md:py-[18px]">
+            <button
+              onClick={() => navigate("/form")}
+              className="text-[#2738F5] w-[125px] md:w-[241px] font-bold text-[10px] md:text-[20px] bg-[white] rounded-3xl px-[11.5px] md:px-[18.5px] py-[7px] md:py-[18px]"
+            >
               ¡VAMOS CON TODO!
             </button>
           </div>

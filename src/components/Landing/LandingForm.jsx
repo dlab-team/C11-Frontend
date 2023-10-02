@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function LandingForm() {
   return (
     <form className="bg-[#140B34] w-[24.5625rem] sm:w-[36.875rem] h-[53.25rem] sm:h-[62.9375rem] sm:mt-[4.875rem] sm:mb-[6.125rem] sm:rounded-[1rem] text-[color:white] pb-0 pt-[2rem] pl-[2.0625rem] sm:pl-[3.1875rem] pr-[1.6875rem] sm:pr-[3.125rem] flex flex-col relative">
@@ -193,7 +191,7 @@ export default function LandingForm() {
       />
       <div className="flex items-center content-center justify-center mb-[2.3125rem] sm:mb-[2.5rem]">
         <button
-          className="sm:border-none border-solid border-[#2738F5] border rounded-[0.5rem] sm:rounded-3xl bg-[#fff] w-[21.375rem] h-[2.3125rem] sm:w-[8.5625rem] sm:h-[4.25rem] text-blue-700 font-bold text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
+          className="text-[#2738F5] sm:border-none border-solid border-[#2738F5] border rounded-[0.5rem] sm:rounded-3xl bg-[#fff] w-[21.375rem] h-[2.3125rem] sm:w-[8.5625rem] sm:h-[4.25rem] text-blue-700 font-bold text-[1rem] sm:text-[1.5rem] sm:font-bold sm:px-6 sm:py-4"
           type="submit"
         >
           ENVIAR

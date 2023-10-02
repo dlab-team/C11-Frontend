@@ -1,68 +1,68 @@
-import { useState, Fragment } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { Disclosure, Menu, Transition } from "@headlessui/react"
-import { X, Menu as Barras, Home, UserCheck } from "lucide-react"
-import logo_blanco from "../assets/logo_blanco.png"
-import logo_azul from "../assets/logo_azul.png"
+import { useState, Fragment } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { X, Menu as Barras, Home, UserCheck } from "lucide-react";
+import logo_blanco from "../assets/logo_blanco.png";
+import logo_azul from "../assets/logo_azul.png";
 
-import useAuthStore from "../authStore"
+import useAuthStore from "../authStore";
 
-const ruta_login = "/login"
-let user = {}
-let nombre = "Iniciar Sesión"
+const ruta_login = "/login";
+let user = {};
+let nombre = "Iniciar Sesión";
 let imagen = (
   <UserCheck className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
-)
+);
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
 const Nav = () => {
-  const Profile = useAuthStore()
-  const [navColor, setNavColor] = useState("bg-[#2738F5]")
-  const [logo, setLogo] = useState(logo_blanco)
+  const Profile = useAuthStore();
+  const [navColor, setNavColor] = useState("bg-[#2738F5]");
+  const [logo, setLogo] = useState(logo_blanco);
 
-  const navigate = useNavigate()
-  const logout = useAuthStore(state => state.logout) 
+  const navigate = useNavigate();
+  const logout = useAuthStore((state) => state.logout);
 
   if (Profile.profile) {
     user = {
       nombre: Profile.profile.displayName || "user",
       foto: Profile.profile.photoURL, // || fotox
-    }
+    };
   }
 
   if (user.nombre) {
-    nombre = user.nombre
+    nombre = user.nombre;
     imagen = (
       <img
         className="ms-8 me-4 h-10 w-10 md:h-16 md:w-16  rounded-full"
         src={user.foto}
         alt="foto"
       />
-    )
-  } else nombre = "Iniciar Sesión"
+    );
+  } else nombre = "Iniciar Sesión";
 
   const navigation = [
     {
       name: "Inicio",
       href: "/",
       current: true,
-      icono: <Home className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />
+      icono: <Home className="iconBlue icon_cel h-8 w-8" aria-hidden="true" />,
     },
     {
       name: nombre,
       href: ruta_login,
       current: false,
-      icono: imagen
-    }
-  ]
+      icono: imagen,
+    },
+  ];
 
   const handleSubmit = () => {
-    logout()
-    navigate('/')
-  }
+    logout();
+    navigate("/");
+  };
 
   return (
     <div className="w-[90rem] h-[6rem] mx-auto">
@@ -193,15 +193,25 @@ const Nav = () => {
                     </>
                   ) : (
                     <>
-                    {!user ? (<>
-                      {setNavColor("bg-[#2738F5]")}
-                      {setLogo(logo_blanco)}
-                      <Barras className="block h-6 w-6" aria-hidden="true" />
-                    </>) : (<>
-                      {setNavColor("bg-[#FFFFFF]")}
-                      {setLogo(logo_azul)}
-                      <Barras className="bg-[#2738F5] block h-6 w-6" aria-hidden="true" />
-                    </>)}
+                      {!user ? (
+                        <>
+                          {setNavColor("bg-[#2738F5]")}
+                          {setLogo(logo_blanco)}
+                          <Barras
+                            className="block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </>
+                      ) : (
+                        <>
+                          {setNavColor("bg-[#FFFFFF]")}
+                          {setLogo(logo_azul)}
+                          <Barras
+                            className="bg-[#2738F5] block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </>
+                      )}
                     </>
                   )}
                 </Disclosure.Button>
@@ -230,11 +240,7 @@ const Nav = () => {
         )}
       </Disclosure>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
-
-
-
-
+export default Nav;
