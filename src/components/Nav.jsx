@@ -65,7 +65,7 @@ const Nav = () => {
   }
 
   return (
-    <div className="min-h-full">
+    <div className="w-[90rem] h-[6rem] mx-auto">
       <Disclosure as="nav" className={navColor}>
         {({ open }) => (
           <>
@@ -234,3 +234,7 @@ const Nav = () => {
 }
 
 export default Nav
+
+
+
+

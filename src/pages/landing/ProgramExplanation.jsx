@@ -27,7 +27,7 @@ const ProgramExplanation = () => {
       </header>
       <section className="bg-celeste pb-28">
         <div className=" overflow-x-auto mx-4 sm:mx-0 sm:px-9 grid  sm:grid-cols-3 gap-4 justify-items-center text-center ">
-          <Carousel className="rounded-xl">
+          <Carousel className="rounded-xl sm-auto">
             <article className="card max-w-sm overflow-hidden shadow-lg bg-[#FFFFFF] sm:bg-celeste">
               <img src={mid1} alt="" className="mb-14 max-h-36 inline" />
               <h1 className="titulo">Aceleramos</h1>
