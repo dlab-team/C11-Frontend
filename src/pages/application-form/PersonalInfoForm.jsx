@@ -273,9 +273,9 @@ function PersonalInfoForm() {
           >
             Numero telefónico <span className="text-[#AC231B]">*</span>
           </label>
-          <div className="flex gap-1 lg:gap-[10px] justify-right  lg:mt-[24px]">
+          <div className="flex gap-1 lg:gap-[10px] justify-right  ">
             <input
-              className="lg:text-[20px] lg:mt-0 lg:h-[48px] lg:w-[116px] font-semibold h-[29px] pl-[14px] text-xs border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem]  lg:mt-[24px] w-[79px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
+              className="lg:text-[20px] lg:h-[48px] lg:w-[116px] font-semibold h-[29px] pl-[14px] text-xs border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem]  lg:mt-[24px] w-[79px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
               type="text"
               id="name"
               value="CL  +569"
@@ -283,7 +283,7 @@ function PersonalInfoForm() {
               readOnly
             />{" "}
             <input
-              className="lg:mt-0 lg:h-[48px] lg:w-[252px] h-[29px] pl-[14px]  border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem]  lg:mt-[24px] w-[142px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
+              className="lg:h-[48px] lg:w-[252px] h-[29px] pl-[14px]  border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem]  lg:mt-[24px] w-[142px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
               type="text"
               id="name"
             />
@@ -327,7 +327,7 @@ function PersonalInfoForm() {
             ¿Cuál es tu estado laboral actual?
           </h2>
           <div className="flex flex-col gap-[2px] lg:gap-[16px] text-[10px] lg:text-[1rem]">
-            <label htmlFor="radio-direct" className="">
+            <label htmlFor="radio-direct" className="flex">
               <input
                 className="p-0 m-0 mt-[-2px] mr-[5px] lg:mr-[16px] align-middle lg:h-[24px] lg:w-[24px] h-[14px] w-[14px] "
                 type="radio"
@@ -400,7 +400,7 @@ function PersonalInfoForm() {
               />
               Desarrollador/a Back End
             </label>
-            <label htmlFor="radio-direct">
+            <label htmlFor="radio-direct" >
               <input
                 className="p-0 m-0 mt-[-2px] mr-[10px] align-middle lg:h-[24px] lg:w-[24px] h-[14px] w-[14px] "
                 type="checkbox"
@@ -430,7 +430,7 @@ function PersonalInfoForm() {
               />
               Desarrollador/a Móvil
             </label>
-            <label htmlFor="radio-direct" className="mr-[-10px] lg:mr-[-40px]">
+            <label htmlFor="radio-direct" className="mr-[-10px] lg:mr-[-40px] flex">
               <input
                 className="p-0 m-0 mt-[-2px] mr-[10px] align-middle lg:h-[24px] lg:w-[24px] h-[14px] w-[14px] "
                 type="checkbox"
