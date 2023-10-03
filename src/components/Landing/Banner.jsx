@@ -24,10 +24,10 @@ const Banner = () => {
         <div className="flex mt-[50px]">
           <div>
             <iframe
-              className="aspect-video w-[21.1875rem] lg:w-[34.75rem]"
+              className="aspect-video w-[21.1875rem] lg:w-[34.75rem] h-[191px] lg:h-[340px]"
               title="Devsafio:¿Cómo funcionamos?"
               width="100%"
-              height="21.25rem"
+              height="100%"
               allowFullScreen
               src="https://www.youtube.com/embed/z5NPi7WrViU?si=G41Etx6_0H5oiYk-"
             >
