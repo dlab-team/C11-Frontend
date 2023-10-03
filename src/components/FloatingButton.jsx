@@ -117,7 +117,7 @@ const FloatingButton = () => {
 			<button
 				className="fixed bg-[FFFFFF]"
 				style={{
-					bottom: `110px`,
+					bottom: `116px`,
 					right: `20px`,
 				}}
 				onMouseDown={handleMouseDown}
@@ -128,14 +128,14 @@ const FloatingButton = () => {
 				{selectedIcon ? (
 					selectedIcon
 				) : (
-					<BiSolidUniversalAccess className="text-[85px] lg:text-[90px] text-[#2738F5]" />
+					<BiSolidUniversalAccess className="text-[80px] lg:text-[90px] text-[#2738F5] "  />
 				)}
 			</button>
 
 			{isModalOpen && (
 				<div className="fixed inset-0 flex justify-center items-center bg-[#FFFFFF] sm:bg-[#d1d5db]  md:bg-[#d1d5db]  lg:bg-[#d1d5db]  ">
 					<div
-						className=" flex flex-col   rounded-lg w-[24.375rem] h-[49.8125rem] sm:w-[auto] sm:h-[auto] md:w-[auto] md:h-[auto] lg:w-[auto] lg:h-[auto] "
+						className=" flex flex-col rounded-lg w-[24.375rem] h-[49.8125rem] sm:w-[auto] sm:h-[auto] md:w-[auto] md:h-[auto] lg:w-[auto] lg:h-[auto] "
 						style={{ top: modalPosition.top, left: modalPosition.left }}
 					>
 						{/* Sección de Accesibilidad */}
