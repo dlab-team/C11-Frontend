@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Line from "../../assets/Line.svg";
 
-function PersonalInfoForm({ formData, setFormData }) {
+function PersonalInfoForm({ formData, setFormData, page }) {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [phonecode, setSelectedPhonecode] = useState("");
@@ -35,7 +35,8 @@ function PersonalInfoForm({ formData, setFormData }) {
       .catch((error) => {
         console.error(`An error occurred: ${error.message}`);
       });
-  }, []);
+  }, [page]);
+  console.log("page:", page);
 
   useEffect(() => {
     // Check if a country is selected
@@ -63,7 +64,7 @@ function PersonalInfoForm({ formData, setFormData }) {
           );
         });
     }
-  }, [selectedCountry]);
+  }, [selectedCountry, page]);
 
   useEffect(() => {
     // Check if a region is selected
@@ -149,6 +150,10 @@ function PersonalInfoForm({ formData, setFormData }) {
             className="lg:h-[48px] lg:w-[386px] pl-[14px]  h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] lg:mt-[24px]  lg:mt-[24px]w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
             id="last_name"
+            value={formData.last_name}
+            onChange={(event) =>
+              setFormData({ ...formData, last_name: event.target.value })
+            }
           />
         </div>
         <div className="lg:mt-[24px] mt-[12px] lg:order-3">
@@ -162,6 +167,10 @@ function PersonalInfoForm({ formData, setFormData }) {
             className="lg:h-[48px] lg:w-[386px] pl-[14px]  h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] lg:mt-[24px]  lg:mt-[24px]w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
             id="email"
+            value={formData.email}
+            onChange={(event) =>
+              setFormData({ ...formData, email: event.target.value })
+            }
           />
         </div>
         <div className="lg:mt-[24px] lg:w-[386px] mt-[20px] lg:order-5">
@@ -175,7 +184,7 @@ function PersonalInfoForm({ formData, setFormData }) {
             <select
               className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="country"
-              value={selectedCountry}
+              value={selectedCountry || formData.country}
               onChange={(e) => {
                 setSelectedCountry(e.target.value);
                 const selectedCountryObj = countries.find(
@@ -183,6 +192,7 @@ function PersonalInfoForm({ formData, setFormData }) {
                 );
                 if (selectedCountryObj) {
                   setSelectedPhonecode(selectedCountryObj.phonecode);
+                  setFormData({ ...formData, country: e.target.value });
                 } else {
                   setSelectedPhonecode("");
                 }
@@ -292,7 +302,10 @@ function PersonalInfoForm({ formData, setFormData }) {
               className="lg:text-[20px] lg:h-[48px] lg:w-[116px] font-semibold h-[29px] pl-[14px] text-xs border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem]  lg:mt-[24px] w-[79px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
               type="text"
               id="name"
-              value={phonecode}
+              value={phonecode || formData.phonecode}
+              onChange={(event) =>
+                setFormData({ ...formData, phonecode: event.target.value })
+              }
               style={{ color: "rgba(0, 0, 0, 0.5)" }}
               readOnly
             />{" "}

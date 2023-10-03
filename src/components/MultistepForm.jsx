@@ -8,8 +8,9 @@ import WorkingExperience from "../pages/application-form/WorkingExperience";
 function MultistepForm() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    first_name: "afefe",
+    first_name: "",
     last_name: "",
+    email: "",
     country: "",
     region: "",
     city: "",
@@ -30,6 +31,7 @@ function MultistepForm() {
         <InformacionProfesionalForm
           formData={formData}
           setFormData={setFormData}
+          page={page}
         />
       );
     } else if (page === 2) {
@@ -47,11 +49,6 @@ function MultistepForm() {
 
   return (
     <div className="form">
-      <div className="progressbar">
-        <div
-          style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
-        ></div>
-      </div>
       <div className="form-container">
         <div className="header">{/* <h1>{FormTitles[page]}</h1> */}</div>
         <div className="body">{PageDisplay()}</div>
