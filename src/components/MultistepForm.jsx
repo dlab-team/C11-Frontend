@@ -8,14 +8,16 @@ import WorkingExperience from "../pages/application-form/WorkingExperience";
 function MultistepForm() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-    firstName: "",
-    lastName: "",
-    username: "",
-    nationality: "",
-    other: "",
+    first_name: "afefe",
+    last_name: "",
+    country: "",
+    region: "",
+    city: "",
+    phonecode: "",
+    phonenumber: "",
+    gender: "",
+    labor_state: "",
+    cargos: [],
   });
 
   // const FormTitles = ["Sign Up", "Personal Info", "Other"];

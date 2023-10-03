@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import Line from "../../assets/Line.svg";
 
-function PersonalInfoForm() {
+function PersonalInfoForm({ formData, setFormData }) {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState("");
+  const [phonecode, setSelectedPhonecode] = useState("");
+  console.log("phonecode:", phonecode);
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [cities, setCities] = useState([]);
@@ -121,46 +124,50 @@ function PersonalInfoForm() {
         <div className="mt-[12px] lg:order-1">
           <label
             className="lg:text-[20px] block sm:text-[1rem] font-normal text-[12px]"
-            htmlFor="name"
+            htmlFor="first_name"
           >
             Nombre <span className="text-[#AC231B]">*</span>
           </label>
           <input
             className="pl-[14px] h-[29px] lg:h-[48px] lg:w-[386px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] lg:mt-[24px]  lg:mt-[24px]w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
-            id="name"
+            id="first_name"
+            value={formData.first_name}
+            onChange={(event) =>
+              setFormData({ ...formData, first_name: event.target.value })
+            }
           />
         </div>
         <div className="mt-[12px] lg:order-2">
           <label
             className="lg:text-[20px] block sm:text-[1rem] font-normal text-[12px]"
-            htmlFor="name"
+            htmlFor="last_name"
           >
             Apellido <span className="text-[#AC231B]">*</span>
           </label>
           <input
             className="lg:h-[48px] lg:w-[386px] pl-[14px]  h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] lg:mt-[24px]  lg:mt-[24px]w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
-            id="name"
+            id="last_name"
           />
         </div>
         <div className="lg:mt-[24px] mt-[12px] lg:order-3">
           <label
             className="lg:text-[20px] block sm:text-[1rem] font-normal text-[12px]"
-            htmlFor="name"
+            htmlFor="email"
           >
             Email <span className="text-[#AC231B]">*</span>
           </label>
           <input
             className="lg:h-[48px] lg:w-[386px] pl-[14px]  h-[29px] border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem] lg:mt-[24px]  lg:mt-[24px]w-full sm:w-[14.5625rem] sm:h-9 bg-celeste"
             type="text"
-            id="name"
+            id="email"
           />
         </div>
         <div className="lg:mt-[24px] lg:w-[386px] mt-[20px] lg:order-5">
           <label
             className="lg:text-[20px] block sm:text-[1rem] font-normal text-[12px]"
-            htmlFor="name"
+            htmlFor="country"
           >
             País <span className="text-[#AC231B]">*</span>
           </label>
@@ -171,7 +178,14 @@ function PersonalInfoForm() {
               value={selectedCountry}
               onChange={(e) => {
                 setSelectedCountry(e.target.value);
-                // Clear the selected region when the country changes
+                const selectedCountryObj = countries.find(
+                  (country) => country.id === e.target.value
+                );
+                if (selectedCountryObj) {
+                  setSelectedPhonecode(selectedCountryObj.phonecode);
+                } else {
+                  setSelectedPhonecode("");
+                }
                 setSelectedRegion("");
               }}
             >
@@ -199,7 +213,7 @@ function PersonalInfoForm() {
         <div className="lg:mt-[24px] lg:w-[386px] mt-[20px] lg:order-7">
           <label
             className="lg:text-[20px] block sm:text-[1rem] font-normal text-[12px]"
-            htmlFor="name"
+            htmlFor="region"
           >
             Región <span className="text-[#AC231B]">*</span>
           </label>
@@ -235,7 +249,7 @@ function PersonalInfoForm() {
         <div className="lg:w-[386px] mt-[20px] lg:mt-[-57px] lg:order-9">
           <label
             className="lg:text-[20px] block sm:text-[1rem] font-normal text-[12px]"
-            htmlFor="name"
+            htmlFor="city"
           >
             Ciudad <span className="text-[#AC231B]">*</span>
           </label>
@@ -278,21 +292,21 @@ function PersonalInfoForm() {
               className="lg:text-[20px] lg:h-[48px] lg:w-[116px] font-semibold h-[29px] pl-[14px] text-xs border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem]  lg:mt-[24px] w-[79px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
               type="text"
               id="name"
-              value="CL  +569"
+              value={phonecode}
               style={{ color: "rgba(0, 0, 0, 0.5)" }}
               readOnly
             />{" "}
             <input
               className="lg:h-[48px] lg:w-[252px] h-[29px] pl-[14px]  border-[0.5px] border-[#140B34] rounded-md sm:rounded-lg mt-[0.4063rem] sm:mt-[1rem]  lg:mt-[24px] w-[142px] sm:w-[14.5625rem] sm:h-9 bg-celeste"
               type="text"
-              id="name"
+              id="phonenumber"
             />
           </div>
         </div>
         <div className="lg:mt-[24px] lg:w-[386px] mt-[18px] lg:order-6">
           <label
             className="lg:text-[20px] block sm:text-[1rem] font-normal text-[10px] mb-[10px]"
-            htmlFor="name"
+            htmlFor="gender"
           >
             ¿Con qué género te identificas?{" "}
             <span className="text-[#AC231B]">*</span>
@@ -400,7 +414,7 @@ function PersonalInfoForm() {
               />
               Desarrollador/a Back End
             </label>
-            <label htmlFor="radio-direct" >
+            <label htmlFor="radio-direct">
               <input
                 className="p-0 m-0 mt-[-2px] mr-[10px] align-middle lg:h-[24px] lg:w-[24px] h-[14px] w-[14px] "
                 type="checkbox"
@@ -430,7 +444,10 @@ function PersonalInfoForm() {
               />
               Desarrollador/a Móvil
             </label>
-            <label htmlFor="radio-direct" className="mr-[-10px] lg:mr-[-40px] flex">
+            <label
+              htmlFor="radio-direct"
+              className="mr-[-10px] lg:mr-[-40px] flex"
+            >
               <input
                 className="p-0 m-0 mt-[-2px] mr-[10px] align-middle lg:h-[24px] lg:w-[24px] h-[14px] w-[14px] "
                 type="checkbox"
