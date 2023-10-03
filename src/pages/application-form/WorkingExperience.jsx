@@ -69,7 +69,7 @@ const WorkingExperience = () => {
   }
 
   return (
-    <section>
+    <section className="lg:grid lg:justify-center">
       <div className="flex flex-row justify-center mt-[26px] mb-[3rem] lg:mb-[4rem]">
         <div className=" flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border text-[#2738F5] border-[#2738F5] lg:text-[2.5rem]">
           1
