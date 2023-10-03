@@ -1,6 +1,67 @@
+import { useState } from "react";
+
 export default function LandingForm() {
+  const [formData, setFormData] = useState({
+    reference_name: "",
+    reference_last_name: "",
+    reference_email: "",
+    reference_phone: "",
+    company: "",
+    roles: [],
+    comment: "",
+  });
+
+  const handleCheckboxChange = (e, id) => {
+    console.log("Checkbox changed:", id);
+    setFormData((prevState) => {
+      if (e.target.checked) {
+        return {
+          ...prevState,
+          roles: [...prevState.roles, id],
+        };
+      } else {
+        return {
+          ...prevState,
+          roles: prevState.roles.filter((option) => option !== id),
+        };
+      }
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch(
+      "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/companies",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data sent successfully:", data);
+        // You can reset the form or perform any other actions here
+      })
+      .catch((error) => {
+        console.error("Error sending data:", error);
+      });
+  };
+
   return (
-    <form className="bg-[#140B34] w-[393px] sm:w-[590px] h-[852px] sm:h-[1007px] sm:mt-[78px] sm:mb-[98px] sm:rounded-[16px] text-[color:white] pb-0 pt-[32px] pl-[33px] sm:pl-[51px] pr-[27px] sm:pr-[50px] flex flex-col relative">
+    <form
+      className="bg-[#140B34] w-[393px] sm:w-[590px] h-[852px] sm:h-[1007px] sm:mt-[78px] sm:mb-[98px] sm:rounded-[16px] text-[color:white] pb-0 pt-[32px] pl-[33px] sm:pl-[51px] pr-[27px] sm:pr-[50px] flex flex-col relative"
+      onSubmit={handleSubmit}
+    >
+      {" "}
       <p className="text-[15px] sm:text-[20px] font-semibold h-[92px] sm:h-[90px] mb-[6px] sm:mb-[32px]">
         Si eres empresa y buscas talento TI, déjanos tu información en este
         formulario. En breve te contactaremos:
@@ -9,27 +70,35 @@ export default function LandingForm() {
         <div>
           <label
             className="block text-[13px] sm:text-[16px] font-normal"
-            htmlFor="name"
+            htmlFor="reference_name"
           >
             Nombre *
           </label>
           <input
             className="pl-[0.625rem] text-[black] rounded-md sm:rounded-lg mt-[6.5008px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
             type="text"
-            id="name"
+            id="reference_name"
+            value={formData.reference_name}
+            onChange={(e) =>
+              setFormData({ ...formData, reference_name: e.target.value })
+            }
           />
         </div>
         <div>
           <label
             className="block text-[13px] sm:text-[16px] font-normal"
-            htmlFor="surname"
+            htmlFor="reference_last_name"
           >
             Apellido *
           </label>
           <input
             className="pl-[0.625rem] text-[black] rounded-md sm:rounded-lg mt-[6.5008px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
             type="text"
-            id="surname"
+            id="reference_last_name"
+            value={formData.reference_last_name}
+            onChange={(e) =>
+              setFormData({ ...formData, reference_last_name: e.target.value })
+            }
           />
         </div>
       </div>
@@ -44,7 +113,11 @@ export default function LandingForm() {
           <input
             className="pl-[0.625rem] text-[black] rounded-md sm:rounded-lg mt-[6.5008px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
             type="email"
-            id="email"
+            id="reference_email"
+            value={formData.reference_email}
+            onChange={(e) =>
+              setFormData({ ...formData, reference_email: e.target.value })
+            }
           />
         </div>
         <div>
@@ -56,22 +129,30 @@ export default function LandingForm() {
           </label>
           <input
             className="pl-[0.625rem] text-[black] rounded-md sm:rounded-lg mt-[6.5008px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
-            type="tel"
-            id="tel"
+            type="text"
+            id="reference_phone"
+            value={formData.reference_phone}
+            onChange={(e) =>
+              setFormData({ ...formData, reference_phone: e.target.value })
+            }
           />
         </div>
       </div>
       <div className="mt-[28px] sm:mt-[16px]">
         <label
           className="block text-[13px] sm:text-[16px] font-normal"
-          htmlFor="company-name"
+          htmlFor="company"
         >
           ¿A qué empresa perteneces? *
         </label>
         <input
-          className="pl-[0.625rem] text-[black] rounded-md sm:rounded-lg mt-[6px] sm:mt-[16px] w-[300px] sm:w-[489px] h-9 bg-celeste"
+          className="pl-[0.625rem] text-[black] rounded-md sm:rounded-lg mt-[6.5008px] sm:mt-[16px] w-[138px] sm:w-[233px] sm:h-9 bg-celeste"
           type="text"
-          id="company-name"
+          id="company"
+          value={formData.company}
+          onChange={(e) =>
+            setFormData({ ...formData, company: e.target.value })
+          }
         />
       </div>
       <section className="mt-[19px] mb-[33px]">
@@ -82,12 +163,14 @@ export default function LandingForm() {
           <div className="flex items-center content-center">
             <label
               className="text-[12px] sm:text-[16px] font-normal"
-              htmlFor="checkbox-front"
+              htmlFor="1"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] bg-celeste"
                 type="checkbox"
-                id="checkbox-front"
+                id="1"
+                checked={formData.roles.includes(1)}
+                onChange={(e) => handleCheckboxChange(e, 1)}
               />
               Desarrollador Front End
             </label>
@@ -95,12 +178,14 @@ export default function LandingForm() {
           <div className="flex items-center content-center">
             <label
               className="text-[12px] sm:text-[16px] font-normal"
-              htmlFor="checkbox-back"
+              htmlFor="2"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="checked align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] bg-celeste"
                 type="checkbox"
-                id="checkbox-back"
+                id="2"
+                checked={formData.roles.includes(2)}
+                onChange={(e) => handleCheckboxChange(e, 2)}
               />
               Desarrollador Full Stack / Backend
             </label>
@@ -108,12 +193,14 @@ export default function LandingForm() {
           <div className="flex items-center content-center">
             <label
               className="text-[12px] sm:text-[16px] font-normal"
-              htmlFor="checkbox-ui"
+              htmlFor="3"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] bg-celeste"
                 type="checkbox"
-                id="checkbox-ui"
+                id="3"
+                checked={formData.roles.includes(3)}
+                onChange={(e) => handleCheckboxChange(e, 3)}
               />
               Diseñador UX/UI
             </label>
@@ -121,12 +208,14 @@ export default function LandingForm() {
           <div className="flex items-center content-center">
             <label
               className="text-[12px] sm:text-[16px] font-normal"
-              htmlFor="checkbox-qa"
+              htmlFor="4"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] bg-celeste"
                 type="checkbox"
-                id="checkbox-qa"
+                id="4"
+                checked={formData.roles.includes(4)}
+                onChange={(e) => handleCheckboxChange(e, 4)}
               />
               Analista QA
             </label>
@@ -134,12 +223,14 @@ export default function LandingForm() {
           <div className="flex items-center content-center">
             <label
               className="text-[12px] sm:text-[16px] font-normal"
-              htmlFor="checkbox-mobile"
+              htmlFor="5"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] bg-celeste"
                 type="checkbox"
-                id="checkbox-mobile"
+                id="5"
+                checked={formData.roles.includes(5)}
+                onChange={(e) => handleCheckboxChange(e, 5)}
               />
               Desarrollador Mobile
             </label>
@@ -147,12 +238,14 @@ export default function LandingForm() {
           <div className="flex items-center content-center">
             <label
               className="text-[12px] sm:text-[16px] font-normal"
-              htmlFor="checkbox-data"
+              htmlFor="6"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] bg-celeste"
                 type="checkbox"
-                id="checkbox-data"
+                id="6"
+                checked={formData.roles.includes(6)}
+                onChange={(e) => handleCheckboxChange(e, 6)}
               />
               Datos
             </label>
@@ -160,12 +253,14 @@ export default function LandingForm() {
           <div className="flex items-center content-center">
             <label
               className="text-[12px] sm:text-[16px] font-normal"
-              htmlFor="checkbox-others"
+              htmlFor="7"
             >
               <input
-                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] appearance-none bg-celeste"
+                className="align-middle mr-[6px] sm:mr-[24px] w-[17px] sm:w-[24px] h-[17px] sm:h-[24px] bg-celeste"
                 type="checkbox"
-                id="checkbox-others"
+                id="7"
+                checked={formData.roles.includes(7)}
+                onChange={(e) => handleCheckboxChange(e, 7)}
               />
               Otra
             </label>
@@ -175,13 +270,20 @@ export default function LandingForm() {
       <div className="flex flex-col gap-[13px] mb-[42px] sm:mb-[40px]">
         <label
           className="text-[13px] sm:text-[16px] font-normal"
-          htmlFor="questions"
+          htmlFor="comment"
         >
           ¿Dudas? Déjalas acá!
         </label>
         <textarea
-          className="rounded-md sm:rounded-lg w-[343px] sm:w-[489px] h-[69px] sm:h-[85px] bg-celeste"
-          id="questions"
+          className="pl-[0.625rem] text-[black] rounded-md sm:rounded-lg w-[343px] sm:w-[489px] h-[69px] sm:h-[85px] bg-celeste"
+          id="comment"
+          name="comment"
+          rows="4"
+          cols="50"
+          value={formData.comment}
+          onChange={(e) =>
+            setFormData({ ...formData, comment: e.target.value })
+          }
         ></textarea>
       </div>
       <img
