@@ -49,7 +49,15 @@ export default function LandingForm() {
       })
       .then((data) => {
         console.log("Data sent successfully:", data);
-        // You can reset the form or perform any other actions here
+        setFormData({
+          reference_name: "",
+          reference_last_name: "",
+          reference_email: "",
+          reference_phone: "",
+          company: "",
+          roles: [],
+          comment: "",
+        });
       })
       .catch((error) => {
         console.error("Error sending data:", error);
@@ -60,6 +68,7 @@ export default function LandingForm() {
     <form
       className="bg-[#140B34] w-[393px] sm:w-[590px] h-[852px] sm:h-[1007px] sm:mt-[78px] sm:mb-[98px] sm:rounded-[16px] text-[color:white] pb-0 pt-[32px] pl-[33px] sm:pl-[51px] pr-[27px] sm:pr-[50px] flex flex-col relative"
       onSubmit={handleSubmit}
+      id="landing-form"
     >
       {" "}
       <p className="text-[15px] sm:text-[20px] font-semibold h-[92px] sm:h-[90px] mb-[6px] sm:mb-[32px]">
