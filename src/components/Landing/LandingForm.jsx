@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from "sweetalert";
 
 export default function LandingForm() {
   const [formData, setFormData] = useState({
@@ -58,9 +59,28 @@ export default function LandingForm() {
           roles: [],
           comment: "",
         });
+        swal({
+          text: "FELICIDADES HAS COMPLETADO EL FORMULARIO EXITOSAMENTE",
+          icon: "success",
+          className: "swal-text",
+        });
       })
       .catch((error) => {
         console.error("Error sending data:", error);
+        setFormData({
+          reference_name: "",
+          reference_last_name: "",
+          reference_email: "",
+          reference_phone: "",
+          company: "",
+          roles: [],
+          comment: "",
+        });
+        swal({
+          text: "Hubo un error al completar el formulario, por favor intenta nuevamente",
+          icon: "error",
+          className: "swal-text",
+        });
       });
   };
 
