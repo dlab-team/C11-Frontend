@@ -3,7 +3,7 @@ import AgregarInstitucion from "../../assets/boton-más.svg";
 
 function InformacionProfesionalForm() {
   return (
-    <div className="container">
+    <div className="container lg:pt-[69px] ">
       <div className="flex flex-row justify-center mt-[1rem] lg:mt-[10] mb-[3rem] lg:mb-[4rem] lg:ml-[20%]">
         <div className="flex justify-center items-center rounded-full w-[2.5rem] h-[2.5rem] lg:w-[6.5rem] lg:h-[6.5rem] bg-white border border-[#2738F5] text-[#2738F5] lg:text-[2.5rem]">
           1
@@ -28,7 +28,7 @@ function InformacionProfesionalForm() {
       <h1 className="text-center lg:text-left lg:ml-[16.69rem] font-bold mb-[2rem] lg:text-[2rem] lg:font-bold font-poppins">
         INFORMACIÓN PROFESIONAL
       </h1>
-      <div className="lg:ml-[25rem]">
+      <div className="lg:ml-[21rem]">
         <form action="" className="w-full pl-[22px] pr-[30px] lg:w-[90%]">
           <div className=" md:w-3/3  mb-[1.38rem] md:mb-0">
             <label
@@ -40,7 +40,7 @@ function InformacionProfesionalForm() {
             </label>
             <div className="relative divide-x divide-black text-[10px]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option className="m-0 p-0">Selección</option>
@@ -71,7 +71,7 @@ function InformacionProfesionalForm() {
               <span className="text-[#AC231B]">*</span>
             </label>
             <input
-              className="appearance-none block w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] rounded-[0.5rem] py-1 px-4 leading-tight focus:outline-none focus:bg-white"
+              className="lg:h-[48px] appearance-none block w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] rounded-[0.5rem] py-1 px-4 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
               placeholder=""
@@ -85,7 +85,7 @@ function InformacionProfesionalForm() {
               Nombre institución 1:<span className="text-[#AC231B]">*</span>
             </label>
             <input
-              className="appearance-none block w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] rounded-[0.5rem] py-1 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="lg:h-[48px] appearance-none block w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] rounded-[0.5rem] py-1 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
               placeholder=""
@@ -100,7 +100,7 @@ function InformacionProfesionalForm() {
             </label>
             <div className="relative divide-x divide-black text-[10px]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option className="m-0 p-0">Selección</option>
@@ -128,7 +128,7 @@ function InformacionProfesionalForm() {
               </button>
             </div>
             {/* _________________Ultima sección_________________ */}
-            <div className="grid grid-cols-2 lg:flex lg:flex-row gap-[8px]">
+            <div className="grid grid-cols-2 lg:flex lg:flex-row gap-[8px] lg:gap-[20px]">
               <div className="w-full md:w-5/5 lg:w-[36.8rem]   md:mb-0">
                 <label
                   className="block tracking-wide text-black font-normal mb-2 text-[0.625rem] lg:text-[1.25rem]"
@@ -139,7 +139,7 @@ function InformacionProfesionalForm() {
                 </label>
                 <div className="relative divide-x divide-black text-[10px]">
                   <select
-                    className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-state"
                   >
                     <option className="m-0 p-0">Selección</option>
@@ -164,7 +164,7 @@ function InformacionProfesionalForm() {
                 </label>
                 <div className="relative divide-x divide-black text-[10px]">
                   <select
-                    className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-state"
                   >
                     <option className="m-0 p-0">Selección</option>
