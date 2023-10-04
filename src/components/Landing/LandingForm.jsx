@@ -86,7 +86,7 @@ export default function LandingForm() {
 
   return (
     <form
-      className="bg-[#140B34] w-[393px] sm:w-[590px] h-[852px] sm:h-[1007px] sm:mt-[78px] sm:mb-[98px] sm:rounded-[16px] text-[color:white] pb-0 pt-[32px] pl-[33px] sm:pl-[51px] pr-[27px] sm:pr-[50px] flex flex-col relative"
+      className="bg-[#140B34]  w-[393px] sm:w-[590px] h-[852px] sm:h-[1007px] sm:mt-[78px] sm:mb-[98px] sm:rounded-[16px] text-[color:white] pb-0 pt-[32px] pl-[33px] sm:pl-[51px] pr-[27px] sm:pr-[50px] flex flex-col relative"
       onSubmit={handleSubmit}
       id="landing-form"
     >
