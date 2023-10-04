@@ -3,7 +3,6 @@ import Line from "../../assets/Line.svg";
 
 function JobTypeForm() {
   const [employmentStatusOptions, setEmploymentStatusOptions] = useState([]);
-  console.log("employmentStatusOptions:", employmentStatusOptions);
 
   useEffect(() => {
     const apiUrl =
@@ -63,7 +62,7 @@ function JobTypeForm() {
             Déjanos una breve descripción con respecto tu trabajo ideal
           </label>
           <textarea
-            className="h-[135px] mt-[21px] w-full rounded-[8px] border-[0.5px] border-[#140B34]  bg-[#E2F2FE]"
+            className="pl-[10px] pt-[5px] h-[135px] mt-[21px] w-full rounded-[8px] border-[0.5px] border-[#140B34]  bg-[#E2F2FE]"
             name=""
             id=""
             cols="30"

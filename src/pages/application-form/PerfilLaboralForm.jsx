@@ -1,7 +1,60 @@
+import { useState, useEffect } from "react";
 import Line from "../../assets/Line.svg";
 import AgregarInstitucion from "../../assets/boton-más.svg";
 
 function PerfilLaboralForm() {
+  const [levels, setLevels] = useState([]);
+  const [selectedLevel1, setSelectedLevel1] = useState([]);
+  const [selectedLevel2, setSelectedLevel2] = useState([]);
+  const [selectedLevel3, setSelectedLevel3] = useState([]);
+  const [skills, setSkills] = useState([]);
+  const [selectedSkill1, setSelectedSkill1] = useState([]);
+  const [selectedSkill2, setSelectedSkill2] = useState([]);
+  const [selectedSkill3, setSelectedSkill3] = useState([]);
+  const filteredSkills1 = skills.filter((skill) => skill.type_skills_id === 1);
+  const filteredSkills2 = skills.filter((skill) => skill.type_skills_id === 2);
+  const filteredSkills3 = skills.filter((skill) => skill.type_skills_id === 3);
+  // const [selectedLevel2, setSelectedLevel2] = useState([]);
+  // const [selectedLevel3, setSelectedLevel3] = useState([]);
+  useEffect(() => {
+    const apiUrl =
+      "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/levels";
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Failed to retrieve data. Status code: ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setLevels(data);
+      })
+      .catch((error) => {
+        console.error(`An error occurred: ${error.message}`);
+      });
+  }, []);
+
+  useEffect(() => {
+    const apiUrl =
+      "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/skills";
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Failed to retrieve data. Status code: ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setSkills(data);
+      })
+      .catch((error) => {
+        console.error(`An error occurred: ${error.message}`);
+      });
+  }, []);
   return (
     <section className="lg:pt-[69px] lg:pb-[61px] lg:px-[150px] bg-[white] pl-[35px] pr-[45px] text-[color:black] lg:grid lg:justify-center">
       <div className="flex flex-row justify-center mt-[26px] mb-[3rem] lg:mb-[4rem]">
@@ -71,10 +124,19 @@ function PerfilLaboralForm() {
             </label>
             <div className="lg:mt-[17px] text-[10px] relative divide-x divide-[#140B34]">
               <select
-              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="skill1"
+                value={selectedSkill1}
+                onChange={(e) => {
+                  setSelectedSkill1(e.target.value);
+                }}
               >
                 <option>Selección</option>
+                {filteredSkills1.map((skill, index) => (
+                  <option key={index} value={skill.id}>
+                    {skill.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -96,10 +158,19 @@ function PerfilLaboralForm() {
             </label>
             <div className="relative divide-x divide-[#140B34]">
               <select
-              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="level1"
+                value={selectedLevel1}
+                onChange={(e) => {
+                  setSelectedLevel1(e.target.value);
+                }}
               >
                 <option>Selección</option>
+                {levels.map((level, index) => (
+                  <option key={index} value={level.id}>
+                    {level.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -135,10 +206,19 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="skill2"
+                value={selectedSkill2}
+                onChange={(e) => {
+                  setSelectedSkill2(e.target.value);
+                }}
               >
                 <option>Selección</option>
+                {filteredSkills2.map((skill, index) => (
+                  <option key={index} value={skill.id}>
+                    {skill.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -160,10 +240,19 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="level2"
+                value={selectedLevel2}
+                onChange={(e) => {
+                  setSelectedLevel2(e.target.value);
+                }}
               >
                 <option>Selección</option>
+                {levels.map((level, index) => (
+                  <option key={index} value={level.id}>
+                    {level.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -199,10 +288,19 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="skill3"
+                value={selectedSkill3}
+                onChange={(e) => {
+                  setSelectedSkill3(e.target.value);
+                }}
               >
                 <option>Selección</option>
+                {filteredSkills3.map((skill, index) => (
+                  <option key={index} value={skill.id}>
+                    {skill.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -224,10 +322,19 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
+                className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="level2"
+                value={selectedLevel3}
+                onChange={(e) => {
+                  setSelectedLevel3(e.target.value);
+                }}
               >
                 <option>Selección</option>
+                {levels.map((level, index) => (
+                  <option key={index} value={level.id}>
+                    {level.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
