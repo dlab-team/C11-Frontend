@@ -64,15 +64,15 @@ function PerfilLaboralForm() {
         <div className="px-[26px] lg:flex lg:flex-row lg:justify-between">
           <div className="w-full md:w-3/3 lg:w-[24.12rem] px-3 mb-[1.38rem] md:mb-0">
             <label
-              className=" tracking-wide text-black text-xs lg:text-[1.25rem] font-bold font-poppins mb-1 lg:mb-[1.25rem]"
+              className="tracking-wide text-black text-xs lg:text-[1.25rem] font-bold font-poppins mb-1 lg:mb-[1.25rem]"
               htmlFor="grid-first-name"
             >
               Lenguaje
             </label>
-            <div className="text-[10px] relative divide-x divide-[#140B34]">
+            <div className="lg:mt-[17px] text-[10px] relative divide-x divide-[#140B34]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-state"
               >
                 <option>Selección</option>
               </select>
@@ -96,7 +96,7 @@ function PerfilLaboralForm() {
             </label>
             <div className="relative divide-x divide-[#140B34]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option>Selección</option>
@@ -135,8 +135,8 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-state"
               >
                 <option>Selección</option>
               </select>
@@ -160,8 +160,8 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-state"
               >
                 <option>Selección</option>
               </select>
@@ -199,8 +199,8 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-state"
               >
                 <option>Selección</option>
               </select>
@@ -224,8 +224,8 @@ function PerfilLaboralForm() {
             </label>
             <div className="text-[10px] relative divide-x divide-[#140B34]">
               <select
-                className="block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.2496px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+              className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-state"
               >
                 <option>Selección</option>
               </select>
