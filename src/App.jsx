@@ -35,6 +35,7 @@ function App() {
           <Route exact path="/intro" element={<Introduction />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingButton/>
         <Footer />
       </Router>
     </main>
