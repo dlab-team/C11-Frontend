@@ -13,7 +13,7 @@ import { IoContrastOutline } from "react-icons/io5";
 
 const FloatingButton = () => {
 	const [isDragging, setIsDragging] = useState(false);
-	const [position, setPosition] = useState({ x: 100, y: 100 });
+	const [position, setPosition] = useState({ x: 25, y: 84 });
 	const [offset, setOffset] = useState({ x: 0, y: 0 });
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [selectedIcon, setSelectedIcon] = useState(null);
@@ -114,11 +114,11 @@ const FloatingButton = () => {
 
 	return (
 		<div>
-			<button className="fixed text-white font-bold py-2 px-4 rounded  shadow shadow-xl"
+			<button
+				className="fixed bg-[FFFFFF]"
 				style={{
-					top: `${position.y}px`,
-					left: `${position.x}px`,
-					cursor: isDragging ? "grabbing" : "grab",
+					bottom: `116px`,
+					right: `20px`,
 				}}
 				onMouseDown={handleMouseDown}
 				onMouseMove={handleMouseMove}
@@ -128,14 +128,14 @@ const FloatingButton = () => {
 				{selectedIcon ? (
 					selectedIcon
 				) : (
-					<BiSolidUniversalAccess className="text-7xl text-[#2738F5] mr-2 " />
+					<BiSolidUniversalAccess className="text-[80px] lg:text-[90px] text-[#2738F5] "  />
 				)}
 			</button>
 
 			{isModalOpen && (
-				<div className="fixed inset-0  flex justify-center items-center bg-[#ffffff] ">
+				<div className="fixed inset-0 flex justify-center items-center bg-[#FFFFFF] sm:bg-[#d1d5db]  md:bg-[#d1d5db]  lg:bg-[#d1d5db]  ">
 					<div
-						className=" flex flex-col  rounded-lg "
+						className=" flex flex-col rounded-lg w-[24.375rem] h-[49.8125rem] sm:w-[auto] sm:h-[auto] md:w-[auto] md:h-[auto] lg:w-[auto] lg:h-[auto] "
 						style={{ top: modalPosition.top, left: modalPosition.left }}
 					>
 						{/* Sección de Accesibilidad */}
@@ -149,19 +149,19 @@ const FloatingButton = () => {
 							/>
 						</div>
 
-						<div className=" rounded-lg flex flex-col justify-center items-center mt-7">
+						<div className=" rounded-lg flex flex-col  justify-center items-center ">
 							{/* Sección 1 */}
-							<div className=" bg-[#ffffff] rounded-lg  w-[35.8125rem] h-[12.375rem] flex flex-col ">
-								<div className="text-[0.9375rem] weight-[500] mx-5 ">
+							<div className=" bg-[#d1d5db] sm:bg-[#FFFFFF] rounded-lg  w-[21.8125rem] h-[23.9375rem] sm:w-[35.8125rem] sm:h-[12.375rem] md:w-[35.8125rem] md:h-[12.375rem] lg:w-[35.8125rem] lg:h-[12.375rem] flex flex-col my-5">
+								<div className="text-[0.9375rem] font-bold flex justify-center sm:justify-start md:justify-start lg:justify-start">
 									<span>LECTOR DE TEXTO</span>
 								</div>
-								<div className="flex flex-row mx-auto space-x-12 ">
+								<div className="flex flex-col sm:flex-row md:flex-row lg:flex-row mx-auto space-y-3 sm:space-y-0 md:space-y-0 lg:space-y-0  sm:space-x-12 md:space-x-12 lg:space-x-12 ">
 									{/* Caja 1 */}
-									<div className="flex justify-center border rounded-lg bg-[#FFFFFF] w-[8.3125rem] h-[7.5625rem]  ">
+									<div className="flex justify-center border rounded-lg bg-[#FFFFFF] w-[19rem] h-[5.625rem] sm:w-[8.3125rem] sm:h-[7.5625rem] md:w-[8.3125rem] md:h-[7.5625rem] lg:w-[8.3125rem] lg:h-[7.5625rem] sm:bg-[#d1d5db]  md:bg-[#d1d5db]  lg:bg-[#d1d5db] ">
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center">
 											{/* Icono de Reproductor */}
-											<div className="flex items-center text-[#FFFFFF]  cursor-pointer rounded-full">
+											<div className="flex items-center text-[#FFFFFF]  cursor-pointer rounded-full ">
 												<BiSolidCaretRightCircle
 													className="text-[#2738F5] text-[2.875rem] cursor-pointer"
 													onClick={() =>
@@ -175,18 +175,18 @@ const FloatingButton = () => {
 									</div>
 
 									{/* Caja 2 */}
-									<div className="flex justify-center border bg-[#FFFFFF] w-[8.3125rem] h-[7.5625rem] rounded-lg">
+									<div className="flex justify-center border rounded-lg bg-[#FFFFFF] w-[19rem] h-[5.625rem] sm:w-[8.3125rem] sm:h-[7.5625rem] md:w-[8.3125rem] md:h-[7.5625rem] lg:w-[8.3125rem] lg:h-[7.5625rem]  sm:bg-[#d1d5db]  md:bg-[#d1d5db]  lg:bg-[#d1d5db]  ">
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center  ">
 											{/* Icono de Reproductor */}
 											<BiPause
-												className=" flex items-center text-[#FFFFFF] text-[2.375rem] cursor-pointer bg-[#2738F5] rounded-full"
+												className=" flex items-center text-[#FFFFFF] text-[2.375rem] cursor-pointer bg-[#2738F5] rounded-full "
 												onClick={pause}
 											/>
 										</div>
 									</div>
 									{/* Caja 3 */}
-									<div className="flex justify-center bg-[#FFFFFF]  border rounded-lg w-[8.3125rem] h-[7.5625rem]">
+									<div className="flex justify-center border rounded-lg bg-[#FFFFFF] w-[19rem] h-[5.625rem] sm:w-[8.3125rem] sm:h-[7.5625rem] md:w-[8.3125rem] md:h-[7.5625rem] lg:w-[8.3125rem] lg:h-[7.5625rem]  sm:bg-[#d1d5db]  md:bg-[#d1d5db]  lg:bg-[#d1d5db]  ">
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center">
 											{/* Icono de Reproductor */}
@@ -195,10 +195,10 @@ const FloatingButton = () => {
 									</div>
 								</div>
 								{/* Barra de Volumen */}
-								<div className="mt-5">
+								<div className="my-5">
 									<div className="flex justify-center items-center w-[13.75rem] rounded-full h-[1.75rem] mx-auto bg-[#9ca3af] ">
 										<BiMinus
-											className="text-white rounded-full bg-[#2738F5] text-2xl cursor-pointer "
+											className="text-[#FFFFFF] rounded-full bg-[#2738F5] text-[2rem] cursor-pointer "
 											onClick={decreaseVolume}
 										/>
 										<div className="flex-grow w-[10.75rem] h-[1.3rem] relative">
@@ -211,21 +211,21 @@ const FloatingButton = () => {
 											</div>
 										</div>
 										<BiPlus
-											className="text-white rounded-full bg-[#2738F5] text-[1.35rem] cursor-pointer"
+											className="text-[#FFFFFF] rounded-full bg-[#2738F5] text-[2rem] cursor-pointer"
 											onClick={increaseVolume}
 										/>
 									</div>
 								</div>
 							</div>
 							{/* Sección 2 */}
-							<div className="bg-[#ffffff] rounded-lg  w-[35.8125rem] h-[12.375rem] flex flex-col">
-								<div className="text-[0.9375rem] weight-[500] mx-5">
+							<div className="bg-[#ffffff] rounded-lg  w-[21.8125rem] h-[6.625rem] sm:w-[35.8125rem] sm:h-[12.375rem] md:w-[35.8125rem] md:h-[12.375rem] lg:w-[35.8125rem] lg:h-[12.375rem] flex flex-col">
+								<div className="text-[0.9375rem] font-bold flex justify-center sm:justify-start md:justify-start lg:justify-start ">
 									<span>TAMAÑO FUENTE</span>
 								</div>
 								{/* Cajas */}
-								<div className="flex flex-row flex justify-center place-items-stretch space-x-[6rem] my-auto">
+								<div className="flex flex-row justify-center space-x-[6rem] lg:my-auto ">
 									{/* Caja 1 */}
-									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[8.75rem] h-[7.5625rem]  cursor-pointer">
+									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[5.625rem] h-[4.125rem]  sm:w-[8.75rem] sm:h-[7.5625rem] md:w-[8.75rem] md:h-[7.5625rem] lg:w-[8.75rem] lg:h-[7.5625rem] cursor-pointer">
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center  ">
 											{/* Icono de Reproductor */}
@@ -234,30 +234,30 @@ const FloatingButton = () => {
 									</div>
 
 									{/* Caja 2 */}
-									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[8.75rem] h-[7.5625rem]  cursor-pointer">
+									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[5.625rem] h-[4.125rem]  sm:w-[8.75rem] sm:h-[7.5625rem] md:w-[8.75rem] md:h-[7.5625rem] lg:w-[8.75rem] lg:h-[7.5625rem] cursor-pointer ">
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center ">
 											{/* Icono de Reproductor */}
-											<span className="text-[3rem] text-[#ffffff]">-A</span>
+											<span className="text-[2rem] text-[#ffffff]">-A</span>
 										</div>
 									</div>
 								</div>
 							</div>
 							{/* Sección 3 */}
-							<div className="bg-[#ffffff] rounded-lg  w-[35.8125rem] h-[12.375rem] flex flex-col">
-								<div className="text-[0.9375rem] weight-[500] mx-5">
+							<div className="bg-[#ffffff] rounded-lg  w-[21.8125rem] h-[6.625rem] sm:w-[35.8125rem] sm:h-[12.375rem] md:w-[35.8125rem] md:h-[12.375rem] lg:w-[35.8125rem] lg:h-[12.375rem] flex flex-col my-5">
+								<div className="text-[0.9375rem] font-bold flex justify-center sm:justify-start md:justify-start lg:justify-start ">
 									<span>COLOR DE CONTRASTE</span>
 								</div>
 								<div className="flex flex-row flex justify-center place-items-stretch space-x-[6rem] my-auto ">
 									{/* Caja 1 */}
-									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[8.75rem] h-[7.5625rem]  cursor-pointer">
+									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[5.625rem] h-[4.125rem]  sm:w-[8.75rem] sm:h-[7.5625rem] md:w-[8.75rem] md:h-[7.5625rem] lg:w-[8.75rem] lg:h-[7.5625rem] cursor-pointer">
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center space-x-1">
 											<IoContrastOutline className="text-[#fcd34d] text-4xl  cursor-pointer" />
 										</div>
 									</div>
 									{/* Caja 2 */}
-									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[8.75rem] h-[7.5625rem]  cursor-pointer">
+									<div className="flex justify-center bg-[#2738F5]  rounded-lg w-[5.625rem] h-[4.125rem]  sm:w-[8.75rem] sm:h-[7.5625rem] md:w-[8.75rem] md:h-[7.5625rem] lg:w-[8.75rem] lg:h-[7.5625rem] cursor-pointer">
 										{/* Contenido de la Caja 1 */}
 										<div className="flex items-center">
 											{/* Icono de Reproductor */}

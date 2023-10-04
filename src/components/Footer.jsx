@@ -1,87 +1,96 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
-  return <footer className="h-28 py-[3rem] w-full  bg-[#2738F5] text-[#FFFFFF]">
-  <div className="invisible md:visible px-[2.188rem] w-full flex justify-between">
-    <div className="md:ps-[3.813rem]">
-      <h1>Copyright©2023 - Devsafío</h1>
-    </div>
+  const [isFooterVisible, setFooterVisible] = useState(true);
 
-    <span className="flex">
-      <a
-        href="https://www.linkedin.com/company/devsafio"
-        target="_blank"
-        className="linkedin relative bottom-4"
-        title="LinkedIn"
-        aria-label="LinkedIn"
-        rel="noreferrer"
-      >
-        <svg
-          width="80"
-          height="60"
-          viewBox="0 0 80 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle id="Ellipse 25" cx="40" cy="40" r="40" fill="white" />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="74"
-            height="58"
-            viewBox="0 -6 20 24"
-            fill="none"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M2.47327e-07 1.67091C2.47327e-07 1.22776 0.176042 0.802756 0.489398 0.4894C0.802754 0.176044 1.22776 2.22756e-06 1.67091 2.22756e-06H18.3273C18.5469 -0.000356456 18.7644 0.0426049 18.9674 0.126426C19.1704 0.210248 19.3548 0.333284 19.5102 0.48849C19.6656 0.643696 19.7888 0.828024 19.8729 1.03092C19.9569 1.23382 20.0001 1.4513 20 1.67091V18.3273C20.0002 18.5469 19.9572 18.7645 19.8732 18.9675C19.7893 19.1705 19.6662 19.3549 19.5109 19.5103C19.3556 19.6656 19.1713 19.7889 18.9683 19.8729C18.7654 19.9569 18.5478 20.0001 18.3282 20H1.67091C1.45141 20 1.23405 19.9568 1.03127 19.8727C0.828487 19.7887 0.644247 19.6655 0.489077 19.5103C0.333906 19.355 0.210847 19.1707 0.12693 18.9679C0.0430121 18.7651 -0.000119178 18.5477 2.47327e-07 18.3282V1.67091ZM7.91636 7.62546H10.6245V8.98546C11.0155 8.20364 12.0155 7.5 13.5182 7.5C16.3991 7.5 17.0818 9.05727 17.0818 11.9145V17.2073H14.1664V12.5655C14.1664 10.9382 13.7755 10.02 12.7827 10.02C11.4055 10.02 10.8327 11.01 10.8327 12.5655V17.2073H7.91636V7.62546ZM2.91636 17.0827H5.83273V7.5H2.91636V17.0818V17.0827ZM6.25 4.37455C6.2555 4.62425 6.21107 4.87254 6.11931 5.10483C6.02755 5.33713 5.89032 5.54876 5.71566 5.7273C5.54101 5.90585 5.33245 6.0477 5.10223 6.14455C4.87201 6.2414 4.62476 6.29129 4.375 6.29129C4.12524 6.29129 3.87799 6.2414 3.64777 6.14455C3.41755 6.0477 3.20899 5.90585 3.03433 5.7273C2.85968 5.54876 2.72245 5.33713 2.63069 5.10483C2.53893 4.87254 2.4945 4.62425 2.5 4.37455C2.51079 3.88441 2.71308 3.41799 3.06353 3.07517C3.41399 2.73235 3.88475 2.54038 4.375 2.54038C4.86525 2.54038 5.33601 2.73235 5.68647 3.07517C6.03692 3.41799 6.23921 3.88441 6.25 4.37455Z"
-              fill="#0E76A8"
-            />
-          </svg>
-        </svg>
-      </a>
+  useEffect(() => {
+    // Add an event listener to check the screen width and update the state accordingly
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setFooterVisible(false); // Hide the footer on screens narrower than 768px
+      } else {
+        setFooterVisible(true); // Show the footer on wider screens
+      }
+    };
 
-      <a
-        href="mailto:contacto@devsafio.com?subject=Hello!"
-        target="_self"
-        className="email relative bottom-4"
-        title="Email"
-        aria-label="Email"
-        rel="noreferrer"
-      >
-        <svg
-          width="80"
-          height="60"
-          viewBox="0 0 80 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle id="Ellipse 25" cx="40" cy="40" r="40" fill="white" />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="74"
-            height="58"
-            viewBox="0 -6 20 24"
-            fill="none"
-          >
-            <path
-              d="M16.6665 3.33325H3.33317C2.4127 3.33325 1.6665 4.07944 1.6665 4.99992V14.9999C1.6665 15.9204 2.4127 16.6666 3.33317 16.6666H16.6665C17.587 16.6666 18.3332 15.9204 18.3332 14.9999V4.99992C18.3332 4.07944 17.587 3.33325 16.6665 3.33325Z"
-              stroke="#0E76A8"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M18.3332 5.83325L10.8582 10.5833C10.6009 10.7444 10.3034 10.8299 9.99984 10.8299C9.69624 10.8299 9.39878 10.7444 9.1415 10.5833L1.6665 5.83325"
-              stroke="#0E76A8"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </svg>
-      </a>
-    </span>
-  </div>
-</footer>
-}
+    // Call the event listener initially and add it to the resize event
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  return (
+    <>
+      {isFooterVisible ? (
+        <footer className="lg:h-28 w-full  bg-[#2738F5] text-[#FFFFFF] flex justify-between items-center">
+          <h1 className="text-[20px] px-[2.188rem]">
+            Copyright©2023 - Devsafío
+          </h1>
+          <div className="flex justify-center items-center gap-[34px] mr-[65px]">
+            <div className="w-[80px] h-[80px] bg-[white] rounded-full flex items-center justify-center">
+              <Link
+                to="https://www.linkedin.com/company/devsafio"
+                className="cursor-pointer"
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_4170_117)">
+                    <path
+                      d="M36.25 0.9374H3.75C3.0126 0.929896 2.30233 1.21523 1.77506 1.73078C1.24778 2.24634 0.946566 2.95002 0.9375 3.6874V36.3187C0.948206 37.0549 1.25014 37.757 1.77724 38.2712C2.30434 38.7854 3.01367 39.0699 3.75 39.0624H36.25C36.9874 39.0682 37.6972 38.7819 38.2242 38.2661C38.7512 37.7502 39.0526 37.0467 39.0625 36.3093V3.67803C39.0493 2.9428 38.7465 2.24248 38.2199 1.72929C37.6932 1.2161 36.9853 0.931518 36.25 0.9374Z"
+                      fill="#0076B2"
+                    />
+                    <path
+                      d="M6.58126 15.228H12.2406V33.4374H6.58126V15.228ZM9.41251 6.16553C10.0616 6.16553 10.6961 6.35805 11.2358 6.71874C11.7755 7.07942 12.196 7.59207 12.4443 8.19182C12.6925 8.79157 12.7573 9.45148 12.6305 10.0881C12.5036 10.7247 12.1908 11.3093 11.7316 11.7681C11.2724 12.2268 10.6874 12.5391 10.0507 12.6654C9.41402 12.7916 8.75418 12.7262 8.15466 12.4774C7.55515 12.2285 7.0429 11.8075 6.68273 11.2675C6.32256 10.7275 6.13064 10.0928 6.13126 9.44365C6.13209 8.57395 6.47815 7.74016 7.09342 7.12548C7.70868 6.5108 8.54281 6.16553 9.41251 6.16553ZM15.7906 15.228H21.2156V17.728H21.2906C22.0469 16.2968 23.8906 14.7874 26.6438 14.7874C32.375 14.7749 33.4375 18.5468 33.4375 23.4374V33.4374H27.7781V24.578C27.7781 22.4687 27.7406 19.753 24.8375 19.753C21.9344 19.753 21.4406 22.053 21.4406 24.4405V33.4374H15.7906V15.228Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_4170_117">
+                      <rect width="40" height="40" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </Link>
+            </div>
+            <div className="w-[80px] h-[80px] bg-[white] rounded-full flex items-center justify-center">
+              <Link
+                className="cursor-pointer"
+                to="mailto:contacto@devsafio.com?subject=Hello!"
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 8.33325V7.08325C4.66848 7.08325 4.35054 7.21495 4.11612 7.44937C3.8817 7.68379 3.75 8.00173 3.75 8.33325H5ZM35 8.33325H36.25C36.25 8.00173 36.1183 7.68379 35.8839 7.44937C35.6495 7.21495 35.3315 7.08325 35 7.08325V8.33325ZM5 9.58325H35V7.08325H5V9.58325ZM33.75 8.33325V28.3333H36.25V8.33325H33.75ZM31.6667 30.4166H8.33333V32.9166H31.6667V30.4166ZM6.25 28.3333V8.33325H3.75V28.3333H6.25ZM8.33333 30.4166C7.18333 30.4166 6.25 29.4833 6.25 28.3333H3.75C3.75 29.5488 4.23289 30.7146 5.09243 31.5742C5.95197 32.4337 7.11776 32.9166 8.33333 32.9166V30.4166ZM33.75 28.3333C33.75 29.4833 32.8167 30.4166 31.6667 30.4166V32.9166C32.8822 32.9166 34.048 32.4337 34.9076 31.5742C35.7671 30.7146 36.25 29.5488 36.25 28.3333H33.75Z"
+                    fill="#0076B2"
+                  />
+                  <path
+                    d="M5 8.33325L20 23.3333L35 8.33325"
+                    stroke="#0076B2"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </footer>
+      ) : null}
+    </>
+  );
+};
 export default Footer;

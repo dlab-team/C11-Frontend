@@ -1,74 +1,74 @@
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   GoogleAuthProvider,
   GithubAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
-} from "firebase/auth"
-import { auth } from "../firebase"
-import { Alert } from "./Alert"
-import useAuthStore from "../authStore"
+} from "firebase/auth";
+import { auth } from "../firebase";
+import { Alert } from "./Alert";
+import useAuthStore from "../authStore";
 
-import mail from "../assets/mail.svg"
-import gmail from "../assets/gmail.svg"
-import github from "../assets/github.svg"
-import facebook from "../assets/facebook.svg"
+import mail from "../assets/mail.svg";
+import gmail from "../assets/gmail.svg";
+import github from "../assets/github.svg";
+import facebook from "../assets/facebook.svg";
 
 const loginGoogle = () => {
-  const googleProvider = new GoogleAuthProvider()
-  return signInWithPopup(auth, googleProvider)
-}
+  const googleProvider = new GoogleAuthProvider();
+  return signInWithPopup(auth, googleProvider);
+};
 
 const loginGithub = () => {
-  const githubProvider = new GithubAuthProvider()
-  return signInWithPopup(auth, githubProvider)
-}
+  const githubProvider = new GithubAuthProvider();
+  return signInWithPopup(auth, githubProvider);
+};
 
 const loginFacebook = () => {
-  const facebookProvider = new FacebookAuthProvider()
-  return signInWithPopup(auth, facebookProvider)
-}
+  const facebookProvider = new FacebookAuthProvider();
+  return signInWithPopup(auth, facebookProvider);
+};
 
 const Social_login = () => {
-  const navigate = useNavigate()
-  const [error, setError] = useState("")
-  const setProfile = useAuthStore((state) => state.setProfile)
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const setProfile = useAuthStore((state) => state.setProfile);
   const btn_soc =
-    "hover:bg-blue-700 text-[#000] borde w-full h-[2.3125rem] md:h-[4.25rem] px-4 focus:outline-none focus:shadow-outline flex items-center"
-  const [social, setSocial] = useState("")
+    "hover:bg-blue-700 text-[#000] borde w-full h-[2.3125rem] md:h-[4.25rem] px-4 focus:outline-none focus:shadow-outline flex items-center";
+  const [social, setSocial] = useState("");
 
   async function handleSubmit(event) {
-    event.preventDefault()
-    setError("")
-    console.log(social)
+    event.preventDefault();
+    setError("");
+    console.log(social);
     try {
       if (social == "google") {
-        setSocial("")
-        const res = await loginGoogle()
-        setProfile(res.user)
-        const credential = GoogleAuthProvider.credentialFromResult(res)
-        const token = credential.accessToken
-        console.log(token)
+        setSocial("");
+        const res = await loginGoogle();
+        setProfile(res.user);
+        const credential = GoogleAuthProvider.credentialFromResult(res);
+        const token = credential.accessToken;
+        console.log(token);
       } else if (social == "github") {
-        setSocial("")
-        const res = await loginGithub()
-        setProfile(res.user)
-        const credential = GithubAuthProvider.credentialFromResult(res)
-        const token = credential.accessToken
-        console.log(token)
+        setSocial("");
+        const res = await loginGithub();
+        setProfile(res.user);
+        const credential = GithubAuthProvider.credentialFromResult(res);
+        const token = credential.accessToken;
+        console.log(token);
       } else if (social == "facebook") {
-        setSocial("")
-        const res = await loginFacebook()
-        setProfile(res.user)
-        const credential = FacebookAuthProvider.credentialFromResult(res)
-        const token = credential.accessToken
-        console.log(token)
+        setSocial("");
+        const res = await loginFacebook();
+        setProfile(res.user);
+        const credential = FacebookAuthProvider.credentialFromResult(res);
+        const token = credential.accessToken;
+        console.log(token);
       }
-      navigate("/")
+      navigate("/intro");
     } catch (error) {
-      if (error.code == 'auth/account-exists-with-different-credential') {
-        setError('cuenta ya autorizada con otro servicio')        
+      if (error.code == "auth/account-exists-with-different-credential") {
+        setError("cuenta ya autorizada con otro servicio");
       }
     }
   }
@@ -132,7 +132,7 @@ const Social_login = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Social_login
+export default Social_login;

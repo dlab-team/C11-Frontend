@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Poppins:wght@100;200;300;400;500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Poppins:wght@100;200;300;400;500&display=swap");
 
 #root {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo_blanco {
@@ -17,10 +16,9 @@
 }
 
 .iconBlue {
-  color:#0084EA;
+  color: #0084ea;
   background-color: white;
   width: 80px;
-  
 }
 
 .icon_cel {
@@ -28,8 +26,8 @@
 }
 
 .texto_azul {
-  font-weight:600;
-  color: #2738F5;
+  font-weight: 600;
+  color: #2738f5;
 }
 
 .titulo {
@@ -44,10 +42,16 @@
 }
 
 .borde {
-  border: 3px solid #2738F5;
+  border: 3px solid #2738f5;
   border-radius: 0.5rem;
 }
 
 .jockey {
-  font-family: 'Jockey One', sans-serif;
+  font-family: "Jockey One", sans-serif;
+}
+
+.swal-text {
+  text-align: center;
+  width: 300px;
+  text-wrap: wrap;
 }
