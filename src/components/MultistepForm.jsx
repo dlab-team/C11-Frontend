@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PersonalInfoForm from "../pages/application-form/PersonalInfoForm";
 import InformacionProfesionalForm from "../pages/application-form/InformacionProfesionalForm";
 import PerfilLaboralForm from "../pages/application-form/PerfilLaboralForm";
@@ -47,6 +47,11 @@ function MultistepForm() {
       return <JobTypeForm formData={formData} setFormData={setFormData} />;
     }
   };
+
+  useEffect(() => {
+    // Scroll to the top of the page whenever the page changes
+    window.scrollTo(0, 0);
+  }, [page]);
 
   return (
     <div className="form">
