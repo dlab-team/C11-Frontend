@@ -10,8 +10,6 @@ const radios = [
 ];
 
 const WorkingExperience = () => {
-  const [selected, setSelected] = useState(radios[0]);
-
   const [inputs, setInputs] = useState({
     cv: "",
     linkedin: "",
