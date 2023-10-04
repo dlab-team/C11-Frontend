@@ -10,17 +10,17 @@ function HeroSection(props) {
   
     return (
       <div className=' flex flex-col pt-[3.06rem] bg-gradient-to-b from-[#2738F5] from-33% via-[#1E239A] via-33% to-[#140B34] to-33% w-screen h-screen'>
-          <div className='lg:hidden flex justify-center content-center pt-[15.5%] pl-[42px] pr-[48.47px] pb-[47px]'>
-              <img src={IMG} alt="Img-landing-mobile" className='lg:hidden w-[299px] h-[218px] md:w-[500px] md:h-[400px]'/>
+          <div className='flex justify-center content-center pt-[15.5%] pl-[42px] pr-[48.47px] pb-[47px]'>
+              <img src={IMG} alt="Img-landing-mobile" className=' visible w-[299px] h-[218px] md:w-[500px] md:h-[400px]'/>
           </div>
           <div className='flex flex-col justify-center content-center mb-[1.50rem] lg:mb-[6.12rem]'>
-            <h1 className='text-center text-white text-[2.0625rem] font-poppins font-bold leading-normal mb-[0
-              80rem] lg:text-left lg:ml-[7.5rem] lg:text-[4.5rem] lg:mb-[1.5rem] lg:font-bold lg:font-poppins'>{props.titulo}</h1>
-            <p className='text-center text-white text-[0.8125rem] font-semibold leading-normal mb-[1.44rem] lg:text-left lg:ml-[7.5rem] lg:text-[2.25rem] lg:w-[40%] font-poppins'>Contrata <span className='text-[#008FF7] text-[0.8125rem] lg:text-[2.25rem]'>Talento TI</span> rápido, inteligente y eficiente</p>
-            <p className='text-left text-white text-[0.9375rem] font-poppins leading-normal px-[2.40rem] lg:ml-[5rem] lg:text-[1.25rem] lg:w-[55%]'>{props.resumen}</p>
+            <h1 className='text-center text-[white] text-[2.0625rem] font-poppins font-bold leading-normal mb-[0
+              80rem] lg:text-left lg:ml-[7.5rem] lg:text-[4.5rem] lg:mb-[1.5rem] lg:font-bold lg:font-poppins'>¿Buscas talento TI?</h1>
+            <p className='text-center text-[white] text-[0.8125rem] font-semibold leading-normal mb-[1.44rem] lg:text-left lg:ml-[7.5rem] lg:text-[2.25rem] lg:w-[40%] font-poppins'>Contrata <span className='text-[#008FF7] text-[0.8125rem] lg:text-[2.25rem]'>Talento TI</span> rápido, inteligente y eficiente</p>
+            <p className='text-left text-[white] text-[0.9375rem] font-poppins leading-normal px-[2.40rem] lg:ml-[5rem] lg:text-[1.25rem] lg:w-[55%]'>Te encontramos profesionales en 5 días y los acompañamos por 3 meses con tutores senior para potenciar y acelerar sus habilidades técnicas</p>
           </div>
           <div className='ml-[2.06rem] lg:ml-[7.5rem] md:ml-[40%]'>
-            <button className='bg-white text-[#2738F5] text-[0.625rem] lg:text-[1.5rem] font-poppins font-bold rounded-[1.5rem] px-[1.5rem] py-[1rem] mb-[33%] lg:mb-[0%] md:mb-[34.5%] '>
+            <button className='bg-[white] text-[#2738F5] text-[0.625rem] lg:text-[1.5rem] font-poppins font-bold rounded-[1.5rem] px-[1.5rem] py-[1rem] mb-[33%] lg:mb-[0%] md:mb-[34.5%] '>
               QUIERO CONTRATAR
             </button>
             <img src={ImgLuna} alt="Img-media-lune-Mobile" className='lg:hidden w-[7.3125rem] ml-[60%]'/>
