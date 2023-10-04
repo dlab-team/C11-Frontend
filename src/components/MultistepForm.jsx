@@ -4,6 +4,7 @@ import InformacionProfesionalForm from "../pages/application-form/InformacionPro
 import PerfilLaboralForm from "../pages/application-form/PerfilLaboralForm";
 import JobTypeForm from "../pages/application-form/JobTypeForm";
 import WorkingExperience from "../pages/application-form/WorkingExperience";
+import swal from "sweetalert";
 
 function MultistepForm() {
   const [page, setPage] = useState(0);
@@ -144,7 +145,11 @@ function MultistepForm() {
             <button
               className="text-[10px] bg-[#2738F5] text-[white] font-bold py-[7px] px-4 rounded-r-xl lg:text-[1.5rem]"
               onClick={() => {
-                alert("FELICIDADES EL FORMULARIO FUE REGISTRADO EXITOSAMENTE");
+                swal({
+                  text: "FELICIDADES HAS COMPLETADO EL FORMULARIO EXITOSAMENTE",
+                  icon: "success",
+                  className: "swal-text",
+                });
               }}
             >
               Enviar
