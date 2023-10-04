@@ -36,7 +36,6 @@ function PersonalInfoForm({ formData, setFormData, page }) {
         console.error(`An error occurred: ${error.message}`);
       });
   }, [page]);
-  console.log("page:", page);
 
   useEffect(() => {
     // Check if a country is selected

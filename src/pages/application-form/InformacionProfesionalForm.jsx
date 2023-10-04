@@ -1,7 +1,64 @@
+import { useState, useEffect } from "react";
 import Line from "../../assets/Line.svg";
 import AgregarInstitucion from "../../assets/boton-más.svg";
 
 function InformacionProfesionalForm() {
+  const [educationalLevels, setEducationalLevels] = useState([]);
+  const [selectedEducationalLevel1, setSelectedEducationalLevel1] = useState(
+    []
+  );
+  const [selectedEducationalLevel2, setSelectedEducationalLevel2] = useState(
+    []
+  );
+  const [selectedEducationalLevel3, setSelectedEducationalLevel3] = useState(
+    []
+  );
+
+  const [englishlLevels, setEnglishlLevels] = useState([]);
+  const [selectedEnglishlLevel, setSelectedEnglishlLevel] = useState([]);
+
+  useEffect(() => {
+    const apiUrl =
+      "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/insitutions";
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Failed to retrieve data. Status code: ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setEducationalLevels(data);
+      })
+      .catch((error) => {
+        console.error(`An error occurred: ${error.message}`);
+      });
+  }, []);
+
+  useEffect(() => {
+    const apiUrl =
+      "https://devsafio-c11-backend-fb36b571f074.herokuapp.com/api/english";
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Failed to retrieve data. Status code: ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setEnglishlLevels(data);
+      })
+      .catch((error) => {
+        console.error(`An error occurred: ${error.message}`);
+      });
+  }, []);
+
   return (
     <div className="container lg:pt-[69px] ">
       <div className="flex flex-row justify-center mt-[1rem] lg:mt-[10] mb-[3rem] lg:mb-[4rem] lg:ml-[20%]">
@@ -41,9 +98,18 @@ function InformacionProfesionalForm() {
             <div className="relative divide-x divide-black text-[10px]">
               <select
                 className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+                id="educationalLevel1"
+                value={selectedEducationalLevel1}
+                onChange={(e) => {
+                  setSelectedEducationalLevel1(e.target.value);
+                }}
               >
                 <option className="m-0 p-0">Selección</option>
+                {educationalLevels.map((educationalLevel1, index) => (
+                  <option key={index} value={educationalLevel1.id}>
+                    {educationalLevel1.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -101,9 +167,18 @@ function InformacionProfesionalForm() {
             <div className="relative divide-x divide-black text-[10px]">
               <select
                 className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+                id="educationalLevel2"
+                value={selectedEducationalLevel2}
+                onChange={(e) => {
+                  setSelectedEducationalLevel2(e.target.value);
+                }}
               >
                 <option className="m-0 p-0">Selección</option>
+                {educationalLevels.map((educationalLevel2, index) => (
+                  <option key={index} value={educationalLevel2.id}>
+                    {educationalLevel2.name}
+                  </option>
+                ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -140,9 +215,18 @@ function InformacionProfesionalForm() {
                 <div className="relative divide-x divide-black text-[10px]">
                   <select
                     className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-state"
+                    id="educationalLevel3"
+                    value={selectedEducationalLevel3}
+                    onChange={(e) => {
+                      setSelectedEducationalLevel3(e.target.value);
+                    }}
                   >
                     <option className="m-0 p-0">Selección</option>
+                    {educationalLevels.map((educationalLevel, index) => (
+                      <option key={index} value={educationalLevel.id}>
+                        {educationalLevel.name}
+                      </option>
+                    ))}
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg
@@ -165,9 +249,18 @@ function InformacionProfesionalForm() {
                 <div className="relative divide-x divide-black text-[10px]">
                   <select
                     className="lg:text-[20px] lg:h-[48px]  block appearance-none w-full bg-[#E2F2FE] border border-[#140B34] text-[#575253] py-[7.25px] px-4 pr-8 rounded-[0.5rem] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-state"
+                    id="englishLevel"
+                    value={selectedEnglishlLevel}
+                    onChange={(e) => {
+                      setSelectedEnglishlLevel(e.target.value);
+                    }}
                   >
                     <option className="m-0 p-0">Selección</option>
+                    {englishlLevels.map((englishlLevel, index) => (
+                      <option key={index} value={englishlLevel.idenglish}>
+                        {englishlLevel.name}
+                      </option>
+                    ))}
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg
